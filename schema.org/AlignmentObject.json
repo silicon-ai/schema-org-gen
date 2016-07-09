@@ -2,8 +2,8 @@
 	"id": "AlignmentObject.json",
 	"title": "Alignment Object",
 	"description": "An intangible item that describes an alignment between a learning resource and a node in an educational framework.",
-	"format": "http://schema.org/AlignmentObject",
-	"media": {"type": "application/json;profile=http://schema.org/AlignmentObject"},
+	"format": "http://fibo.sdo-fibo.appspot.com/AlignmentObject",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/AlignmentObject"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

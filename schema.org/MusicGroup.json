@@ -2,8 +2,8 @@
 	"id": "MusicGroup.json",
 	"title": "Music Group",
 	"description": "A musical group, such as a band, an orchestra, or a choir. Can also be a solo musician.",
-	"format": "http://schema.org/MusicGroup",
-	"media": {"type": "application/json;profile=http://schema.org/MusicGroup"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MusicGroup",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MusicGroup"},
 	"allOf": [{"$ref": "PerformingGroup.json"}],
 	"type": "object",
 	"properties": {

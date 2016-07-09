@@ -2,8 +2,8 @@
 	"id": "RoofingContractor.json",
 	"title": "Roofing Contractor",
 	"description": "A roofing contractor.",
-	"format": "http://schema.org/RoofingContractor",
-	"media": {"type": "application/json;profile=http://schema.org/RoofingContractor"},
+	"format": "http://fibo.sdo-fibo.appspot.com/RoofingContractor",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/RoofingContractor"},
 	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],
 	"definitions": {
 		"array": {

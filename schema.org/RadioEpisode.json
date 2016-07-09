@@ -2,8 +2,8 @@
 	"id": "RadioEpisode.json",
 	"title": "Radio Episode",
 	"description": "A radio episode which can be part of a series or season.",
-	"format": "http://schema.org/RadioEpisode",
-	"media": {"type": "application/json;profile=http://schema.org/RadioEpisode"},
+	"format": "http://fibo.sdo-fibo.appspot.com/RadioEpisode",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/RadioEpisode"},
 	"allOf": [{"$ref": "Episode.json"}],
 	"definitions": {
 		"array": {

@@ -2,8 +2,8 @@
 	"id": "LocalBusiness.json",
 	"title": "Local Business",
 	"description": "A particular physical business or branch of an organization. Examples of LocalBusiness include a restaurant, a particular branch of a restaurant chain, a branch of a bank, a medical practice, a club, a bowling alley, etc.",
-	"format": "http://schema.org/LocalBusiness",
-	"media": {"type": "application/json;profile=http://schema.org/LocalBusiness"},
+	"format": "http://fibo.sdo-fibo.appspot.com/LocalBusiness",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/LocalBusiness"},
 	"allOf": [{"$ref": "Organization.json"}, {"$ref": "Place.json"}],
 	"type": "object",
 	"properties": {

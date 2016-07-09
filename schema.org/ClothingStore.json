@@ -2,8 +2,8 @@
 	"id": "ClothingStore.json",
 	"title": "Clothing Store",
 	"description": "A clothing store.",
-	"format": "http://schema.org/ClothingStore",
-	"media": {"type": "application/json;profile=http://schema.org/ClothingStore"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ClothingStore",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ClothingStore"},
 	"allOf": [{"$ref": "Store.json"}],
 	"definitions": {
 		"array": {

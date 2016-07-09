@@ -2,8 +2,8 @@
 	"id": "PresentationDigitalDocument.json",
 	"title": "Presentation Digital Document",
 	"description": "A file containing slides or used for a presentation.",
-	"format": "http://schema.org/PresentationDigitalDocument",
-	"media": {"type": "application/json;profile=http://schema.org/PresentationDigitalDocument"},
+	"format": "http://fibo.sdo-fibo.appspot.com/PresentationDigitalDocument",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/PresentationDigitalDocument"},
 	"allOf": [{"$ref": "DigitalDocument.json"}],
 	"definitions": {
 		"array": {

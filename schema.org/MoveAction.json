@@ -2,8 +2,8 @@
 	"id": "MoveAction.json",
 	"title": "Move Action",
 	"description": "The act of an agent relocating to a place.Related actions:TransferAction: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.",
-	"format": "http://schema.org/MoveAction",
-	"media": {"type": "application/json;profile=http://schema.org/MoveAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MoveAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MoveAction"},
 	"allOf": [{"$ref": "Action.json"}],
 	"type": "object",
 	"properties": {

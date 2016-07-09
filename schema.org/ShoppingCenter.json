@@ -2,8 +2,8 @@
 	"id": "ShoppingCenter.json",
 	"title": "Shopping Center",
 	"description": "A shopping center or mall.",
-	"format": "http://schema.org/ShoppingCenter",
-	"media": {"type": "application/json;profile=http://schema.org/ShoppingCenter"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ShoppingCenter",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ShoppingCenter"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],
 	"definitions": {
 		"array": {

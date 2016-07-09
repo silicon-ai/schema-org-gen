@@ -2,8 +2,8 @@
 	"id": "Order.json",
 	"title": "Order",
 	"description": "An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.",
-	"format": "http://schema.org/Order",
-	"media": {"type": "application/json;profile=http://schema.org/Order"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Order",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Order"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

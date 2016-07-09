@@ -2,8 +2,8 @@
 	"id": "ChildCare.json",
 	"title": "Child Care",
 	"description": "A Childcare center.",
-	"format": "http://schema.org/ChildCare",
-	"media": {"type": "application/json;profile=http://schema.org/ChildCare"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ChildCare",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ChildCare"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],
 	"definitions": {
 		"array": {

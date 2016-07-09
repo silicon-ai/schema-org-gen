@@ -2,8 +2,8 @@
 	"id": "Brand.json",
 	"title": "Brand",
 	"description": "A brand is a name used by an organization or business person for labeling a product, product group, or similar.",
-	"format": "http://schema.org/Brand",
-	"media": {"type": "application/json;profile=http://schema.org/Brand"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Brand",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Brand"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

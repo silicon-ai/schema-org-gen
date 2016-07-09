@@ -2,8 +2,8 @@
 	"id": "ExerciseAction.json",
 	"title": "Exercise Action",
 	"description": "The act of participating in exertive activity for the purposes of improving health and fitness.",
-	"format": "http://schema.org/ExerciseAction",
-	"media": {"type": "application/json;profile=http://schema.org/ExerciseAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ExerciseAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ExerciseAction"},
 	"allOf": [{"$ref": "PlayAction.json"}],
 	"type": "object",
 	"properties": {

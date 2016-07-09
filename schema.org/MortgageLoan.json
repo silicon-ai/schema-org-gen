@@ -1,0 +1,59 @@
+{
+	"id": "MortgageLoan.json",
+	"title": "Mortgage Loan",
+	"description": "A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)",
+	"format": "http://fibo.sdo-fibo.appspot.com/MortgageLoan",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MortgageLoan"},
+	"allOf": [{"$ref": "LoanOrCredit.json"}],
+	"type": "object",
+	"properties": {
+		"domiciled": {"$ref": "#/definitions/domiciled"},
+		"loanMortgageMandateAmount": {"$ref": "MonetaryAmount.json#/definitions/possibleRef"},
+		"renegotiable": {"$ref": "#/definitions/renegotiable"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"domiciled": {
+			"title": "Domiciled",
+			"description": "Whether borrower is a resident of the jurisdiction where the property is located.",
+			"type": "boolean"
+		},
+		"renegotiable": {
+			"title": "Renegotiable",
+			"description": "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
+			"type": "boolean"
+		}
+	}
+}

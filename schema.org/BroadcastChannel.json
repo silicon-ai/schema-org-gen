@@ -2,8 +2,8 @@
 	"id": "BroadcastChannel.json",
 	"title": "Broadcast Channel",
 	"description": "A unique instance of a BroadcastService on a CableOrSatelliteService lineup.",
-	"format": "http://schema.org/BroadcastChannel",
-	"media": {"type": "application/json;profile=http://schema.org/BroadcastChannel"},
+	"format": "http://fibo.sdo-fibo.appspot.com/BroadcastChannel",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/BroadcastChannel"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

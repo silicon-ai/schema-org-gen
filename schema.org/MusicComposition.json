@@ -2,22 +2,14 @@
 	"id": "MusicComposition.json",
 	"title": "Music Composition",
 	"description": "A musical composition.",
-	"format": "http://schema.org/MusicComposition",
-	"media": {"type": "application/json;profile=http://schema.org/MusicComposition"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MusicComposition",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MusicComposition"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {
 		"composer": {"$ref": "#/definitions/composer"},
 		"firstPerformance": {"$ref": "Event.json#/definitions/possibleRef"},
-		"includedComposition": {
-			"oneOf": [
-				{"$ref": "MusicComposition.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "MusicComposition.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"includedComposition": {"$ref": "MusicComposition.json#/definitions/possibleRefArray"},
 		"iswcCode": {"$ref": "#/definitions/iswcCode"},
 		"lyricist": {"$ref": "Person.json#/definitions/possibleRef"},
 		"lyrics": {"$ref": "CreativeWork.json#/definitions/possibleRef"},

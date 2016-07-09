@@ -1,32 +1,16 @@
 {
 	"id": "Action.json",
 	"title": "Action",
-	"description": "The date/time the message was received if a single recipient exists.",
-	"format": "http://schema.org/Action",
-	"media": {"type": "application/json;profile=http://schema.org/Action"},
+	"description": "An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.\n      See also blog post\n      and Actions overview document.",
+	"format": "http://fibo.sdo-fibo.appspot.com/Action",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Action"},
 	"allOf": [{"$ref": "Thing.json"}],
 	"type": "object",
 	"properties": {
-		"actionStatus": {
-			"oneOf": [
-				{"$ref": "ActionStatusType.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "ActionStatusType.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"actionStatus": {"$ref": "ActionStatusType.json#/definitions/possibleRef"},
 		"agent": {"$ref": "#/definitions/agent"},
 		"endTime": {"$ref": "#/definitions/endTime"},
-		"error": {
-			"oneOf": [
-				{"$ref": "Thing.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "Thing.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"error": {"$ref": "Thing.json#/definitions/possibleRefArray"},
 		"instrument": {"$ref": "Thing.json#/definitions/possibleRef"},
 		"location": {"$ref": "#/definitions/location"},
 		"object": {"$ref": "Thing.json#/definitions/possibleRef"},
@@ -36,15 +20,7 @@
 		},
 		"result": {"$ref": "Thing.json#/definitions/possibleRef"},
 		"startTime": {"$ref": "#/definitions/startTime"},
-		"target": {
-			"oneOf": [
-				{"$ref": "EntryPoint.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "EntryPoint.json#/definitions/possibleRef"}
-				}
-			]
-		}
+		"target": {"$ref": "EntryPoint.json#/definitions/possibleRefArray"}
 	},
 	"definitions": {
 		"array": {

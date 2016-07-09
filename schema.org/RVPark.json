@@ -2,8 +2,8 @@
 	"id": "RVPark.json",
 	"title": "RV Park",
 	"description": "A place offering space for \"Recreational Vehicles\", Caravans, mobile homes and the like.",
-	"format": "http://schema.org/RVPark",
-	"media": {"type": "application/json;profile=http://schema.org/RVPark"},
+	"format": "http://fibo.sdo-fibo.appspot.com/RVPark",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/RVPark"},
 	"allOf": [{"$ref": "CivicStructure.json"}],
 	"definitions": {
 		"array": {

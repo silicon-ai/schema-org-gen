@@ -2,8 +2,8 @@
 	"id": "BroadcastService.json",
 	"title": "Broadcast Service",
 	"description": "A delivery service through which content is provided via broadcast over the air or online.",
-	"format": "http://schema.org/BroadcastService",
-	"media": {"type": "application/json;profile=http://schema.org/BroadcastService"},
+	"format": "http://fibo.sdo-fibo.appspot.com/BroadcastService",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/BroadcastService"},
 	"allOf": [{"$ref": "Service.json"}],
 	"type": "object",
 	"properties": {

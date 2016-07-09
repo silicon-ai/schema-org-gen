@@ -2,8 +2,8 @@
 	"id": "QualitativeValue.json",
 	"title": "Qualitative Value",
 	"description": "A predefined value for a product characteristic, e.g. the power cord plug type \"US\" or the garment sizes \"S\", \"M\", \"L\", and \"XL\".",
-	"format": "http://schema.org/QualitativeValue",
-	"media": {"type": "application/json;profile=http://schema.org/QualitativeValue"},
+	"format": "http://fibo.sdo-fibo.appspot.com/QualitativeValue",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/QualitativeValue"},
 	"allOf": [{"$ref": "Enumeration.json"}],
 	"type": "object",
 	"properties": {

@@ -2,8 +2,8 @@
 	"id": "ItemAvailability.json",
 	"title": "Item Availability",
 	"description": "A list of possible product availability options.",
-	"format": "http://schema.org/ItemAvailability",
-	"media": {"type": "application/json;profile=http://schema.org/ItemAvailability"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ItemAvailability",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ItemAvailability"},
 	"allOf": [{"$ref": "Enumeration.json"}],
 	"definitions": {
 		"array": {

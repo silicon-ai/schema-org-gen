@@ -2,8 +2,8 @@
 	"id": "ComputerStore.json",
 	"title": "Computer Store",
 	"description": "A computer store.",
-	"format": "http://schema.org/ComputerStore",
-	"media": {"type": "application/json;profile=http://schema.org/ComputerStore"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ComputerStore",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ComputerStore"},
 	"allOf": [{"$ref": "Store.json"}],
 	"definitions": {
 		"array": {

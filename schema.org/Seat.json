@@ -2,8 +2,8 @@
 	"id": "Seat.json",
 	"title": "Seat",
 	"description": "Used to describe a seat, such as a reserved seat in an event reservation.",
-	"format": "http://schema.org/Seat",
-	"media": {"type": "application/json;profile=http://schema.org/Seat"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Seat",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Seat"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

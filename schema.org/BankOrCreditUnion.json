@@ -2,8 +2,8 @@
 	"id": "BankOrCreditUnion.json",
 	"title": "Bank or Credit Union",
 	"description": "Bank or credit union.",
-	"format": "http://schema.org/BankOrCreditUnion",
-	"media": {"type": "application/json;profile=http://schema.org/BankOrCreditUnion"},
+	"format": "http://fibo.sdo-fibo.appspot.com/BankOrCreditUnion",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/BankOrCreditUnion"},
 	"allOf": [{"$ref": "FinancialService.json"}],
 	"definitions": {
 		"array": {

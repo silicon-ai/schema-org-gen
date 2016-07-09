@@ -2,8 +2,8 @@
 	"id": "NoteDigitalDocument.json",
 	"title": "Note Digital Document",
 	"description": "A file containing a note, primarily for the author.",
-	"format": "http://schema.org/NoteDigitalDocument",
-	"media": {"type": "application/json;profile=http://schema.org/NoteDigitalDocument"},
+	"format": "http://fibo.sdo-fibo.appspot.com/NoteDigitalDocument",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/NoteDigitalDocument"},
 	"allOf": [{"$ref": "DigitalDocument.json"}],
 	"definitions": {
 		"array": {

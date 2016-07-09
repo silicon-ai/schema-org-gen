@@ -2,8 +2,8 @@
 	"id": "Review.json",
 	"title": "Review",
 	"description": "A review of an item - for example, of a restaurant, movie, or store.",
-	"format": "http://schema.org/Review",
-	"media": {"type": "application/json;profile=http://schema.org/Review"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Review",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Review"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {

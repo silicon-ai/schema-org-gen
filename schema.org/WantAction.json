@@ -2,8 +2,8 @@
 	"id": "WantAction.json",
 	"title": "Want Action",
 	"description": "The act of expressing a desire about the object. An agent wants an object.",
-	"format": "http://schema.org/WantAction",
-	"media": {"type": "application/json;profile=http://schema.org/WantAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/WantAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/WantAction"},
 	"allOf": [{"$ref": "ReactAction.json"}],
 	"definitions": {
 		"array": {

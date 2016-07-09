@@ -2,8 +2,8 @@
 	"id": "DaySpa.json",
 	"title": "Day Spa",
 	"description": "A day spa.",
-	"format": "http://schema.org/DaySpa",
-	"media": {"type": "application/json;profile=http://schema.org/DaySpa"},
+	"format": "http://fibo.sdo-fibo.appspot.com/DaySpa",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/DaySpa"},
 	"allOf": [{"$ref": "HealthAndBeautyBusiness.json"}],
 	"definitions": {
 		"array": {

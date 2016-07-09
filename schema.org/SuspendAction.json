@@ -2,8 +2,8 @@
 	"id": "SuspendAction.json",
 	"title": "Suspend Action",
 	"description": "The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).",
-	"format": "http://schema.org/SuspendAction",
-	"media": {"type": "application/json;profile=http://schema.org/SuspendAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/SuspendAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/SuspendAction"},
 	"allOf": [{"$ref": "ControlAction.json"}],
 	"definitions": {
 		"array": {

@@ -2,29 +2,13 @@
 	"id": "Airport.json",
 	"title": "Airport",
 	"description": "An airport.",
-	"format": "http://schema.org/Airport",
-	"media": {"type": "application/json;profile=http://schema.org/Airport"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Airport",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Airport"},
 	"allOf": [{"$ref": "CivicStructure.json"}],
 	"type": "object",
 	"properties": {
-		"iataCode": {
-			"oneOf": [
-				{"$ref": "#/definitions/iataCode"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/iataCode"}
-				}
-			]
-		},
-		"icaoCode": {
-			"oneOf": [
-				{"$ref": "#/definitions/icaoCode"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/icaoCode"}
-				}
-			]
-		}
+		"iataCode": {"$ref": "#/definitions/iataCode"},
+		"icaoCode": {"$ref": "#/definitions/icaoCode"}
 	},
 	"definitions": {
 		"array": {

@@ -2,8 +2,8 @@
 	"id": "SearchAction.json",
 	"title": "Search Action",
 	"description": "The act of searching for an object.Related actions:FindAction: SearchAction generally leads to a FindAction, but not necessarily.",
-	"format": "http://schema.org/SearchAction",
-	"media": {"type": "application/json;profile=http://schema.org/SearchAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/SearchAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/SearchAction"},
 	"allOf": [{"$ref": "Action.json"}],
 	"type": "object",
 	"properties": {

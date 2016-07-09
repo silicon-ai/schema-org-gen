@@ -2,8 +2,8 @@
 	"id": "MusicReleaseFormatType.json",
 	"title": "Music Release Format Type",
 	"description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
-	"format": "http://schema.org/MusicReleaseFormatType",
-	"media": {"type": "application/json;profile=http://schema.org/MusicReleaseFormatType"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MusicReleaseFormatType",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MusicReleaseFormatType"},
 	"allOf": [{"$ref": "Enumeration.json"}],
 	"definitions": {
 		"array": {

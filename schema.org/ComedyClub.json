@@ -2,8 +2,8 @@
 	"id": "ComedyClub.json",
 	"title": "Comedy Club",
 	"description": "A comedy club.",
-	"format": "http://schema.org/ComedyClub",
-	"media": {"type": "application/json;profile=http://schema.org/ComedyClub"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ComedyClub",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ComedyClub"},
 	"allOf": [{"$ref": "EntertainmentBusiness.json"}],
 	"definitions": {
 		"array": {

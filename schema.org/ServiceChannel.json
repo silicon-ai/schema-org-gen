@@ -2,14 +2,22 @@
 	"id": "ServiceChannel.json",
 	"title": "Service Channel",
 	"description": "A means for accessing a service, e.g. a government office location, web site, or phone number.",
-	"format": "http://schema.org/ServiceChannel",
-	"media": {"type": "application/json;profile=http://schema.org/ServiceChannel"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ServiceChannel",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ServiceChannel"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {
 		"availableLanguage": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/availableLanguage"}
+		},
+		"email": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/email"}
+		},
+		"mobileApp": {
+			"type": "string",
+			"format": "uri"
 		},
 		"processingTime": {"$ref": "Duration.json#/definitions/possibleRef"},
 		"providesService": {"$ref": "Service.json#/definitions/possibleRef"},
@@ -20,12 +28,26 @@
 		"serviceUrl": {
 			"type": "string",
 			"format": "uri"
+		},
+		"textChat": {
+			"type": "string",
+			"format": "uri"
 		}
 	},
-	"links": [{
-		"rel": "http://schema.org/serviceUrl",
-		"href": "{+serviceUrl}"
-	}],
+	"links": [
+		{
+			"rel": "http://schema.org/mobileApp",
+			"href": "{+mobileApp}"
+		},
+		{
+			"rel": "http://schema.org/serviceUrl",
+			"href": "{+serviceUrl}"
+		},
+		{
+			"rel": "http://schema.org/textChat",
+			"href": "{+textChat}"
+		}
+	],
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -64,6 +86,11 @@
 			"title": "Available Language",
 			"description": "A language someone may use with the item. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage.",
 			"anyOf": [{"type": "string"}, {"$ref": "Language.json#/definitions/possibleRef"}]
+		},
+		"email": {
+			"title": "Email",
+			"description": "The address to access the service by email.",
+			"type": "string"
 		}
 	}
 }

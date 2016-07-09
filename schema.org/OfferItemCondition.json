@@ -2,8 +2,8 @@
 	"id": "OfferItemCondition.json",
 	"title": "Offer Item Condition",
 	"description": "A list of possible conditions for the item.",
-	"format": "http://schema.org/OfferItemCondition",
-	"media": {"type": "application/json;profile=http://schema.org/OfferItemCondition"},
+	"format": "http://fibo.sdo-fibo.appspot.com/OfferItemCondition",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/OfferItemCondition"},
 	"allOf": [{"$ref": "Enumeration.json"}],
 	"definitions": {
 		"array": {

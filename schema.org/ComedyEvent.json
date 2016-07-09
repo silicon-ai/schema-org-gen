@@ -2,8 +2,8 @@
 	"id": "ComedyEvent.json",
 	"title": "Comedy Event",
 	"description": "Event type: Comedy event.",
-	"format": "http://schema.org/ComedyEvent",
-	"media": {"type": "application/json;profile=http://schema.org/ComedyEvent"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ComedyEvent",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ComedyEvent"},
 	"allOf": [{"$ref": "Event.json"}],
 	"definitions": {
 		"array": {

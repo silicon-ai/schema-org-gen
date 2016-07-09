@@ -2,23 +2,15 @@
 	"id": "MusicRelease.json",
 	"title": "Music Release",
 	"description": "A MusicRelease is a specific release of a music album.",
-	"format": "http://schema.org/MusicRelease",
-	"media": {"type": "application/json;profile=http://schema.org/MusicRelease"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MusicRelease",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MusicRelease"},
 	"allOf": [{"$ref": "MusicPlaylist.json"}],
 	"type": "object",
 	"properties": {
 		"catalogNumber": {"$ref": "#/definitions/catalogNumber"},
 		"creditedTo": {"$ref": "#/definitions/creditedTo"},
 		"duration": {"$ref": "Duration.json#/definitions/possibleRef"},
-		"musicReleaseFormat": {
-			"oneOf": [
-				{"$ref": "MusicReleaseFormatType.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "MusicReleaseFormatType.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"musicReleaseFormat": {"$ref": "MusicReleaseFormatType.json#/definitions/possibleRefArray"},
 		"recordLabel": {"$ref": "Organization.json#/definitions/possibleRef"},
 		"releaseOf": {"$ref": "MusicAlbum.json#/definitions/possibleRef"}
 	},

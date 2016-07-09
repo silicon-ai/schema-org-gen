@@ -2,8 +2,8 @@
 	"id": "PostOffice.json",
 	"title": "Post Office",
 	"description": "A post office.",
-	"format": "http://schema.org/PostOffice",
-	"media": {"type": "application/json;profile=http://schema.org/PostOffice"},
+	"format": "http://fibo.sdo-fibo.appspot.com/PostOffice",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/PostOffice"},
 	"allOf": [{"$ref": "GovernmentOffice.json"}],
 	"definitions": {
 		"array": {

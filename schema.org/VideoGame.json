@@ -2,43 +2,19 @@
 	"id": "VideoGame.json",
 	"title": "Video Game",
 	"description": "A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.",
-	"format": "http://schema.org/VideoGame",
-	"media": {"type": "application/json;profile=http://schema.org/VideoGame"},
+	"format": "http://fibo.sdo-fibo.appspot.com/VideoGame",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/VideoGame"},
 	"allOf": [{"$ref": "Game.json"}, {"$ref": "SoftwareApplication.json"}],
 	"type": "object",
 	"properties": {
 		"actor": {"$ref": "Person.json#/definitions/possibleRefArray"},
-		"cheatCode": {
-			"oneOf": [
-				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"cheatCode": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
 		"director": {"$ref": "Person.json#/definitions/possibleRef"},
 		"gamePlatform": {"$ref": "#/definitions/gamePlatform"},
 		"gameServer": {"$ref": "GameServer.json#/definitions/possibleRef"},
-		"gameTip": {
-			"oneOf": [
-				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"gameTip": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
 		"musicBy": {"$ref": "#/definitions/musicBy"},
-		"playMode": {
-			"oneOf": [
-				{"$ref": "GamePlayMode.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "GamePlayMode.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"playMode": {"$ref": "GamePlayMode.json#/definitions/possibleRefArray"},
 		"trailer": {"$ref": "VideoObject.json#/definitions/possibleRef"}
 	},
 	"definitions": {

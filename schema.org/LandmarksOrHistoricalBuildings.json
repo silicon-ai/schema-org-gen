@@ -2,8 +2,8 @@
 	"id": "LandmarksOrHistoricalBuildings.json",
 	"title": "Landmarks or Historical Buildings",
 	"description": "An historical landmark or building.",
-	"format": "http://schema.org/LandmarksOrHistoricalBuildings",
-	"media": {"type": "application/json;profile=http://schema.org/LandmarksOrHistoricalBuildings"},
+	"format": "http://fibo.sdo-fibo.appspot.com/LandmarksOrHistoricalBuildings",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/LandmarksOrHistoricalBuildings"},
 	"allOf": [{"$ref": "Place.json"}],
 	"definitions": {
 		"array": {

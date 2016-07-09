@@ -2,8 +2,8 @@
 	"id": "MobilePhoneStore.json",
 	"title": "Mobile Phone Store",
 	"description": "A store that sells mobile phones and related accessories.",
-	"format": "http://schema.org/MobilePhoneStore",
-	"media": {"type": "application/json;profile=http://schema.org/MobilePhoneStore"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MobilePhoneStore",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MobilePhoneStore"},
 	"allOf": [{"$ref": "Store.json"}],
 	"definitions": {
 		"array": {

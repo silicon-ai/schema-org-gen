@@ -2,8 +2,8 @@
 	"id": "DepositAccount.json",
 	"title": "Deposit Account",
 	"description": "A type of Bank Account with a main purpose of depositing funds to gain interest or other benefits.",
-	"format": "http://schema.org/DepositAccount",
-	"media": {"type": "application/json;profile=http://schema.org/DepositAccount"},
+	"format": "http://fibo.sdo-fibo.appspot.com/DepositAccount",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/DepositAccount"},
 	"allOf": [{"$ref": "InvestmentOrDeposit.json"}, {"$ref": "BankAccount.json"}],
 	"definitions": {
 		"array": {

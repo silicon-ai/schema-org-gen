@@ -2,8 +2,8 @@
 	"id": "DiscussionForumPosting.json",
 	"title": "Discussion Forum Posting",
 	"description": "A posting to a discussion forum.",
-	"format": "http://schema.org/DiscussionForumPosting",
-	"media": {"type": "application/json;profile=http://schema.org/DiscussionForumPosting"},
+	"format": "http://fibo.sdo-fibo.appspot.com/DiscussionForumPosting",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/DiscussionForumPosting"},
 	"allOf": [{"$ref": "SocialMediaPosting.json"}],
 	"definitions": {
 		"array": {

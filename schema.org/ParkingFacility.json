@@ -2,8 +2,8 @@
 	"id": "ParkingFacility.json",
 	"title": "Parking Facility",
 	"description": "A parking lot or other parking facility.",
-	"format": "http://schema.org/ParkingFacility",
-	"media": {"type": "application/json;profile=http://schema.org/ParkingFacility"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ParkingFacility",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ParkingFacility"},
 	"allOf": [{"$ref": "CivicStructure.json"}],
 	"definitions": {
 		"array": {

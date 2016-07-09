@@ -2,8 +2,8 @@
 	"id": "Locksmith.json",
 	"title": "Locksmith",
 	"description": "A locksmith.",
-	"format": "http://schema.org/Locksmith",
-	"media": {"type": "application/json;profile=http://schema.org/Locksmith"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Locksmith",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Locksmith"},
 	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],
 	"definitions": {
 		"array": {

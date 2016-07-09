@@ -2,8 +2,8 @@
 	"id": "Service.json",
 	"title": "Service",
 	"description": "A service provided by an organization, e.g. delivery service, print services, etc.",
-	"format": "http://schema.org/Service",
-	"media": {"type": "application/json;profile=http://schema.org/Service"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Service",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Service"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {
@@ -20,15 +20,7 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/category"}
 		},
-		"hasOfferCatalog": {
-			"oneOf": [
-				{"$ref": "OfferCatalog.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "OfferCatalog.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"hasOfferCatalog": {"$ref": "OfferCatalog.json#/definitions/possibleRefArray"},
 		"hoursAvailable": {"$ref": "OpeningHoursSpecification.json#/definitions/possibleRef"},
 		"isRelatedTo": {
 			"type": "array",
@@ -44,15 +36,7 @@
 		},
 		"offers": {"$ref": "Offer.json#/definitions/possibleRefArray"},
 		"provider": {"$ref": "#/definitions/provider"},
-		"providerMobility": {
-			"oneOf": [
-				{"$ref": "#/definitions/providerMobility"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/providerMobility"}
-				}
-			]
-		},
+		"providerMobility": {"$ref": "#/definitions/providerMobility"},
 		"review": {"$ref": "Review.json#/definitions/possibleRefArray"},
 		"serviceOutput": {"$ref": "Thing.json#/definitions/possibleRef"},
 		"serviceType": {"$ref": "#/definitions/serviceType"}

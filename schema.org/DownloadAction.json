@@ -2,8 +2,8 @@
 	"id": "DownloadAction.json",
 	"title": "Download Action",
 	"description": "The act of downloading an object.",
-	"format": "http://schema.org/DownloadAction",
-	"media": {"type": "application/json;profile=http://schema.org/DownloadAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/DownloadAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/DownloadAction"},
 	"allOf": [{"$ref": "TransferAction.json"}],
 	"definitions": {
 		"array": {

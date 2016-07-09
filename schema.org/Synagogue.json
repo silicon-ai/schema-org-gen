@@ -2,8 +2,8 @@
 	"id": "Synagogue.json",
 	"title": "Synagogue",
 	"description": "A synagogue.",
-	"format": "http://schema.org/Synagogue",
-	"media": {"type": "application/json;profile=http://schema.org/Synagogue"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Synagogue",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Synagogue"},
 	"allOf": [{"$ref": "PlaceOfWorship.json"}],
 	"definitions": {
 		"array": {

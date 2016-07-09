@@ -2,8 +2,8 @@
 	"id": "Embassy.json",
 	"title": "Embassy",
 	"description": "An embassy.",
-	"format": "http://schema.org/Embassy",
-	"media": {"type": "application/json;profile=http://schema.org/Embassy"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Embassy",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Embassy"},
 	"allOf": [{"$ref": "GovernmentBuilding.json"}],
 	"definitions": {
 		"array": {

@@ -2,8 +2,8 @@
 	"id": "Plumber.json",
 	"title": "Plumber",
 	"description": "A plumbing service.",
-	"format": "http://schema.org/Plumber",
-	"media": {"type": "application/json;profile=http://schema.org/Plumber"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Plumber",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Plumber"},
 	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],
 	"definitions": {
 		"array": {

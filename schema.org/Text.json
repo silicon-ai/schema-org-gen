@@ -2,8 +2,8 @@
 	"id": "Text.json",
 	"title": "Text",
 	"description": "Data type: Text.",
-	"format": "http://schema.org/Text",
-	"media": {"type": "application/json;profile=http://schema.org/Text"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Text",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Text"},
 	"type": "string",
 	"definitions": {
 		"array": {

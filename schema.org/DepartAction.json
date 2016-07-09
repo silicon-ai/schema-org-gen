@@ -2,8 +2,8 @@
 	"id": "DepartAction.json",
 	"title": "Depart Action",
 	"description": "The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants.",
-	"format": "http://schema.org/DepartAction",
-	"media": {"type": "application/json;profile=http://schema.org/DepartAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/DepartAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/DepartAction"},
 	"allOf": [{"$ref": "MoveAction.json"}],
 	"definitions": {
 		"array": {

@@ -2,8 +2,8 @@
 	"id": "WholesaleStore.json",
 	"title": "Wholesale Store",
 	"description": "A wholesale store.",
-	"format": "http://schema.org/WholesaleStore",
-	"media": {"type": "application/json;profile=http://schema.org/WholesaleStore"},
+	"format": "http://fibo.sdo-fibo.appspot.com/WholesaleStore",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/WholesaleStore"},
 	"allOf": [{"$ref": "Store.json"}],
 	"definitions": {
 		"array": {

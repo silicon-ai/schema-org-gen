@@ -2,8 +2,8 @@
 	"id": "Enumeration.json",
 	"title": "Enumeration",
 	"description": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
-	"format": "http://schema.org/Enumeration",
-	"media": {"type": "application/json;profile=http://schema.org/Enumeration"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Enumeration",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Enumeration"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"definitions": {
 		"array": {

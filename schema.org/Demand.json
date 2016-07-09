@@ -2,8 +2,8 @@
 	"id": "Demand.json",
 	"title": "Demand",
 	"description": "A demand entity represents the public, not necessarily binding, not necessarily exclusive, announcement by an organization or person to seek a certain type of goods or services. For describing demand using this type, the very same properties used for Offer apply.",
-	"format": "http://schema.org/Demand",
-	"media": {"type": "application/json;profile=http://schema.org/Demand"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Demand",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Demand"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

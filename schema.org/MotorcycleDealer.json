@@ -2,8 +2,8 @@
 	"id": "MotorcycleDealer.json",
 	"title": "Motorcycle Dealer",
 	"description": "A motorcycle dealer.",
-	"format": "http://schema.org/MotorcycleDealer",
-	"media": {"type": "application/json;profile=http://schema.org/MotorcycleDealer"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MotorcycleDealer",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MotorcycleDealer"},
 	"allOf": [{"$ref": "AutomotiveBusiness.json"}],
 	"definitions": {
 		"array": {

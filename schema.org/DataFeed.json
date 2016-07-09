@@ -2,8 +2,8 @@
 	"id": "DataFeed.json",
 	"title": "Data Feed",
 	"description": "A single feed providing structured information about one or more entities or topics.",
-	"format": "http://schema.org/DataFeed",
-	"media": {"type": "application/json;profile=http://schema.org/DataFeed"},
+	"format": "http://fibo.sdo-fibo.appspot.com/DataFeed",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/DataFeed"},
 	"allOf": [{"$ref": "Dataset.json"}],
 	"type": "object",
 	"properties": {

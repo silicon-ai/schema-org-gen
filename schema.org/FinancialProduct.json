@@ -2,20 +2,15 @@
 	"id": "FinancialProduct.json",
 	"title": "Financial Product",
 	"description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
-	"format": "http://schema.org/FinancialProduct",
-	"media": {"type": "application/json;profile=http://schema.org/FinancialProduct"},
+	"format": "http://fibo.sdo-fibo.appspot.com/FinancialProduct",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/FinancialProduct"},
 	"allOf": [{"$ref": "Service.json"}],
 	"type": "object",
 	"properties": {
 		"annualPercentageRate": {"$ref": "#/definitions/annualPercentageRate"},
 		"feesAndCommissionsSpecification": {
-			"oneOf": [
-				{"$ref": "#/definitions/feesAndCommissionsSpecification"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/feesAndCommissionsSpecification"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/feesAndCommissionsSpecification"}
 		},
 		"interestRate": {"$ref": "#/definitions/interestRate"}
 	},

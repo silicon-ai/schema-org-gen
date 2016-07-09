@@ -2,8 +2,8 @@
 	"id": "AggregateOffer.json",
 	"title": "Aggregate Offer",
 	"description": "When a single product is associated with multiple offers (for example, the same pair of shoes is offered by different merchants), then AggregateOffer can be used.",
-	"format": "http://schema.org/AggregateOffer",
-	"media": {"type": "application/json;profile=http://schema.org/AggregateOffer"},
+	"format": "http://fibo.sdo-fibo.appspot.com/AggregateOffer",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/AggregateOffer"},
 	"allOf": [{"$ref": "Offer.json"}],
 	"type": "object",
 	"properties": {

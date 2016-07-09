@@ -2,8 +2,8 @@
 	"id": "OpeningHoursSpecification.json",
 	"title": "Opening Hours Specification",
 	"description": "A structured value providing information about the opening hours of a place or a certain service inside a place.\n\nThe place is open if the opens property is specified, and closed otherwise.\n\nIf the value for the closes property is less than the value for the opens property then the hour range is assumed to span over the next day.",
-	"format": "http://schema.org/OpeningHoursSpecification",
-	"media": {"type": "application/json;profile=http://schema.org/OpeningHoursSpecification"},
+	"format": "http://fibo.sdo-fibo.appspot.com/OpeningHoursSpecification",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/OpeningHoursSpecification"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
 	"type": "object",
 	"properties": {

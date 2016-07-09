@@ -2,8 +2,8 @@
 	"id": "Event.json",
 	"title": "Event",
 	"description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the 'offers' property. Repeated events may be structured as separate Event objects.",
-	"format": "http://schema.org/Event",
-	"media": {"type": "application/json;profile=http://schema.org/Event"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Event",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Event"},
 	"allOf": [{"$ref": "Thing.json"}],
 	"type": "object",
 	"properties": {
@@ -47,15 +47,7 @@
 		"startDate": {"$ref": "#/definitions/startDate"},
 		"subEvent": {"$ref": "Event.json#/definitions/possibleRefArray"},
 		"superEvent": {"$ref": "Event.json#/definitions/possibleRefArray"},
-		"translator": {
-			"oneOf": [
-				{"$ref": "#/definitions/translator"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/translator"}
-				}
-			]
-		},
+		"translator": {"$ref": "#/definitions/translator"},
 		"typicalAgeRange": {"$ref": "#/definitions/typicalAgeRange"},
 		"workFeatured": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
 		"workPerformed": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"}

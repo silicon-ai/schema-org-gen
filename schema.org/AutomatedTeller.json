@@ -2,8 +2,8 @@
 	"id": "AutomatedTeller.json",
 	"title": "Automated Teller",
 	"description": "ATM/cash machine.",
-	"format": "http://schema.org/AutomatedTeller",
-	"media": {"type": "application/json;profile=http://schema.org/AutomatedTeller"},
+	"format": "http://fibo.sdo-fibo.appspot.com/AutomatedTeller",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/AutomatedTeller"},
 	"allOf": [{"$ref": "FinancialService.json"}],
 	"definitions": {
 		"array": {

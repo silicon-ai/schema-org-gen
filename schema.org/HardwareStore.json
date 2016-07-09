@@ -2,8 +2,8 @@
 	"id": "HardwareStore.json",
 	"title": "Hardware Store",
 	"description": "A hardware store.",
-	"format": "http://schema.org/HardwareStore",
-	"media": {"type": "application/json;profile=http://schema.org/HardwareStore"},
+	"format": "http://fibo.sdo-fibo.appspot.com/HardwareStore",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/HardwareStore"},
 	"allOf": [{"$ref": "Store.json"}],
 	"definitions": {
 		"array": {

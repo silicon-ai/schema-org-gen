@@ -2,8 +2,8 @@
 	"id": "DanceEvent.json",
 	"title": "Dance Event",
 	"description": "Event type: A social dance.",
-	"format": "http://schema.org/DanceEvent",
-	"media": {"type": "application/json;profile=http://schema.org/DanceEvent"},
+	"format": "http://fibo.sdo-fibo.appspot.com/DanceEvent",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/DanceEvent"},
 	"allOf": [{"$ref": "Event.json"}],
 	"definitions": {
 		"array": {

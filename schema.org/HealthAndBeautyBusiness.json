@@ -2,8 +2,8 @@
 	"id": "HealthAndBeautyBusiness.json",
 	"title": "Health And Beauty Business",
 	"description": "Health and beauty.",
-	"format": "http://schema.org/HealthAndBeautyBusiness",
-	"media": {"type": "application/json;profile=http://schema.org/HealthAndBeautyBusiness"},
+	"format": "http://fibo.sdo-fibo.appspot.com/HealthAndBeautyBusiness",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/HealthAndBeautyBusiness"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],
 	"definitions": {
 		"array": {

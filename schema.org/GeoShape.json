@@ -2,8 +2,8 @@
 	"id": "GeoShape.json",
 	"title": "Geo Shape",
 	"description": "The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.",
-	"format": "http://schema.org/GeoShape",
-	"media": {"type": "application/json;profile=http://schema.org/GeoShape"},
+	"format": "http://fibo.sdo-fibo.appspot.com/GeoShape",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/GeoShape"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
 	"type": "object",
 	"properties": {

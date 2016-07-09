@@ -2,8 +2,8 @@
 	"id": "OceanBodyOfWater.json",
 	"title": "Ocean Body of Water",
 	"description": "An ocean (for example, the Pacific).",
-	"format": "http://schema.org/OceanBodyOfWater",
-	"media": {"type": "application/json;profile=http://schema.org/OceanBodyOfWater"},
+	"format": "http://fibo.sdo-fibo.appspot.com/OceanBodyOfWater",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/OceanBodyOfWater"},
 	"allOf": [{"$ref": "BodyOfWater.json"}],
 	"definitions": {
 		"array": {

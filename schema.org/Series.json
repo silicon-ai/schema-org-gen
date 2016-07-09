@@ -2,8 +2,8 @@
 	"id": "Series.json",
 	"title": "Series",
 	"description": "A Series in schema.org is a group of related items, typically but not necessarily of the same kind.",
-	"format": "http://schema.org/Series",
-	"media": {"type": "application/json;profile=http://schema.org/Series"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Series",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Series"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"definitions": {
 		"array": {

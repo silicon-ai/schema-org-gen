@@ -2,38 +2,14 @@
 	"id": "GameServer.json",
 	"title": "Game Server",
 	"description": "Server that provides game interaction in a multiplayer game.",
-	"format": "http://schema.org/GameServer",
-	"media": {"type": "application/json;profile=http://schema.org/GameServer"},
+	"format": "http://fibo.sdo-fibo.appspot.com/GameServer",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/GameServer"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {
-		"game": {
-			"oneOf": [
-				{"$ref": "VideoGame.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "VideoGame.json#/definitions/possibleRef"}
-				}
-			]
-		},
-		"playersOnline": {
-			"oneOf": [
-				{"$ref": "#/definitions/playersOnline"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/playersOnline"}
-				}
-			]
-		},
-		"serverStatus": {
-			"oneOf": [
-				{"$ref": "GameServerStatus.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "GameServerStatus.json#/definitions/possibleRef"}
-				}
-			]
-		}
+		"game": {"$ref": "VideoGame.json#/definitions/possibleRefArray"},
+		"playersOnline": {"$ref": "#/definitions/playersOnline"},
+		"serverStatus": {"$ref": "GameServerStatus.json#/definitions/possibleRef"}
 	},
 	"definitions": {
 		"array": {

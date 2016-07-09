@@ -2,21 +2,21 @@
 	"id": "LoanOrCredit.json",
 	"title": "Loan or Credit",
 	"description": "A financial product for the loaning of an amount of money under agreed terms and charges.",
-	"format": "http://schema.org/LoanOrCredit",
-	"media": {"type": "application/json;profile=http://schema.org/LoanOrCredit"},
+	"format": "http://fibo.sdo-fibo.appspot.com/LoanOrCredit",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/LoanOrCredit"},
 	"allOf": [{"$ref": "FinancialProduct.json"}],
 	"type": "object",
 	"properties": {
 		"amount": {"$ref": "#/definitions/amount"},
+		"currency": {"$ref": "#/definitions/currency"},
+		"gracePeriod": {"$ref": "Duration.json#/definitions/possibleRef"},
 		"loanTerm": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
+		"loanType": {"$ref": "#/definitions/loanType"},
+		"recourseLoan": {"$ref": "#/definitions/recourseLoan"},
+		"repaymentForm": {"$ref": "RepaymentSpecification.json#/definitions/possibleRefArray"},
 		"requiredCollateral": {
-			"oneOf": [
-				{"$ref": "#/definitions/requiredCollateral"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/requiredCollateral"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/requiredCollateral"}
 		}
 	},
 	"definitions": {
@@ -57,6 +57,27 @@
 			"title": "Amount",
 			"description": "The amount of money.",
 			"anyOf": [{"type": "number"}, {"$ref": "MonetaryAmount.json#/definitions/possibleRef"}]
+		},
+		"currency": {
+			"title": "Currency",
+			"description": "The currency in which the monetary amount is expressed (in 3-letter ISO 4217 format).",
+			"type": "string"
+		},
+		"loanType": {
+			"title": "Loan Type",
+			"description": "The type of a loan or credit.",
+			"anyOf": [
+				{"type": "string"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		},
+		"recourseLoan": {
+			"title": "Recourse Loan",
+			"description": "The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.",
+			"type": "boolean"
 		},
 		"requiredCollateral": {
 			"title": "Required Collateral",

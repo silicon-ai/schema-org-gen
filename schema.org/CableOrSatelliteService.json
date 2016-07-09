@@ -2,8 +2,8 @@
 	"id": "CableOrSatelliteService.json",
 	"title": "Cable or Satellite Service",
 	"description": "A service which provides access to media programming like TV or radio. Access may be via cable or satellite.",
-	"format": "http://schema.org/CableOrSatelliteService",
-	"media": {"type": "application/json;profile=http://schema.org/CableOrSatelliteService"},
+	"format": "http://fibo.sdo-fibo.appspot.com/CableOrSatelliteService",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/CableOrSatelliteService"},
 	"allOf": [{"$ref": "Service.json"}],
 	"definitions": {
 		"array": {

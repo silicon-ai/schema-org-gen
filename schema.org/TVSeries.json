@@ -2,8 +2,8 @@
 	"id": "TVSeries.json",
 	"title": "TV Series",
 	"description": "CreativeWorkSeries dedicated to TV broadcast and associated online delivery.",
-	"format": "http://schema.org/TVSeries",
-	"media": {"type": "application/json;profile=http://schema.org/TVSeries"},
+	"format": "http://fibo.sdo-fibo.appspot.com/TVSeries",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/TVSeries"},
 	"allOf": [{"$ref": "CreativeWork.json"}, {"$ref": "CreativeWorkSeries.json"}],
 	"type": "object",
 	"properties": {

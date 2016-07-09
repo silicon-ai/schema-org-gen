@@ -2,8 +2,8 @@
 	"id": "LiquorStore.json",
 	"title": "Liquor Store",
 	"description": "A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.",
-	"format": "http://schema.org/LiquorStore",
-	"media": {"type": "application/json;profile=http://schema.org/LiquorStore"},
+	"format": "http://fibo.sdo-fibo.appspot.com/LiquorStore",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/LiquorStore"},
 	"allOf": [{"$ref": "Store.json"}],
 	"definitions": {
 		"array": {

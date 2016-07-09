@@ -2,8 +2,8 @@
 	"id": "TrainTrip.json",
 	"title": "Train Trip",
 	"description": "A trip on a commercial train line.",
-	"format": "http://schema.org/TrainTrip",
-	"media": {"type": "application/json;profile=http://schema.org/TrainTrip"},
+	"format": "http://fibo.sdo-fibo.appspot.com/TrainTrip",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/TrainTrip"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

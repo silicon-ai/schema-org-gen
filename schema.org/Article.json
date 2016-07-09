@@ -2,8 +2,8 @@
 	"id": "Article.json",
 	"title": "Article",
 	"description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n  <br/><br/>See also <a href=\"http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html\">blog post</a>.",
-	"format": "http://schema.org/Article",
-	"media": {"type": "application/json;profile=http://schema.org/Article"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Article",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Article"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {
@@ -15,13 +15,8 @@
 		"pageEnd": {"$ref": "#/definitions/pageEnd"},
 		"pageStart": {"$ref": "#/definitions/pageStart"},
 		"pagination": {
-			"oneOf": [
-				{"$ref": "#/definitions/pagination"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/pagination"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/pagination"}
 		},
 		"wordCount": {"$ref": "#/definitions/wordCount"}
 	},

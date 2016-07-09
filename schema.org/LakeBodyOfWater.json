@@ -2,8 +2,8 @@
 	"id": "LakeBodyOfWater.json",
 	"title": "Lake Body of Water",
 	"description": "A lake (for example, Lake Pontrachain).",
-	"format": "http://schema.org/LakeBodyOfWater",
-	"media": {"type": "application/json;profile=http://schema.org/LakeBodyOfWater"},
+	"format": "http://fibo.sdo-fibo.appspot.com/LakeBodyOfWater",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/LakeBodyOfWater"},
 	"allOf": [{"$ref": "BodyOfWater.json"}],
 	"definitions": {
 		"array": {

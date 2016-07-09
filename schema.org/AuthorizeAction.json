@@ -2,8 +2,8 @@
 	"id": "AuthorizeAction.json",
 	"title": "Authorize Action",
 	"description": "The act of granting permission to an object.",
-	"format": "http://schema.org/AuthorizeAction",
-	"media": {"type": "application/json;profile=http://schema.org/AuthorizeAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/AuthorizeAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/AuthorizeAction"},
 	"allOf": [{"$ref": "AllocateAction.json"}],
 	"type": "object",
 	"properties": {

@@ -2,8 +2,8 @@
 	"id": "BusinessEvent.json",
 	"title": "Business Event",
 	"description": "Event type: Business event.",
-	"format": "http://schema.org/BusinessEvent",
-	"media": {"type": "application/json;profile=http://schema.org/BusinessEvent"},
+	"format": "http://fibo.sdo-fibo.appspot.com/BusinessEvent",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/BusinessEvent"},
 	"allOf": [{"$ref": "Event.json"}],
 	"definitions": {
 		"array": {

@@ -2,8 +2,8 @@
 	"id": "NGO.json",
 	"title": "NGO",
 	"description": "Organization: Non-governmental Organization.",
-	"format": "http://schema.org/NGO",
-	"media": {"type": "application/json;profile=http://schema.org/NGO"},
+	"format": "http://fibo.sdo-fibo.appspot.com/NGO",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/NGO"},
 	"allOf": [{"$ref": "Organization.json"}],
 	"definitions": {
 		"array": {

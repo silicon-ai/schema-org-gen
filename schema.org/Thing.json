@@ -2,8 +2,8 @@
 	"id": "Thing.json",
 	"title": "Thing",
 	"description": "The most generic type of item.",
-	"format": "http://schema.org/Thing",
-	"media": {"type": "application/json;profile=http://schema.org/Thing"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Thing",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Thing"},
 	"type": "object",
 	"properties": {
 		"additionalType": {
@@ -35,24 +35,11 @@
 			"items": {"$ref": "#/definitions/image"}
 		},
 		"mainEntityOfPage": {
-			"oneOf": [
-				{"$ref": "#/definitions/mainEntityOfPage"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/mainEntityOfPage"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/mainEntityOfPage"}
 		},
 		"name": {"$ref": "#/definitions/name"},
-		"potentialAction": {
-			"oneOf": [
-				{"$ref": "Action.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "Action.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"potentialAction": {"$ref": "Action.json#/definitions/possibleRefArray"},
 		"sameAs": {
 			"type": "array",
 			"items": {

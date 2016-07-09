@@ -2,8 +2,8 @@
 	"id": "DigitalDocumentPermission.json",
 	"title": "Digital Document Permission",
 	"description": "A permission for a particular person or group to access a particular file.",
-	"format": "http://schema.org/DigitalDocumentPermission",
-	"media": {"type": "application/json;profile=http://schema.org/DigitalDocumentPermission"},
+	"format": "http://fibo.sdo-fibo.appspot.com/DigitalDocumentPermission",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/DigitalDocumentPermission"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

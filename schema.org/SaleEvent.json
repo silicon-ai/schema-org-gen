@@ -2,8 +2,8 @@
 	"id": "SaleEvent.json",
 	"title": "Sale Event",
 	"description": "Event type: Sales event.",
-	"format": "http://schema.org/SaleEvent",
-	"media": {"type": "application/json;profile=http://schema.org/SaleEvent"},
+	"format": "http://fibo.sdo-fibo.appspot.com/SaleEvent",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/SaleEvent"},
 	"allOf": [{"$ref": "Event.json"}],
 	"definitions": {
 		"array": {

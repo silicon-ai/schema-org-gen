@@ -2,8 +2,8 @@
 	"id": "SiteNavigationElement.json",
 	"title": "Site Navigation Element",
 	"description": "A navigation element of the page.",
-	"format": "http://schema.org/SiteNavigationElement",
-	"media": {"type": "application/json;profile=http://schema.org/SiteNavigationElement"},
+	"format": "http://fibo.sdo-fibo.appspot.com/SiteNavigationElement",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/SiteNavigationElement"},
 	"allOf": [{"$ref": "WebPageElement.json"}],
 	"definitions": {
 		"array": {

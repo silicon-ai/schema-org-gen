@@ -2,8 +2,8 @@
 	"id": "AdministrativeArea.json",
 	"title": "Administrative Area",
 	"description": "A geographical region, typically under the jurisdiction of a particular government.",
-	"format": "http://schema.org/AdministrativeArea",
-	"media": {"type": "application/json;profile=http://schema.org/AdministrativeArea"},
+	"format": "http://fibo.sdo-fibo.appspot.com/AdministrativeArea",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/AdministrativeArea"},
 	"allOf": [{"$ref": "Place.json"}],
 	"definitions": {
 		"array": {

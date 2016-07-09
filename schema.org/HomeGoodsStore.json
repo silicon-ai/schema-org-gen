@@ -2,8 +2,8 @@
 	"id": "HomeGoodsStore.json",
 	"title": "Home Goods Store",
 	"description": "A home goods store.",
-	"format": "http://schema.org/HomeGoodsStore",
-	"media": {"type": "application/json;profile=http://schema.org/HomeGoodsStore"},
+	"format": "http://fibo.sdo-fibo.appspot.com/HomeGoodsStore",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/HomeGoodsStore"},
 	"allOf": [{"$ref": "Store.json"}],
 	"definitions": {
 		"array": {

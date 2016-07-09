@@ -2,8 +2,8 @@
 	"id": "ComputerLanguage.json",
 	"title": "Computer Language",
 	"description": "This type covers computer programming languages such as Scheme and Lisp, as well as other language-like computer representations. Natural languages are best represented with the Language type.",
-	"format": "http://schema.org/ComputerLanguage",
-	"media": {"type": "application/json;profile=http://schema.org/ComputerLanguage"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ComputerLanguage",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ComputerLanguage"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"definitions": {
 		"array": {

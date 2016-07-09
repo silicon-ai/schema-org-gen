@@ -2,8 +2,8 @@
 	"id": "CheckAction.json",
 	"title": "Check Action",
 	"description": "An agent inspects/determines/investigates/inquire or examine an object's accuracy/quality/condition or state.",
-	"format": "http://schema.org/CheckAction",
-	"media": {"type": "application/json;profile=http://schema.org/CheckAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/CheckAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/CheckAction"},
 	"allOf": [{"$ref": "FindAction.json"}],
 	"definitions": {
 		"array": {

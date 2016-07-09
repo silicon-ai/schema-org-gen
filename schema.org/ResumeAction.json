@@ -2,8 +2,8 @@
 	"id": "ResumeAction.json",
 	"title": "Resume Action",
 	"description": "The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).",
-	"format": "http://schema.org/ResumeAction",
-	"media": {"type": "application/json;profile=http://schema.org/ResumeAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ResumeAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ResumeAction"},
 	"allOf": [{"$ref": "ControlAction.json"}],
 	"definitions": {
 		"array": {

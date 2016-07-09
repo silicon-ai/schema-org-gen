@@ -2,8 +2,8 @@
 	"id": "ImageObject.json",
 	"title": "Image Object",
 	"description": "An image file.",
-	"format": "http://schema.org/ImageObject",
-	"media": {"type": "application/json;profile=http://schema.org/ImageObject"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ImageObject",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ImageObject"},
 	"allOf": [{"$ref": "MediaObject.json"}],
 	"type": "object",
 	"properties": {

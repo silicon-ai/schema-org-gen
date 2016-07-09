@@ -2,8 +2,8 @@
 	"id": "SubwayStation.json",
 	"title": "Subway Station",
 	"description": "A subway station.",
-	"format": "http://schema.org/SubwayStation",
-	"media": {"type": "application/json;profile=http://schema.org/SubwayStation"},
+	"format": "http://fibo.sdo-fibo.appspot.com/SubwayStation",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/SubwayStation"},
 	"allOf": [{"$ref": "CivicStructure.json"}],
 	"definitions": {
 		"array": {

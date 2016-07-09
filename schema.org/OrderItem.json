@@ -2,8 +2,8 @@
 	"id": "OrderItem.json",
 	"title": "Order Item",
 	"description": "An order item is a line of an order. It includes the quantity and shipping details of a bought offer.",
-	"format": "http://schema.org/OrderItem",
-	"media": {"type": "application/json;profile=http://schema.org/OrderItem"},
+	"format": "http://fibo.sdo-fibo.appspot.com/OrderItem",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/OrderItem"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

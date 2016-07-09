@@ -2,8 +2,8 @@
 	"id": "False.json",
 	"title": "False",
 	"description": "The boolean value false.",
-	"format": "http://schema.org/False",
-	"media": {"type": "application/json;profile=http://schema.org/False"},
+	"format": "http://fibo.sdo-fibo.appspot.com/False",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/False"},
 	"type": "object",
 	"definitions": {
 		"array": {

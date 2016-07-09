@@ -2,8 +2,8 @@
 	"id": "CreativeWork.json",
 	"title": "Creative Work",
 	"description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-	"format": "http://schema.org/CreativeWork",
-	"media": {"type": "application/json;profile=http://schema.org/CreativeWork"},
+	"format": "http://fibo.sdo-fibo.appspot.com/CreativeWork",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/CreativeWork"},
 	"allOf": [{"$ref": "Thing.json"}],
 	"type": "object",
 	"properties": {
@@ -38,15 +38,7 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/award"}
 		},
-		"character": {
-			"oneOf": [
-				{"$ref": "Person.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "Person.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"character": {"$ref": "Person.json#/definitions/possibleRefArray"},
 		"citation": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/citation"}
@@ -87,15 +79,7 @@
 		"exampleOfWork": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
 		"fileFormat": {"$ref": "#/definitions/fileFormat"},
 		"genre": {"$ref": "#/definitions/genre"},
-		"hasPart": {
-			"oneOf": [
-				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"hasPart": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
 		"headline": {"$ref": "#/definitions/headline"},
 		"inLanguage": {"$ref": "#/definitions/inLanguage"},
 		"interactionStatistic": {"$ref": "InteractionCounter.json#/definitions/possibleRef"},
@@ -113,15 +97,7 @@
 			"items": {"$ref": "#/definitions/license"}
 		},
 		"locationCreated": {"$ref": "Place.json#/definitions/possibleRef"},
-		"mainEntity": {
-			"oneOf": [
-				{"$ref": "Thing.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "Thing.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"mainEntity": {"$ref": "Thing.json#/definitions/possibleRef"},
 		"mentions": {"$ref": "Thing.json#/definitions/possibleRefArray"},
 		"offers": {"$ref": "Offer.json#/definitions/possibleRefArray"},
 		"position": {"$ref": "#/definitions/position"},
@@ -136,15 +112,7 @@
 		"recordedAt": {"$ref": "Event.json#/definitions/possibleRef"},
 		"releasedEvent": {"$ref": "PublicationEvent.json#/definitions/possibleRef"},
 		"review": {"$ref": "Review.json#/definitions/possibleRefArray"},
-		"schemaVersion": {
-			"oneOf": [
-				{"$ref": "#/definitions/schemaVersion"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/schemaVersion"}
-				}
-			]
-		},
+		"schemaVersion": {"$ref": "#/definitions/schemaVersion"},
 		"sourceOrganization": {"$ref": "Organization.json#/definitions/possibleRef"},
 		"text": {"$ref": "#/definitions/text"},
 		"thumbnailUrl": {
@@ -160,27 +128,11 @@
 			}
 		},
 		"timeRequired": {"$ref": "Duration.json#/definitions/possibleRef"},
-		"translator": {
-			"oneOf": [
-				{"$ref": "#/definitions/translator"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/translator"}
-				}
-			]
-		},
+		"translator": {"$ref": "#/definitions/translator"},
 		"typicalAgeRange": {"$ref": "#/definitions/typicalAgeRange"},
 		"version": {"$ref": "#/definitions/version"},
 		"video": {"$ref": "VideoObject.json#/definitions/possibleRefArray"},
-		"workExample": {
-			"oneOf": [
-				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
-				}
-			]
-		}
+		"workExample": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"}
 	},
 	"links": [{
 		"rel": "http://schema.org/publishingPrinciples",

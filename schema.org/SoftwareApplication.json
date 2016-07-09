@@ -2,8 +2,8 @@
 	"id": "SoftwareApplication.json",
 	"title": "Software Application",
 	"description": "A software application.",
-	"format": "http://schema.org/SoftwareApplication",
-	"media": {"type": "application/json;profile=http://schema.org/SoftwareApplication"},
+	"format": "http://fibo.sdo-fibo.appspot.com/SoftwareApplication",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/SoftwareApplication"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {
@@ -11,13 +11,8 @@
 		"applicationSubCategory": {"$ref": "#/definitions/applicationSubCategory"},
 		"applicationSuite": {"$ref": "#/definitions/applicationSuite"},
 		"availableOnDevice": {
-			"oneOf": [
-				{"$ref": "#/definitions/availableOnDevice"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/availableOnDevice"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/availableOnDevice"}
 		},
 		"countriesNotSupported": {
 			"type": "array",
@@ -55,44 +50,15 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/screenshot"}
 		},
-		"softwareAddOn": {
-			"oneOf": [
-				{"$ref": "SoftwareApplication.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "SoftwareApplication.json#/definitions/possibleRef"}
-				}
-			]
-		},
-		"softwareHelp": {
-			"oneOf": [
-				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"softwareAddOn": {"$ref": "SoftwareApplication.json#/definitions/possibleRefArray"},
+		"softwareHelp": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
 		"softwareRequirements": {
-			"oneOf": [
-				{"$ref": "#/definitions/softwareRequirements"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/softwareRequirements"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/softwareRequirements"}
 		},
 		"softwareVersion": {"$ref": "#/definitions/softwareVersion"},
 		"storageRequirements": {"$ref": "#/definitions/storageRequirements"},
-		"supportingData": {
-			"oneOf": [
-				{"$ref": "DataFeed.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "DataFeed.json#/definitions/possibleRef"}
-				}
-			]
-		}
+		"supportingData": {"$ref": "DataFeed.json#/definitions/possibleRefArray"}
 	},
 	"links": [
 		{

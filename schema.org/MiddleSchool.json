@@ -2,8 +2,8 @@
 	"id": "MiddleSchool.json",
 	"title": "Middle School",
 	"description": "A middle school (typically for children aged around 11-14, although this varies somewhat).",
-	"format": "http://schema.org/MiddleSchool",
-	"media": {"type": "application/json;profile=http://schema.org/MiddleSchool"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MiddleSchool",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MiddleSchool"},
 	"allOf": [{"$ref": "EducationalOrganization.json"}],
 	"definitions": {
 		"array": {

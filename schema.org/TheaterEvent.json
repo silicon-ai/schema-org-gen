@@ -2,8 +2,8 @@
 	"id": "TheaterEvent.json",
 	"title": "Theater Event",
 	"description": "Event type: Theater performance.",
-	"format": "http://schema.org/TheaterEvent",
-	"media": {"type": "application/json;profile=http://schema.org/TheaterEvent"},
+	"format": "http://fibo.sdo-fibo.appspot.com/TheaterEvent",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/TheaterEvent"},
 	"allOf": [{"$ref": "Event.json"}],
 	"definitions": {
 		"array": {

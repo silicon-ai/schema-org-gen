@@ -2,9 +2,21 @@
 	"id": "PaymentCard.json",
 	"title": "Payment Card",
 	"description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
-	"format": "http://schema.org/PaymentCard",
-	"media": {"type": "application/json;profile=http://schema.org/PaymentCard"},
+	"format": "http://fibo.sdo-fibo.appspot.com/PaymentCard",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/PaymentCard"},
 	"allOf": [{"$ref": "FinancialProduct.json"}, {"$ref": "PaymentMethod.json"}],
+	"type": "object",
+	"properties": {
+		"cashBack": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/cashBack"}
+		},
+		"contactlessPayment": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/contactlessPayment"}
+		},
+		"floorLimit": {"$ref": "MonetaryAmount.json#/definitions/possibleRefArray"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -38,6 +50,16 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"cashBack": {
+			"title": "Cash Back",
+			"description": "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
+			"anyOf": [{"type": "boolean"}, {"type": "number"}]
+		},
+		"contactlessPayment": {
+			"title": "Contactless Payment",
+			"description": "A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.",
+			"type": "boolean"
 		}
 	}
 }

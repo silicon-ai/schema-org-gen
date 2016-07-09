@@ -2,8 +2,8 @@
 	"id": "VideoGallery.json",
 	"title": "Video Gallery",
 	"description": "Web page type: Video gallery page.",
-	"format": "http://schema.org/VideoGallery",
-	"media": {"type": "application/json;profile=http://schema.org/VideoGallery"},
+	"format": "http://fibo.sdo-fibo.appspot.com/VideoGallery",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/VideoGallery"},
 	"allOf": [{"$ref": "CollectionPage.json"}],
 	"definitions": {
 		"array": {

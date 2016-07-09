@@ -2,8 +2,8 @@
 	"id": "SteeringPositionValue.json",
 	"title": "Steering Position Value",
 	"description": "A value indicating a steering position.",
-	"format": "http://schema.org/SteeringPositionValue",
-	"media": {"type": "application/json;profile=http://schema.org/SteeringPositionValue"},
+	"format": "http://fibo.sdo-fibo.appspot.com/SteeringPositionValue",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/SteeringPositionValue"},
 	"allOf": [{"$ref": "QualitativeValue.json"}],
 	"definitions": {
 		"array": {

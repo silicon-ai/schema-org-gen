@@ -2,8 +2,8 @@
 	"id": "Boolean.json",
 	"title": "Boolean",
 	"description": "Boolean: True or False.",
-	"format": "http://schema.org/Boolean",
-	"media": {"type": "application/json;profile=http://schema.org/Boolean"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Boolean",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Boolean"},
 	"type": "boolean",
 	"definitions": {
 		"array": {

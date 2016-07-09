@@ -2,8 +2,8 @@
 	"id": "ItemList.json",
 	"title": "Item List",
 	"description": "A list of items of any sort—for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.",
-	"format": "http://schema.org/ItemList",
-	"media": {"type": "application/json;profile=http://schema.org/ItemList"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ItemList",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ItemList"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {

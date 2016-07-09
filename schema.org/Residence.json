@@ -2,8 +2,8 @@
 	"id": "Residence.json",
 	"title": "Residence",
 	"description": "The place where a person lives.",
-	"format": "http://schema.org/Residence",
-	"media": {"type": "application/json;profile=http://schema.org/Residence"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Residence",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Residence"},
 	"allOf": [{"$ref": "Place.json"}],
 	"definitions": {
 		"array": {

@@ -2,8 +2,8 @@
 	"id": "MovieSeries.json",
 	"title": "Movie Series",
 	"description": "A series of movies. Included movies can be indicated with the hasPart property.",
-	"format": "http://schema.org/MovieSeries",
-	"media": {"type": "application/json;profile=http://schema.org/MovieSeries"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MovieSeries",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MovieSeries"},
 	"allOf": [{"$ref": "CreativeWorkSeries.json"}],
 	"type": "object",
 	"properties": {

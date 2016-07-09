@@ -2,8 +2,8 @@
 	"id": "PhotographAction.json",
 	"title": "Photograph Action",
 	"description": "The act of capturing still images of objects using a camera.",
-	"format": "http://schema.org/PhotographAction",
-	"media": {"type": "application/json;profile=http://schema.org/PhotographAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/PhotographAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/PhotographAction"},
 	"allOf": [{"$ref": "CreateAction.json"}],
 	"definitions": {
 		"array": {

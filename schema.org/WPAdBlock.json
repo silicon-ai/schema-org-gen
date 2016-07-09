@@ -2,8 +2,8 @@
 	"id": "WPAdBlock.json",
 	"title": "WP Ad Block",
 	"description": "An advertising section of the page.",
-	"format": "http://schema.org/WPAdBlock",
-	"media": {"type": "application/json;profile=http://schema.org/WPAdBlock"},
+	"format": "http://fibo.sdo-fibo.appspot.com/WPAdBlock",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/WPAdBlock"},
 	"allOf": [{"$ref": "WebPageElement.json"}],
 	"definitions": {
 		"array": {

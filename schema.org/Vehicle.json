@@ -2,8 +2,8 @@
 	"id": "Vehicle.json",
 	"title": "Vehicle",
 	"description": "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.",
-	"format": "http://schema.org/Vehicle",
-	"media": {"type": "application/json;profile=http://schema.org/Vehicle"},
+	"format": "http://fibo.sdo-fibo.appspot.com/Vehicle",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/Vehicle"},
 	"allOf": [{"$ref": "Product.json"}],
 	"type": "object",
 	"properties": {
@@ -30,28 +30,15 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/vehicleConfiguration"}
 		},
-		"vehicleEngine": {
-			"oneOf": [
-				{"$ref": "EngineSpecification.json#/definitions/possibleRef"},
-				{
-					"type": "array",
-					"items": {"$ref": "EngineSpecification.json#/definitions/possibleRef"}
-				}
-			]
-		},
+		"vehicleEngine": {"$ref": "EngineSpecification.json#/definitions/possibleRefArray"},
 		"vehicleIdentificationNumber": {"$ref": "#/definitions/vehicleIdentificationNumber"},
 		"vehicleInteriorColor": {"$ref": "#/definitions/vehicleInteriorColor"},
 		"vehicleInteriorType": {"$ref": "#/definitions/vehicleInteriorType"},
 		"vehicleModelDate": {"$ref": "#/definitions/vehicleModelDate"},
 		"vehicleSeatingCapacity": {"$ref": "#/definitions/vehicleSeatingCapacity"},
 		"vehicleSpecialUsage": {
-			"oneOf": [
-				{"$ref": "#/definitions/vehicleSpecialUsage"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/vehicleSpecialUsage"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/vehicleSpecialUsage"}
 		},
 		"vehicleTransmission": {"$ref": "#/definitions/vehicleTransmission"}
 	},

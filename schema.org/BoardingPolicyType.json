@@ -2,8 +2,8 @@
 	"id": "BoardingPolicyType.json",
 	"title": "Boarding Policy Type",
 	"description": "A type of boarding policy used by an airline.",
-	"format": "http://schema.org/BoardingPolicyType",
-	"media": {"type": "application/json;profile=http://schema.org/BoardingPolicyType"},
+	"format": "http://fibo.sdo-fibo.appspot.com/BoardingPolicyType",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/BoardingPolicyType"},
 	"allOf": [{"$ref": "Enumeration.json"}],
 	"definitions": {
 		"array": {

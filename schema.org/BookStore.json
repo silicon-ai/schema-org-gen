@@ -2,8 +2,8 @@
 	"id": "BookStore.json",
 	"title": "Book Store",
 	"description": "A bookstore.",
-	"format": "http://schema.org/BookStore",
-	"media": {"type": "application/json;profile=http://schema.org/BookStore"},
+	"format": "http://fibo.sdo-fibo.appspot.com/BookStore",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/BookStore"},
 	"allOf": [{"$ref": "Store.json"}],
 	"definitions": {
 		"array": {

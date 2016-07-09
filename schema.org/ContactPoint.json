@@ -2,8 +2,8 @@
 	"id": "ContactPoint.json",
 	"title": "Contact Point",
 	"description": "A contact point—for example, a Customer Complaints department.",
-	"format": "http://schema.org/ContactPoint",
-	"media": {"type": "application/json;profile=http://schema.org/ContactPoint"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ContactPoint",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ContactPoint"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
 	"type": "object",
 	"properties": {
@@ -77,7 +77,7 @@
 		},
 		"email": {
 			"title": "Email",
-			"description": "Email address.",
+			"description": "The address to access the service by email.",
 			"type": "string"
 		},
 		"faxNumber": {

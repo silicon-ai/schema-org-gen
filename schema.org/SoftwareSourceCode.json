@@ -2,8 +2,8 @@
 	"id": "SoftwareSourceCode.json",
 	"title": "Software Source Code",
 	"description": "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.",
-	"format": "http://schema.org/SoftwareSourceCode",
-	"media": {"type": "application/json;profile=http://schema.org/SoftwareSourceCode"},
+	"format": "http://fibo.sdo-fibo.appspot.com/SoftwareSourceCode",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/SoftwareSourceCode"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {
@@ -20,26 +20,16 @@
 			}
 		},
 		"codeSampleType": {
-			"oneOf": [
-				{"$ref": "#/definitions/codeSampleType"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/codeSampleType"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/codeSampleType"}
 		},
 		"programmingLanguage": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/programmingLanguage"}
 		},
 		"runtimePlatform": {
-			"oneOf": [
-				{"$ref": "#/definitions/runtimePlatform"},
-				{
-					"type": "array",
-					"items": {"$ref": "#/definitions/runtimePlatform"}
-				}
-			]
+			"type": "array",
+			"items": {"$ref": "#/definitions/runtimePlatform"}
 		},
 		"targetProduct": {"$ref": "SoftwareApplication.json#/definitions/possibleRefArray"}
 	},

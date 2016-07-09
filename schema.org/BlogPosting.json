@@ -2,8 +2,8 @@
 	"id": "BlogPosting.json",
 	"title": "Blog Posting",
 	"description": "A blog post.",
-	"format": "http://schema.org/BlogPosting",
-	"media": {"type": "application/json;profile=http://schema.org/BlogPosting"},
+	"format": "http://fibo.sdo-fibo.appspot.com/BlogPosting",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/BlogPosting"},
 	"allOf": [{"$ref": "Article.json"}],
 	"definitions": {
 		"array": {

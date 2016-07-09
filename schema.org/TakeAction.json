@@ -2,8 +2,8 @@
 	"id": "TakeAction.json",
 	"title": "Take Action",
 	"description": "The act of gaining ownership of an object from an origin. Reciprocal of GiveAction.Related actions:GiveAction: The reciprocal of TakeAction.ReceiveAction: Unlike ReceiveAction, TakeAction implies that ownership has been transfered.",
-	"format": "http://schema.org/TakeAction",
-	"media": {"type": "application/json;profile=http://schema.org/TakeAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/TakeAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/TakeAction"},
 	"allOf": [{"$ref": "TransferAction.json"}],
 	"definitions": {
 		"array": {

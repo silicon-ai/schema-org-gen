@@ -2,8 +2,8 @@
 	"id": "MedicalOrganization.json",
 	"title": "Medical Organization",
 	"description": "A medical organization (physical or not), such as hospital, institution or clinic.",
-	"format": "http://schema.org/MedicalOrganization",
-	"media": {"type": "application/json;profile=http://schema.org/MedicalOrganization"},
+	"format": "http://fibo.sdo-fibo.appspot.com/MedicalOrganization",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/MedicalOrganization"},
 	"allOf": [{"$ref": "Organization.json"}],
 	"definitions": {
 		"array": {

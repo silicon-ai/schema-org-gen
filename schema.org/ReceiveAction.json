@@ -2,8 +2,8 @@
 	"id": "ReceiveAction.json",
 	"title": "Receive Action",
 	"description": "The act of physically/electronically taking delivery of an object thathas been transferred from an origin to a destination. Reciprocal of SendAction.Related actions:SendAction: The reciprocal of ReceiveAction.TakeAction: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).",
-	"format": "http://schema.org/ReceiveAction",
-	"media": {"type": "application/json;profile=http://schema.org/ReceiveAction"},
+	"format": "http://fibo.sdo-fibo.appspot.com/ReceiveAction",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/ReceiveAction"},
 	"allOf": [{"$ref": "TransferAction.json"}],
 	"type": "object",
 	"properties": {

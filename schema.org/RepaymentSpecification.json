@@ -1,0 +1,69 @@
+{
+	"id": "RepaymentSpecification.json",
+	"title": "Repayment Specification",
+	"description": "A structured value representing repayment.",
+	"format": "http://fibo.sdo-fibo.appspot.com/RepaymentSpecification",
+	"media": {"type": "application/json;profile=http://fibo.sdo-fibo.appspot.com/RepaymentSpecification"},
+	"allOf": [{"$ref": "StructuredValue.json"}],
+	"type": "object",
+	"properties": {
+		"downPayment": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/downPayment"}
+		},
+		"earlyPrepaymentPenalty": {"$ref": "MonetaryAmount.json#/definitions/possibleRef"},
+		"numberOfPayments": {"$ref": "#/definitions/numberOfPayments"},
+		"paymentAmount": {"$ref": "MonetaryAmount.json#/definitions/possibleRef"},
+		"paymentFrequency": {"$ref": "#/definitions/paymentFrequency"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"downPayment": {
+			"title": "Down Payment",
+			"description": "a type of payment made in cash during the onset of the purchase of an expensive good/service. The payment typically represents only a percentage of the full purchase price.",
+			"anyOf": [{"$ref": "MonetaryAmount.json#/definitions/possibleRef"}, {"type": "number"}]
+		},
+		"numberOfPayments": {
+			"title": "Number of Payments",
+			"description": "The number of payments contractually required at origination to repay the loan. For monthly paying loans this is the number of months from the contractual first payment date to the maturity date.",
+			"type": "number"
+		},
+		"paymentFrequency": {
+			"title": "Payment Frequency",
+			"description": "Frequency of payments due, i.e. number of months between payments. This is defined as a frequency, i.e. the reciprocal of a period of time.",
+			"type": "number"
+		}
+	}
+}
