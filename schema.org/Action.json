@@ -20,7 +20,7 @@
 		},
 		"result": {"$ref": "Thing.json#/definitions/possibleRef"},
 		"startTime": {"$ref": "#/definitions/startTime"},
-		"target": {"$ref": "EntryPoint.json#/definitions/possibleRefArray"}
+		"target": {"$ref": "EntryPoint.json#/definitions/possibleRef"}
 	},
 	"definitions": {
 		"array": {
