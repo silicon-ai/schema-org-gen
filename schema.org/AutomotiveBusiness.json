@@ -1,6 +1,7 @@
 {
 	"id": "AutomotiveBusiness.json",
 	"title": "Automotive Business",
+	"description": "Car repair, sales, or parts.",
 	"format": "http://schema.org/AutomotiveBusiness",
 	"media": {"type": "application/json;profile=http://schema.org/AutomotiveBusiness"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

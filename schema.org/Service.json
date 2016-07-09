@@ -1,22 +1,107 @@
 {
 	"id": "Service.json",
 	"title": "Service",
+	"description": "A service provided by an organization, e.g. delivery service, print services, etc.",
 	"format": "http://schema.org/Service",
 	"media": {"type": "application/json;profile=http://schema.org/Service"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {
+		"aggregateRating": {"$ref": "AggregateRating.json#/definitions/possibleRef"},
+		"areaServed": {"$ref": "#/definitions/areaServed"},
+		"audience": {"$ref": "Audience.json#/definitions/possibleRef"},
 		"availableChannel": {"$ref": "ServiceChannel.json#/definitions/possibleRefArray"},
-		"produces": {"$ref": "Thing.json#/definitions/possibleRef"},
+		"award": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/award"}
+		},
+		"brand": {"$ref": "#/definitions/brand"},
+		"category": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/category"}
+		},
+		"hasOfferCatalog": {
+			"oneOf": [
+				{"$ref": "OfferCatalog.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "OfferCatalog.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"hoursAvailable": {"$ref": "OpeningHoursSpecification.json#/definitions/possibleRef"},
+		"isRelatedTo": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/isRelatedTo"}
+		},
+		"isSimilarTo": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/isSimilarTo"}
+		},
+		"logo": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/logo"}
+		},
+		"offers": {"$ref": "Offer.json#/definitions/possibleRefArray"},
 		"provider": {"$ref": "#/definitions/provider"},
-		"serviceArea": {"$ref": "AdministrativeArea.json#/definitions/possibleRef"},
-		"serviceAudience": {"$ref": "Audience.json#/definitions/possibleRef"},
+		"providerMobility": {
+			"oneOf": [
+				{"$ref": "#/definitions/providerMobility"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/providerMobility"}
+				}
+			]
+		},
+		"review": {"$ref": "Review.json#/definitions/possibleRefArray"},
+		"serviceOutput": {"$ref": "Thing.json#/definitions/possibleRef"},
 		"serviceType": {"$ref": "#/definitions/serviceType"}
 	},
 	"definitions": {
+		"areaServed": {
+			"title": "Area Served",
+			"description": "The geographic area where a service or offered item is provided. Supersedes serviceArea.",
+			"anyOf": [{"type": "string"}, {"$ref": "GeoShape.json#/definitions/possibleRef"}, {"$ref": "AdministrativeArea.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
+		},
 		"array": {
 			"type": "array",
 			"items": {"$ref": "#"}
+		},
+		"award": {
+			"title": "Award",
+			"description": "An award won by or for this item. Supersedes awards.",
+			"type": "string"
+		},
+		"brand": {
+			"title": "Brand",
+			"description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Brand.json#/definitions/possibleRef"}]
+		},
+		"category": {
+			"title": "Category",
+			"description": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+			"anyOf": [{"type": "string"}, {"$ref": "Thing.json#/definitions/possibleRef"}]
+		},
+		"isRelatedTo": {
+			"title": "Is Related to",
+			"description": "A pointer to another, somehow related product (or multiple products).",
+			"anyOf": [{"$ref": "Product.json#/definitions/possibleRef"}, {"$ref": "Service.json#/definitions/possibleRef"}]
+		},
+		"isSimilarTo": {
+			"title": "Is Similar to",
+			"description": "A pointer to another, functionally similar product (or multiple products).",
+			"anyOf": [{"$ref": "Product.json#/definitions/possibleRef"}, {"$ref": "Service.json#/definitions/possibleRef"}]
+		},
+		"logo": {
+			"title": "Logo",
+			"description": "An associated logo.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "uri"
+				},
+				{"$ref": "ImageObject.json#/definitions/possibleRef"}
+			]
 		},
 		"possibleRef": {
 			"oneOf": [
@@ -49,8 +134,13 @@
 		},
 		"provider": {
 			"title": "Provider",
-			"description": "The organization or agency that is providing the service.",
+			"description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. Supersedes carrier.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"providerMobility": {
+			"title": "Provider Mobility",
+			"description": "Indicates the mobility of a provided service (e.g. 'static', 'dynamic').",
+			"type": "string"
 		},
 		"serviceType": {
 			"title": "Service Type",

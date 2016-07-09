@@ -1,6 +1,7 @@
 {
 	"id": "FastFoodRestaurant.json",
 	"title": "Fast Food Restaurant",
+	"description": "A fast-food restaurant.",
 	"format": "http://schema.org/FastFoodRestaurant",
 	"media": {"type": "application/json;profile=http://schema.org/FastFoodRestaurant"},
 	"allOf": [{"$ref": "FoodEstablishment.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "JewelryStore.json",
 	"title": "Jewelry Store",
+	"description": "A jewelry store.",
 	"format": "http://schema.org/JewelryStore",
 	"media": {"type": "application/json;profile=http://schema.org/JewelryStore"},
 	"allOf": [{"$ref": "Store.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "AchieveAction.json",
 	"title": "Achieve Action",
+	"description": "The act of accomplishing something via previous efforts. It is an instantaneous action rather than an ongoing process.",
 	"format": "http://schema.org/AchieveAction",
 	"media": {"type": "application/json;profile=http://schema.org/AchieveAction"},
 	"allOf": [{"$ref": "Action.json"}],

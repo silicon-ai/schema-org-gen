@@ -1,9 +1,19 @@
 {
 	"id": "SportsEvent.json",
 	"title": "Sports Event",
+	"description": "Event type: Sports event.",
 	"format": "http://schema.org/SportsEvent",
 	"media": {"type": "application/json;profile=http://schema.org/SportsEvent"},
 	"allOf": [{"$ref": "Event.json"}],
+	"type": "object",
+	"properties": {
+		"awayTeam": {"$ref": "#/definitions/awayTeam"},
+		"competitor": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/competitor"}
+		},
+		"homeTeam": {"$ref": "#/definitions/homeTeam"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -37,6 +47,21 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"awayTeam": {
+			"title": "Away Team",
+			"description": "The away team in a sports event.",
+			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "SportsTeam.json#/definitions/possibleRef"}]
+		},
+		"competitor": {
+			"title": "Competitor",
+			"description": "A competitor in a sports event.",
+			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "SportsTeam.json#/definitions/possibleRef"}]
+		},
+		"homeTeam": {
+			"title": "Home Team",
+			"description": "The home team in a sports event.",
+			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "SportsTeam.json#/definitions/possibleRef"}]
 		}
 	}
 }

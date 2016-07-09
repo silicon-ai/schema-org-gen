@@ -1,9 +1,10 @@
 {
 	"id": "AccountingService.json",
 	"title": "Accounting Service",
+	"description": "Accountancy business.\n        \n        As a LocalBusiness it can be\n        described as a provider of one or more\n        Service(s).",
 	"format": "http://schema.org/AccountingService",
 	"media": {"type": "application/json;profile=http://schema.org/AccountingService"},
-	"allOf": [{"$ref": "ProfessionalService.json"}, {"$ref": "FinancialService.json"}],
+	"allOf": [{"$ref": "FinancialService.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

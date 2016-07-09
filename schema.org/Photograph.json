@@ -1,6 +1,7 @@
 {
 	"id": "Photograph.json",
 	"title": "Photograph",
+	"description": "A photograph.",
 	"format": "http://schema.org/Photograph",
 	"media": {"type": "application/json;profile=http://schema.org/Photograph"},
 	"allOf": [{"$ref": "CreativeWork.json"}],

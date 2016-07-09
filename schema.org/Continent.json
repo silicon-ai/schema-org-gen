@@ -1,6 +1,7 @@
 {
 	"id": "Continent.json",
 	"title": "Continent",
+	"description": "One of the continents (for example, Europe or Africa).",
 	"format": "http://schema.org/Continent",
 	"media": {"type": "application/json;profile=http://schema.org/Continent"},
 	"allOf": [{"$ref": "Landform.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "HairSalon.json",
 	"title": "Hair Salon",
+	"description": "A hair salon.",
 	"format": "http://schema.org/HairSalon",
 	"media": {"type": "application/json;profile=http://schema.org/HairSalon"},
 	"allOf": [{"$ref": "HealthAndBeautyBusiness.json"}],

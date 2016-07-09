@@ -1,6 +1,7 @@
 {
 	"id": "SelfStorage.json",
 	"title": "Self Storage",
+	"description": "A self-storage facility.",
 	"format": "http://schema.org/SelfStorage",
 	"media": {"type": "application/json;profile=http://schema.org/SelfStorage"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

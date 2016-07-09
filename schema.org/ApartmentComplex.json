@@ -1,6 +1,7 @@
 {
 	"id": "ApartmentComplex.json",
 	"title": "Apartment Complex",
+	"description": "Residence type: Apartment complex.",
 	"format": "http://schema.org/ApartmentComplex",
 	"media": {"type": "application/json;profile=http://schema.org/ApartmentComplex"},
 	"allOf": [{"$ref": "Residence.json"}],

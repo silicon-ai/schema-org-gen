@@ -1,6 +1,7 @@
 {
 	"id": "DayOfWeek.json",
 	"title": "Day of Week",
+	"description": "The day of the week, e.g. used to specify to which day the opening hours of an OpeningHoursSpecification refer.\nOriginally, URLs from GoodRelations were used (for Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday plus a special entry for PublicHolidays); these have now been integrated directly into schema.org.",
 	"format": "http://schema.org/DayOfWeek",
 	"media": {"type": "application/json;profile=http://schema.org/DayOfWeek"},
 	"allOf": [{"$ref": "Enumeration.json"}],

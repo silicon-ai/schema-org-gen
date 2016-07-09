@@ -1,6 +1,7 @@
 {
 	"id": "ProfessionalService.json",
 	"title": "Professional Service",
+	"description": "Original definition: \"provider of professional services.\"\n        wzxhzdk:30\n        The general klzzwxh:0002ProfessionalServiceklzzwxh:0003 type\n        for local businesses was deprecated due to confusion with klzzwxh:0004Serviceklzzwxh:0005.\n        For reference, the types that it included were: klzzwxh:0006Dentistklzzwxh:0007,\n        klzzwxh:0008AccountingServiceklzzwxh:0009,\n        klzzwxh:0010Attorneyklzzwxh:0011,\n        klzzwxh:0012Notaryklzzwxh:0013, as well as types for several kinds of\n        klzzwxh:0014HomeAndConstructionBusinessklzzwxh:0015:\n        klzzwxh:0016Electricianklzzwxh:0017,\n        klzzwxh:0018GeneralContractorklzzwxh:0019,\n        klzzwxh:0020HousePainterklzzwxh:0021,\n        klzzwxh:0022Locksmithklzzwxh:0023,\n        klzzwxh:0024Plumberklzzwxh:0025,\n        klzzwxh:0026RoofingContractorklzzwxh:0027.\n        klzzwxh:0028LegalServiceklzzwxh:0029 was introduced as a more\n        inclusive supertype of wzxhzdk:30Attorney.",
 	"format": "http://schema.org/ProfessionalService",
 	"media": {"type": "application/json;profile=http://schema.org/ProfessionalService"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

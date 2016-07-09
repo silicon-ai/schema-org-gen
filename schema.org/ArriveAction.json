@@ -1,6 +1,7 @@
 {
 	"id": "ArriveAction.json",
 	"title": "Arrive Action",
+	"description": "The act of arriving at a place. An agent arrives at a destination from an fromLocation, optionally with participants.",
 	"format": "http://schema.org/ArriveAction",
 	"media": {"type": "application/json;profile=http://schema.org/ArriveAction"},
 	"allOf": [{"$ref": "MoveAction.json"}],

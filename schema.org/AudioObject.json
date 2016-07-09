@@ -1,6 +1,7 @@
 {
 	"id": "AudioObject.json",
 	"title": "Audio Object",
+	"description": "An audio file.",
 	"format": "http://schema.org/AudioObject",
 	"media": {"type": "application/json;profile=http://schema.org/AudioObject"},
 	"allOf": [{"$ref": "MediaObject.json"}],

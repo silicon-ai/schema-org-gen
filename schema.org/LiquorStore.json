@@ -1,6 +1,7 @@
 {
 	"id": "LiquorStore.json",
 	"title": "Liquor Store",
+	"description": "A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.",
 	"format": "http://schema.org/LiquorStore",
 	"media": {"type": "application/json;profile=http://schema.org/LiquorStore"},
 	"allOf": [{"$ref": "Store.json"}],

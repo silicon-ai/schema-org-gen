@@ -1,6 +1,7 @@
 {
 	"id": "ChildCare.json",
 	"title": "Child Care",
+	"description": "A Childcare center.",
 	"format": "http://schema.org/ChildCare",
 	"media": {"type": "application/json;profile=http://schema.org/ChildCare"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

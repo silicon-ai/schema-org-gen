@@ -1,6 +1,7 @@
 {
 	"id": "GovernmentPermit.json",
 	"title": "Government Permit",
+	"description": "A permit issued by a government agency.",
 	"format": "http://schema.org/GovernmentPermit",
 	"media": {"type": "application/json;profile=http://schema.org/GovernmentPermit"},
 	"allOf": [{"$ref": "Permit.json"}],

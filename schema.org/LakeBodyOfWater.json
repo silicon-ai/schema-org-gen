@@ -1,6 +1,7 @@
 {
 	"id": "LakeBodyOfWater.json",
 	"title": "Lake Body of Water",
+	"description": "A lake (for example, Lake Pontrachain).",
 	"format": "http://schema.org/LakeBodyOfWater",
 	"media": {"type": "application/json;profile=http://schema.org/LakeBodyOfWater"},
 	"allOf": [{"$ref": "BodyOfWater.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "LandmarksOrHistoricalBuildings.json",
 	"title": "Landmarks or Historical Buildings",
+	"description": "An historical landmark or building.",
 	"format": "http://schema.org/LandmarksOrHistoricalBuildings",
 	"media": {"type": "application/json;profile=http://schema.org/LandmarksOrHistoricalBuildings"},
 	"allOf": [{"$ref": "Place.json"}],

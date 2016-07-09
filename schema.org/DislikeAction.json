@@ -1,6 +1,7 @@
 {
 	"id": "DislikeAction.json",
 	"title": "Dislike Action",
+	"description": "The act of expressing a negative sentiment about the object. An agent dislikes an object (a proposition, topic or theme) with participants.",
 	"format": "http://schema.org/DislikeAction",
 	"media": {"type": "application/json;profile=http://schema.org/DislikeAction"},
 	"allOf": [{"$ref": "ReactAction.json"}],

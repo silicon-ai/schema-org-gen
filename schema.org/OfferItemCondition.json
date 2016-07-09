@@ -1,7 +1,43 @@
 {
 	"id": "OfferItemCondition.json",
 	"title": "Offer Item Condition",
+	"description": "A list of possible conditions for the item.",
 	"format": "http://schema.org/OfferItemCondition",
 	"media": {"type": "application/json;profile=http://schema.org/OfferItemCondition"},
-	"enum": ["DamagedCondition", "NewCondition", "RefurbishedCondition", "UsedCondition"]
+	"allOf": [{"$ref": "Enumeration.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
 }

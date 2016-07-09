@@ -1,6 +1,7 @@
 {
 	"id": "Mountain.json",
 	"title": "Mountain",
+	"description": "A mountain, like Mount Whitney or Mount Everest.",
 	"format": "http://schema.org/Mountain",
 	"media": {"type": "application/json;profile=http://schema.org/Mountain"},
 	"allOf": [{"$ref": "Landform.json"}],

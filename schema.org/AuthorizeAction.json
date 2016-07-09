@@ -1,6 +1,7 @@
 {
 	"id": "AuthorizeAction.json",
 	"title": "Authorize Action",
+	"description": "The act of granting permission to an object.",
 	"format": "http://schema.org/AuthorizeAction",
 	"media": {"type": "application/json;profile=http://schema.org/AuthorizeAction"},
 	"allOf": [{"$ref": "AllocateAction.json"}],

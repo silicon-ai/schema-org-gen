@@ -1,6 +1,7 @@
 {
 	"id": "StadiumOrArena.json",
 	"title": "Stadium or Arena",
+	"description": "A stadium.",
 	"format": "http://schema.org/StadiumOrArena",
 	"media": {"type": "application/json;profile=http://schema.org/StadiumOrArena"},
 	"allOf": [{"$ref": "CivicStructure.json"}, {"$ref": "SportsActivityLocation.json"}],

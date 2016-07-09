@@ -1,6 +1,7 @@
 {
 	"id": "SportingGoodsStore.json",
 	"title": "Sporting Goods Store",
+	"description": "A sporting goods store.",
 	"format": "http://schema.org/SportingGoodsStore",
 	"media": {"type": "application/json;profile=http://schema.org/SportingGoodsStore"},
 	"allOf": [{"$ref": "Store.json"}],

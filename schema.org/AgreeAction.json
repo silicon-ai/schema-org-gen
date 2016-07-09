@@ -1,6 +1,7 @@
 {
 	"id": "AgreeAction.json",
 	"title": "Agree Action",
+	"description": "The act of expressing a consistency of opinion with the object. An agent agrees to/about an object (a proposition, topic or theme) with participants.",
 	"format": "http://schema.org/AgreeAction",
 	"media": {"type": "application/json;profile=http://schema.org/AgreeAction"},
 	"allOf": [{"$ref": "ReactAction.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "FurnitureStore.json",
 	"title": "Furniture Store",
+	"description": "A furniture store.",
 	"format": "http://schema.org/FurnitureStore",
 	"media": {"type": "application/json;profile=http://schema.org/FurnitureStore"},
 	"allOf": [{"$ref": "Store.json"}],

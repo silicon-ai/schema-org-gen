@@ -1,6 +1,7 @@
 {
 	"id": "CookAction.json",
 	"title": "Cook Action",
+	"description": "The act of producing/preparing food.",
 	"format": "http://schema.org/CookAction",
 	"media": {"type": "application/json;profile=http://schema.org/CookAction"},
 	"allOf": [{"$ref": "CreateAction.json"}],
@@ -49,7 +50,7 @@
 		},
 		"foodEstablishment": {
 			"title": "Food Establishment",
-			"description": "A sub property of location. The specific food establishment where the action occurreed.",
+			"description": "A sub property of location. The specific food establishment where the action occurred.",
 			"anyOf": [{"$ref": "FoodEstablishment.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
 		}
 	}

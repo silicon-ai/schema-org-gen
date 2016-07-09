@@ -1,9 +1,10 @@
 {
 	"id": "GeneralContractor.json",
 	"title": "General Contractor",
+	"description": "A general contractor.",
 	"format": "http://schema.org/GeneralContractor",
 	"media": {"type": "application/json;profile=http://schema.org/GeneralContractor"},
-	"allOf": [{"$ref": "ProfessionalService.json"}, {"$ref": "HomeAndConstructionBusiness.json"}],
+	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

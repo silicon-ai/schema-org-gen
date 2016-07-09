@@ -1,6 +1,7 @@
 {
 	"id": "WebPage.json",
 	"title": "Web Page",
+	"description": "A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as breadcrumb may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.",
 	"format": "http://schema.org/WebPage",
 	"media": {"type": "application/json;profile=http://schema.org/WebPage"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
@@ -10,7 +11,6 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/breadcrumb"}
 		},
-		"isPartOf": {"$ref": "CollectionPage.json#/definitions/possibleRef"},
 		"lastReviewed": {"$ref": "#/definitions/lastReviewed"},
 		"mainContentOfPage": {"$ref": "WebPageElement.json#/definitions/possibleRef"},
 		"primaryImageOfPage": {"$ref": "ImageObject.json#/definitions/possibleRef"},
@@ -81,7 +81,7 @@
 		"breadcrumb": {
 			"title": "Breadcrumb",
 			"description": "A set of links that can help a user understand and navigate a website hierarchy.",
-			"type": "string"
+			"anyOf": [{"$ref": "BreadcrumbList.json#/definitions/possibleRef"}, {"type": "string"}]
 		},
 		"lastReviewed": {
 			"title": "Last Reviewed",

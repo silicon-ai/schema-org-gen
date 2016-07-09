@@ -1,6 +1,7 @@
 {
 	"id": "Rating.json",
 	"title": "Rating",
+	"description": "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.",
 	"format": "http://schema.org/Rating",
 	"media": {"type": "application/json;profile=http://schema.org/Rating"},
 	"allOf": [{"$ref": "Intangible.json"}],

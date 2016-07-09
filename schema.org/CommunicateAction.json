@@ -1,13 +1,14 @@
 {
 	"id": "CommunicateAction.json",
 	"title": "Communicate Action",
+	"description": "The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.",
 	"format": "http://schema.org/CommunicateAction",
 	"media": {"type": "application/json;profile=http://schema.org/CommunicateAction"},
 	"allOf": [{"$ref": "InteractAction.json"}],
 	"type": "object",
 	"properties": {
 		"about": {"$ref": "Thing.json#/definitions/possibleRef"},
-		"language": {"$ref": "Language.json#/definitions/possibleRefArray"},
+		"inLanguage": {"$ref": "#/definitions/inLanguage"},
 		"recipient": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/recipient"}
@@ -46,6 +47,11 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"inLanguage": {
+			"title": "In Language",
+			"description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
+			"anyOf": [{"type": "string"}, {"$ref": "Language.json#/definitions/possibleRef"}]
 		},
 		"recipient": {
 			"title": "Recipient",

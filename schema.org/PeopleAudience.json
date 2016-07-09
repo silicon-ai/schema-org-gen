@@ -1,12 +1,12 @@
 {
 	"id": "PeopleAudience.json",
 	"title": "People Audience",
+	"description": "A set of characteristics belonging to people, e.g. who compose an item's target audience.",
 	"format": "http://schema.org/PeopleAudience",
 	"media": {"type": "application/json;profile=http://schema.org/PeopleAudience"},
 	"allOf": [{"$ref": "Audience.json"}],
 	"type": "object",
 	"properties": {
-		"healthCondition": {"$ref": "MedicalCondition.json#/definitions/possibleRef"},
 		"requiredGender": {"$ref": "#/definitions/requiredGender"},
 		"requiredMaxAge": {"$ref": "#/definitions/requiredMaxAge"},
 		"requiredMinAge": {"$ref": "#/definitions/requiredMinAge"},
@@ -70,12 +70,12 @@
 		},
 		"suggestedMaxAge": {
 			"title": "Suggested Max Age",
-			"description": "Maximal age recommended for viewing content",
+			"description": "Maximal age recommended for viewing content.",
 			"type": "number"
 		},
 		"suggestedMinAge": {
 			"title": "Suggested Min Age",
-			"description": "Minimal age recommended for viewing content",
+			"description": "Minimal age recommended for viewing content.",
 			"type": "number"
 		}
 	}

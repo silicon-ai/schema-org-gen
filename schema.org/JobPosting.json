@@ -1,13 +1,13 @@
 {
 	"id": "JobPosting.json",
 	"title": "Job Posting",
+	"description": "A listing that describes a job opening in a certain organization.",
 	"format": "http://schema.org/JobPosting",
 	"media": {"type": "application/json;profile=http://schema.org/JobPosting"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {
 		"baseSalary": {"$ref": "#/definitions/baseSalary"},
-		"benefits": {"$ref": "#/definitions/benefits"},
 		"datePosted": {"$ref": "#/definitions/datePosted"},
 		"educationRequirements": {"$ref": "#/definitions/educationRequirements"},
 		"employmentType": {
@@ -16,11 +16,25 @@
 		},
 		"experienceRequirements": {"$ref": "#/definitions/experienceRequirements"},
 		"hiringOrganization": {"$ref": "Organization.json#/definitions/possibleRef"},
-		"incentives": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/incentives"}
+		"incentiveCompensation": {
+			"oneOf": [
+				{"$ref": "#/definitions/incentiveCompensation"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/incentiveCompensation"}
+				}
+			]
 		},
 		"industry": {"$ref": "#/definitions/industry"},
+		"jobBenefits": {
+			"oneOf": [
+				{"$ref": "#/definitions/jobBenefits"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/jobBenefits"}
+				}
+			]
+		},
 		"jobLocation": {"$ref": "Place.json#/definitions/possibleRefArray"},
 		"occupationalCategory": {
 			"type": "array",
@@ -44,6 +58,7 @@
 			"items": {"$ref": "#/definitions/specialCommitments"}
 		},
 		"title": {"$ref": "#/definitions/title"},
+		"validThrough": {"$ref": "#/definitions/validThrough"},
 		"workHours": {"$ref": "#/definitions/workHours"}
 	},
 	"definitions": {
@@ -53,13 +68,8 @@
 		},
 		"baseSalary": {
 			"title": "Base Salary",
-			"description": "The base salary of the job.",
-			"type": "number"
-		},
-		"benefits": {
-			"title": "Benefits",
-			"description": "Description of benefits associated with the job.",
-			"type": "string"
+			"description": "The base salary of the job or of an employee in an EmployeeRole.",
+			"anyOf": [{"$ref": "PriceSpecification.json#/definitions/possibleRef"}, {"type": "number"}, {"$ref": "MonetaryAmount.json#/definitions/possibleRef"}]
 		},
 		"datePosted": {
 			"title": "Date Posted",
@@ -82,14 +92,19 @@
 			"description": "Description of skills and experience needed for the position.",
 			"type": "string"
 		},
-		"incentives": {
-			"title": "Incentives",
-			"description": "Description of bonus and commission compensation aspects of the job.",
+		"incentiveCompensation": {
+			"title": "Incentive Compensation",
+			"description": "Description of bonus and commission compensation aspects of the job. Supersedes incentives.",
 			"type": "string"
 		},
 		"industry": {
 			"title": "Industry",
 			"description": "The industry associated with the job position.",
+			"type": "string"
+		},
+		"jobBenefits": {
+			"title": "Job Benefits",
+			"description": "Description of benefits associated with the job. Supersedes benefits.",
 			"type": "string"
 		},
 		"occupationalCategory": {
@@ -139,7 +154,7 @@
 		},
 		"salaryCurrency": {
 			"title": "Salary Currency",
-			"description": "The currency (coded using ISO 4217, http://en.wikipedia.org/wiki/ISO_4217 used for the main salary information in this job posting.",
+			"description": "The currency (coded using ISO 4217, http://en.wikipedia.org/wiki/ISO_4217 ) used for the main salary information in this job posting or for this employee.",
 			"type": "string"
 		},
 		"skills": {
@@ -156,6 +171,12 @@
 			"title": "Title",
 			"description": "The title of the job.",
 			"type": "string"
+		},
+		"validThrough": {
+			"title": "Valid Through",
+			"description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+			"type": "string",
+			"format": "date-time"
 		},
 		"workHours": {
 			"title": "Work Hours",

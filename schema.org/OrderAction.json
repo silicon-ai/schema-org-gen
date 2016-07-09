@@ -1,9 +1,12 @@
 {
 	"id": "OrderAction.json",
 	"title": "Order Action",
+	"description": "An agent orders an object/product/service to be delivered/sent.",
 	"format": "http://schema.org/OrderAction",
 	"media": {"type": "application/json;profile=http://schema.org/OrderAction"},
 	"allOf": [{"$ref": "TradeAction.json"}],
+	"type": "object",
+	"properties": {"deliveryMethod": {"$ref": "DeliveryMethod.json#/definitions/possibleRefArray"}},
 	"definitions": {
 		"array": {
 			"type": "array",

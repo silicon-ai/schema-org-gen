@@ -1,6 +1,7 @@
 {
 	"id": "BikeStore.json",
 	"title": "Bike Store",
+	"description": "A bike store.",
 	"format": "http://schema.org/BikeStore",
 	"media": {"type": "application/json;profile=http://schema.org/BikeStore"},
 	"allOf": [{"$ref": "Store.json"}],

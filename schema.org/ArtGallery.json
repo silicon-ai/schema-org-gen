@@ -1,6 +1,7 @@
 {
 	"id": "ArtGallery.json",
 	"title": "Art Gallery",
+	"description": "An art gallery.",
 	"format": "http://schema.org/ArtGallery",
 	"media": {"type": "application/json;profile=http://schema.org/ArtGallery"},
 	"allOf": [{"$ref": "EntertainmentBusiness.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "MusicVenue.json",
 	"title": "Music Venue",
+	"description": "A music venue.",
 	"format": "http://schema.org/MusicVenue",
 	"media": {"type": "application/json;profile=http://schema.org/MusicVenue"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

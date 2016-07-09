@@ -1,9 +1,10 @@
 {
 	"id": "HousePainter.json",
 	"title": "House Painter",
+	"description": "A house painting service.",
 	"format": "http://schema.org/HousePainter",
 	"media": {"type": "application/json;profile=http://schema.org/HousePainter"},
-	"allOf": [{"$ref": "ProfessionalService.json"}, {"$ref": "HomeAndConstructionBusiness.json"}],
+	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

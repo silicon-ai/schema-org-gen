@@ -1,6 +1,7 @@
 {
 	"id": "InsuranceAgency.json",
 	"title": "Insurance Agency",
+	"description": "An Insurance agency.",
 	"format": "http://schema.org/InsuranceAgency",
 	"media": {"type": "application/json;profile=http://schema.org/InsuranceAgency"},
 	"allOf": [{"$ref": "FinancialService.json"}],

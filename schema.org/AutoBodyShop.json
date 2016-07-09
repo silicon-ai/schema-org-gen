@@ -1,6 +1,7 @@
 {
 	"id": "AutoBodyShop.json",
 	"title": "Auto Body Shop",
+	"description": "Auto body shop.",
 	"format": "http://schema.org/AutoBodyShop",
 	"media": {"type": "application/json;profile=http://schema.org/AutoBodyShop"},
 	"allOf": [{"$ref": "AutomotiveBusiness.json"}],

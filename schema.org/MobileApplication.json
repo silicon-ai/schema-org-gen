@@ -1,6 +1,7 @@
 {
 	"id": "MobileApplication.json",
 	"title": "Mobile Application",
+	"description": "A software application designed specifically to work well on a mobile device such as a telephone.",
 	"format": "http://schema.org/MobileApplication",
 	"media": {"type": "application/json;profile=http://schema.org/MobileApplication"},
 	"allOf": [{"$ref": "SoftwareApplication.json"}],

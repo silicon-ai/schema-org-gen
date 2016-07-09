@@ -1,6 +1,7 @@
 {
 	"id": "BarOrPub.json",
 	"title": "Bar or Pub",
+	"description": "A bar or pub.",
 	"format": "http://schema.org/BarOrPub",
 	"media": {"type": "application/json;profile=http://schema.org/BarOrPub"},
 	"allOf": [{"$ref": "FoodEstablishment.json"}],

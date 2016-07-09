@@ -1,6 +1,7 @@
 {
 	"id": "NGO.json",
 	"title": "NGO",
+	"description": "Organization: Non-governmental Organization.",
 	"format": "http://schema.org/NGO",
 	"media": {"type": "application/json;profile=http://schema.org/NGO"},
 	"allOf": [{"$ref": "Organization.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "Blog.json",
 	"title": "Blog",
+	"description": "A blog.",
 	"format": "http://schema.org/Blog",
 	"media": {"type": "application/json;profile=http://schema.org/Blog"},
 	"allOf": [{"$ref": "CreativeWork.json"}],

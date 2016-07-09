@@ -1,6 +1,7 @@
 {
 	"id": "Order.json",
 	"title": "Order",
+	"description": "An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.",
 	"format": "http://schema.org/Order",
 	"media": {"type": "application/json;profile=http://schema.org/Order"},
 	"allOf": [{"$ref": "Intangible.json"}],
@@ -8,6 +9,10 @@
 	"properties": {
 		"acceptedOffer": {"$ref": "Offer.json#/definitions/possibleRefArray"},
 		"billingAddress": {"$ref": "PostalAddress.json#/definitions/possibleRef"},
+		"broker": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/broker"}
+		},
 		"confirmationNumber": {"$ref": "#/definitions/confirmationNumber"},
 		"customer": {"$ref": "#/definitions/customer"},
 		"discount": {"$ref": "#/definitions/discount"},
@@ -15,10 +20,15 @@
 		"discountCurrency": {"$ref": "#/definitions/discountCurrency"},
 		"isGift": {"$ref": "#/definitions/isGift"},
 		"orderDate": {"$ref": "#/definitions/orderDate"},
+		"orderDelivery": {"$ref": "ParcelDelivery.json#/definitions/possibleRef"},
 		"orderNumber": {"$ref": "#/definitions/orderNumber"},
 		"orderStatus": {"$ref": "OrderStatus.json#/definitions/possibleRef"},
-		"orderedItem": {"$ref": "Product.json#/definitions/possibleRefArray"},
-		"paymentDue": {"$ref": "#/definitions/paymentDue"},
+		"orderedItem": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/orderedItem"}
+		},
+		"partOfInvoice": {"$ref": "Invoice.json#/definitions/possibleRef"},
+		"paymentDueDate": {"$ref": "#/definitions/paymentDueDate"},
 		"paymentMethod": {"$ref": "PaymentMethod.json#/definitions/possibleRef"},
 		"paymentMethodId": {
 			"type": "array",
@@ -27,7 +37,8 @@
 		"paymentUrl": {
 			"type": "string",
 			"format": "uri"
-		}
+		},
+		"seller": {"$ref": "#/definitions/seller"}
 	},
 	"links": [{
 		"rel": "http://schema.org/paymentUrl",
@@ -38,14 +49,19 @@
 			"type": "array",
 			"items": {"$ref": "#"}
 		},
+		"broker": {
+			"title": "Broker",
+			"description": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred. Supersedes bookingAgent.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
 		"confirmationNumber": {
 			"title": "Confirmation Number",
-			"description": "A number that confirms the given order.",
+			"description": "A number that confirms the given order or payment has been received.",
 			"type": "string"
 		},
 		"customer": {
 			"title": "Customer",
-			"description": "Party placing the order.",
+			"description": "Party placing the order or paying the invoice.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"discount": {
@@ -79,9 +95,14 @@
 			"description": "The identifier of the transaction.",
 			"type": "string"
 		},
-		"paymentDue": {
-			"title": "Payment Due",
-			"description": "The date that payment is due.",
+		"orderedItem": {
+			"title": "Ordered Item",
+			"description": "The item ordered.",
+			"anyOf": [{"$ref": "Product.json#/definitions/possibleRef"}, {"$ref": "OrderItem.json#/definitions/possibleRef"}]
+		},
+		"paymentDueDate": {
+			"title": "Payment Due Date",
+			"description": "The date that payment is due. Supersedes paymentDue.",
 			"type": "string",
 			"format": "date-time"
 		},
@@ -118,6 +139,11 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"seller": {
+			"title": "Seller",
+			"description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider. Supersedes merchant, vendor.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		}
 	}
 }

@@ -1,6 +1,7 @@
 {
 	"id": "Waterfall.json",
 	"title": "Waterfall",
+	"description": "A waterfall, like Niagara.",
 	"format": "http://schema.org/Waterfall",
 	"media": {"type": "application/json;profile=http://schema.org/Waterfall"},
 	"allOf": [{"$ref": "BodyOfWater.json"}],

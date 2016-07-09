@@ -1,6 +1,7 @@
 {
 	"id": "AutoRental.json",
 	"title": "Auto Rental",
+	"description": "A car rental business.",
 	"format": "http://schema.org/AutoRental",
 	"media": {"type": "application/json;profile=http://schema.org/AutoRental"},
 	"allOf": [{"$ref": "AutomotiveBusiness.json"}],

@@ -1,14 +1,15 @@
 {
 	"id": "PublicationEvent.json",
 	"title": "Publication Event",
+	"description": "A PublicationEvent corresponds indifferently to the event of publication for a CreativeWork of any type e.g. a broadcast event, an on-demand event, a book/journal publication via a variety of delivery media.",
 	"format": "http://schema.org/PublicationEvent",
 	"media": {"type": "application/json;profile=http://schema.org/PublicationEvent"},
 	"allOf": [{"$ref": "Event.json"}],
 	"type": "object",
 	"properties": {
-		"free": {
+		"isAccessibleForFree": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/free"}
+			"items": {"$ref": "#/definitions/isAccessibleForFree"}
 		},
 		"publishedOn": {"$ref": "BroadcastService.json#/definitions/possibleRefArray"}
 	},
@@ -46,9 +47,9 @@
 				}
 			]
 		},
-		"free": {
-			"title": "Free",
-			"description": "A flag to signal that the publication is accessible for free.",
+		"isAccessibleForFree": {
+			"title": "Is Accessible for Free",
+			"description": "A flag to signal that the publication is accessible for free. Supersedes free.",
 			"type": "boolean"
 		}
 	}

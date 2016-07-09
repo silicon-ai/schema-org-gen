@@ -1,6 +1,7 @@
 {
 	"id": "ListenAction.json",
 	"title": "Listen Action",
+	"description": "The act of consuming audio content.",
 	"format": "http://schema.org/ListenAction",
 	"media": {"type": "application/json;profile=http://schema.org/ListenAction"},
 	"allOf": [{"$ref": "ConsumeAction.json"}],

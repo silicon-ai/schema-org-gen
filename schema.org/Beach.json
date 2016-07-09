@@ -1,6 +1,7 @@
 {
 	"id": "Beach.json",
 	"title": "Beach",
+	"description": "Beach.",
 	"format": "http://schema.org/Beach",
 	"media": {"type": "application/json;profile=http://schema.org/Beach"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

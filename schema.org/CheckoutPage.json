@@ -1,6 +1,7 @@
 {
 	"id": "CheckoutPage.json",
 	"title": "Checkout Page",
+	"description": "Web page type: Checkout page.",
 	"format": "http://schema.org/CheckoutPage",
 	"media": {"type": "application/json;profile=http://schema.org/CheckoutPage"},
 	"allOf": [{"$ref": "WebPage.json"}],

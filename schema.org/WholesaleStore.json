@@ -1,6 +1,7 @@
 {
 	"id": "WholesaleStore.json",
 	"title": "Wholesale Store",
+	"description": "A wholesale store.",
 	"format": "http://schema.org/WholesaleStore",
 	"media": {"type": "application/json;profile=http://schema.org/WholesaleStore"},
 	"allOf": [{"$ref": "Store.json"}],

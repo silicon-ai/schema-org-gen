@@ -1,6 +1,7 @@
 {
 	"id": "AutoRepair.json",
 	"title": "Auto Repair",
+	"description": "Car repair business.",
 	"format": "http://schema.org/AutoRepair",
 	"media": {"type": "application/json;profile=http://schema.org/AutoRepair"},
 	"allOf": [{"$ref": "AutomotiveBusiness.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "WarrantyScope.json",
 	"title": "Warranty Scope",
+	"description": "A range of of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.\n\n    Commonly used values:\n\n    http://purl.org/goodrelations/v1#Labor-BringIn \n    http://purl.org/goodrelations/v1#PartsAndLabor-BringIn \n    http://purl.org/goodrelations/v1#PartsAndLabor-PickUp",
 	"format": "http://schema.org/WarrantyScope",
 	"media": {"type": "application/json;profile=http://schema.org/WarrantyScope"},
 	"allOf": [{"$ref": "Enumeration.json"}],

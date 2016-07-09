@@ -1,6 +1,7 @@
 {
 	"id": "Aquarium.json",
 	"title": "Aquarium",
+	"description": "Aquarium.",
 	"format": "http://schema.org/Aquarium",
 	"media": {"type": "application/json;profile=http://schema.org/Aquarium"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

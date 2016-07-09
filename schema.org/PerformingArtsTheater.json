@@ -1,6 +1,7 @@
 {
 	"id": "PerformingArtsTheater.json",
 	"title": "Performing Arts Theater",
+	"description": "A theater or other performing art center.",
 	"format": "http://schema.org/PerformingArtsTheater",
 	"media": {"type": "application/json;profile=http://schema.org/PerformingArtsTheater"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

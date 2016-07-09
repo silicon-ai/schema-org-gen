@@ -1,6 +1,7 @@
 {
 	"id": "WPHeader.json",
 	"title": "WP Header",
+	"description": "The header section of the page.",
 	"format": "http://schema.org/WPHeader",
 	"media": {"type": "application/json;profile=http://schema.org/WPHeader"},
 	"allOf": [{"$ref": "WebPageElement.json"}],

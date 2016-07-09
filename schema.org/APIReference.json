@@ -1,13 +1,22 @@
 {
 	"id": "APIReference.json",
 	"title": "API Reference",
+	"description": "Reference documentation for application programming interfaces (APIs).",
 	"format": "http://schema.org/APIReference",
 	"media": {"type": "application/json;profile=http://schema.org/APIReference"},
 	"allOf": [{"$ref": "TechArticle.json"}],
 	"type": "object",
 	"properties": {
-		"assembly": {"$ref": "#/definitions/assembly"},
 		"assemblyVersion": {"$ref": "#/definitions/assemblyVersion"},
+		"executableLibraryName": {
+			"oneOf": [
+				{"$ref": "#/definitions/executableLibraryName"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/executableLibraryName"}
+				}
+			]
+		},
 		"programmingModel": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/programmingModel"}
@@ -51,14 +60,14 @@
 				}
 			]
 		},
-		"assembly": {
-			"title": "Assembly",
-			"description": "Library file name e.g., mscorlib.dll, system.web.dll",
-			"type": "string"
-		},
 		"assemblyVersion": {
 			"title": "Assembly Version",
-			"description": "Associated product/technology version. e.g., .NET Framework 4.5",
+			"description": "Associated product/technology version. e.g., .NET Framework 4.5.",
+			"type": "string"
+		},
+		"executableLibraryName": {
+			"title": "Executable Library Name",
+			"description": "Library file name e.g., mscorlib.dll, system.web.dll. Supersedes assembly.",
 			"type": "string"
 		},
 		"programmingModel": {

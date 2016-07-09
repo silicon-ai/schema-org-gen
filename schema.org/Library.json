@@ -1,6 +1,7 @@
 {
 	"id": "Library.json",
 	"title": "Library",
+	"description": "A library.",
 	"format": "http://schema.org/Library",
 	"media": {"type": "application/json;profile=http://schema.org/Library"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

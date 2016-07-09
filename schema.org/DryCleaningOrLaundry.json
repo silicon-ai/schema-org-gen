@@ -1,6 +1,7 @@
 {
 	"id": "DryCleaningOrLaundry.json",
 	"title": "Dry Cleaning or Laundry",
+	"description": "A dry-cleaning business.",
 	"format": "http://schema.org/DryCleaningOrLaundry",
 	"media": {"type": "application/json;profile=http://schema.org/DryCleaningOrLaundry"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

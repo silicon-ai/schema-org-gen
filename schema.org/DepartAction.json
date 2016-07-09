@@ -1,6 +1,7 @@
 {
 	"id": "DepartAction.json",
 	"title": "Depart Action",
+	"description": "The act of  departing from a place. An agent departs from an fromLocation for a destination, optionally with participants.",
 	"format": "http://schema.org/DepartAction",
 	"media": {"type": "application/json;profile=http://schema.org/DepartAction"},
 	"allOf": [{"$ref": "MoveAction.json"}],

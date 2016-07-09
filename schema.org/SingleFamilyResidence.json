@@ -1,6 +1,7 @@
 {
 	"id": "SingleFamilyResidence.json",
 	"title": "Single Family Residence",
+	"description": "Residence type: Single-family home.",
 	"format": "http://schema.org/SingleFamilyResidence",
 	"media": {"type": "application/json;profile=http://schema.org/SingleFamilyResidence"},
 	"allOf": [{"$ref": "Residence.json"}],

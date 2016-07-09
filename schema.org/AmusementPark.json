@@ -1,6 +1,7 @@
 {
 	"id": "AmusementPark.json",
 	"title": "Amusement Park",
+	"description": "An amusement park.",
 	"format": "http://schema.org/AmusementPark",
 	"media": {"type": "application/json;profile=http://schema.org/AmusementPark"},
 	"allOf": [{"$ref": "EntertainmentBusiness.json"}],

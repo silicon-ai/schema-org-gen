@@ -1,6 +1,7 @@
 {
 	"id": "Winery.json",
 	"title": "Winery",
+	"description": "A winery.",
 	"format": "http://schema.org/Winery",
 	"media": {"type": "application/json;profile=http://schema.org/Winery"},
 	"allOf": [{"$ref": "FoodEstablishment.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "RejectAction.json",
 	"title": "Reject Action",
+	"description": "The act of rejecting to/adopting an object.Related actions:AcceptAction: The antonym of RejectAction.",
 	"format": "http://schema.org/RejectAction",
 	"media": {"type": "application/json;profile=http://schema.org/RejectAction"},
 	"allOf": [{"$ref": "AllocateAction.json"}],

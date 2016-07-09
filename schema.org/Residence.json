@@ -1,6 +1,7 @@
 {
 	"id": "Residence.json",
 	"title": "Residence",
+	"description": "The place where a person lives.",
 	"format": "http://schema.org/Residence",
 	"media": {"type": "application/json;profile=http://schema.org/Residence"},
 	"allOf": [{"$ref": "Place.json"}],

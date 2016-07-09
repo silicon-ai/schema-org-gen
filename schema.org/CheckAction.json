@@ -1,6 +1,7 @@
 {
 	"id": "CheckAction.json",
 	"title": "Check Action",
+	"description": "An agent inspects/determines/investigates/inquire or examine an object's accuracy/quality/condition or state.",
 	"format": "http://schema.org/CheckAction",
 	"media": {"type": "application/json;profile=http://schema.org/CheckAction"},
 	"allOf": [{"$ref": "FindAction.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "MarryAction.json",
 	"title": "Marry Action",
+	"description": "The act of marrying a person.",
 	"format": "http://schema.org/MarryAction",
 	"media": {"type": "application/json;profile=http://schema.org/MarryAction"},
 	"allOf": [{"$ref": "InteractAction.json"}],

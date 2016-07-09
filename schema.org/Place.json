@@ -1,38 +1,33 @@
 {
 	"id": "Place.json",
 	"title": "Place",
+	"description": "Entities that have a somewhat fixed, physical extension.",
 	"format": "http://schema.org/Place",
 	"media": {"type": "application/json;profile=http://schema.org/Place"},
 	"allOf": [{"$ref": "Thing.json"}],
 	"type": "object",
 	"properties": {
-		"address": {"$ref": "PostalAddress.json#/definitions/possibleRef"},
+		"additionalProperty": {"$ref": "PropertyValue.json#/definitions/possibleRefArray"},
+		"address": {"$ref": "#/definitions/address"},
 		"aggregateRating": {"$ref": "AggregateRating.json#/definitions/possibleRef"},
-		"containedIn": {"$ref": "Place.json#/definitions/possibleRef"},
+		"branchCode": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/branchCode"}
+		},
+		"containedInPlace": {"$ref": "Place.json#/definitions/possibleRef"},
+		"containsPlace": {"$ref": "Place.json#/definitions/possibleRef"},
 		"event": {"$ref": "Event.json#/definitions/possibleRefArray"},
 		"faxNumber": {"$ref": "#/definitions/faxNumber"},
 		"geo": {"$ref": "#/definitions/geo"},
 		"globalLocationNumber": {"$ref": "#/definitions/globalLocationNumber"},
-		"interactionCount": {
+		"hasMap": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/interactionCount"}
+			"items": {"$ref": "#/definitions/hasMap"}
 		},
 		"isicV4": {"$ref": "#/definitions/isicV4"},
 		"logo": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/logo"}
-		},
-		"map": {
-			"type": "array",
-			"items": {
-				"type": "string",
-				"format": "uri",
-				"links": [{
-					"rel": "http://schema.org/map",
-					"href": "{+$}",
-					"linkSource": 2
-				}]
-			}
 		},
 		"openingHoursSpecification": {"$ref": "OpeningHoursSpecification.json#/definitions/possibleRef"},
 		"photo": {
@@ -40,12 +35,23 @@
 			"items": {"$ref": "#/definitions/photo"}
 		},
 		"review": {"$ref": "Review.json#/definitions/possibleRefArray"},
+		"specialOpeningHoursSpecification": {"$ref": "OpeningHoursSpecification.json#/definitions/possibleRef"},
 		"telephone": {"$ref": "#/definitions/telephone"}
 	},
 	"definitions": {
+		"address": {
+			"title": "Address",
+			"description": "Physical address of the item.",
+			"anyOf": [{"type": "string"}, {"$ref": "PostalAddress.json#/definitions/possibleRef"}]
+		},
 		"array": {
 			"type": "array",
 			"items": {"$ref": "#"}
+		},
+		"branchCode": {
+			"title": "Branch Code",
+			"description": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
+			"type": "string"
 		},
 		"faxNumber": {
 			"title": "Fax Number",
@@ -62,10 +68,16 @@
 			"description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
 			"type": "string"
 		},
-		"interactionCount": {
-			"title": "Interaction Count",
-			"description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
-			"type": "string"
+		"hasMap": {
+			"title": "Has Map",
+			"description": "A URL to a map of the place. Supersedes map, maps.",
+			"anyOf": [
+				{"$ref": "Map.json#/definitions/possibleRef"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
 		},
 		"isicV4": {
 			"title": "Isic V4",
@@ -74,7 +86,7 @@
 		},
 		"logo": {
 			"title": "Logo",
-			"description": "A logo associated with an organization.",
+			"description": "An associated logo.",
 			"anyOf": [
 				{
 					"type": "string",
@@ -85,7 +97,7 @@
 		},
 		"photo": {
 			"title": "Photo",
-			"description": "A photograph of this place.",
+			"description": "A photograph of this place. Supersedes photos.",
 			"anyOf": [{"$ref": "ImageObject.json#/definitions/possibleRef"}, {"$ref": "Photograph.json#/definitions/possibleRef"}]
 		},
 		"possibleRef": {

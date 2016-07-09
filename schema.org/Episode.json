@@ -1,6 +1,7 @@
 {
 	"id": "Episode.json",
 	"title": "Episode",
+	"description": "A media episode (e.g. TV, radio, video game) which can be part of a series or season.",
 	"format": "http://schema.org/Episode",
 	"media": {"type": "application/json;profile=http://schema.org/Episode"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
@@ -10,12 +11,9 @@
 		"director": {"$ref": "Person.json#/definitions/possibleRef"},
 		"episodeNumber": {"$ref": "#/definitions/episodeNumber"},
 		"musicBy": {"$ref": "#/definitions/musicBy"},
-		"partOfSeason": {"$ref": "Season.json#/definitions/possibleRef"},
-		"partOfSeries": {"$ref": "Series.json#/definitions/possibleRef"},
-		"position": {"$ref": "#/definitions/position"},
-		"producer": {"$ref": "Person.json#/definitions/possibleRef"},
+		"partOfSeason": {"$ref": "CreativeWorkSeason.json#/definitions/possibleRef"},
+		"partOfSeries": {"$ref": "CreativeWorkSeries.json#/definitions/possibleRef"},
 		"productionCompany": {"$ref": "Organization.json#/definitions/possibleRef"},
-		"publication": {"$ref": "PublicationEvent.json#/definitions/possibleRefArray"},
 		"trailer": {"$ref": "VideoObject.json#/definitions/possibleRef"}
 	},
 	"definitions": {
@@ -55,17 +53,12 @@
 		"episodeNumber": {
 			"title": "Episode Number",
 			"description": "Position of the episode within an ordered group of episodes.",
-			"type": "integer"
+			"anyOf": [{"type": "integer"}, {"type": "string"}]
 		},
 		"musicBy": {
 			"title": "Music by",
-			"description": "The composer of the movie or TV/radio soundtrack.",
+			"description": "The composer of the soundtrack.",
 			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "MusicGroup.json#/definitions/possibleRef"}]
-		},
-		"position": {
-			"title": "Position",
-			"description": "Free text to define other than pure numerical ranking of an episode or a season in an ordered list of items (further formatting restrictions may apply within particular user groups).",
-			"type": "string"
 		}
 	}
 }

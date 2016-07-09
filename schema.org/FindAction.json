@@ -1,6 +1,7 @@
 {
 	"id": "FindAction.json",
 	"title": "Find Action",
+	"description": "The act of finding an object.Related actions:SearchAction: FindAction is generally lead by a SearchAction, but not necessarily.",
 	"format": "http://schema.org/FindAction",
 	"media": {"type": "application/json;profile=http://schema.org/FindAction"},
 	"allOf": [{"$ref": "Action.json"}],

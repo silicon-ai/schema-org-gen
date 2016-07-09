@@ -1,6 +1,7 @@
 {
 	"id": "Reservoir.json",
 	"title": "Reservoir",
+	"description": "A reservoir of water, typically an artificially created lake, like the Lake Kariba reservoir.",
 	"format": "http://schema.org/Reservoir",
 	"media": {"type": "application/json;profile=http://schema.org/Reservoir"},
 	"allOf": [{"$ref": "BodyOfWater.json"}],

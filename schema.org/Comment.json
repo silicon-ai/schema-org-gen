@@ -1,9 +1,16 @@
 {
 	"id": "Comment.json",
 	"title": "Comment",
+	"description": "A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the \"text\" property, and its topic via \"about\", properties shared with all CreativeWorks.",
 	"format": "http://schema.org/Comment",
 	"media": {"type": "application/json;profile=http://schema.org/Comment"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"downvoteCount": {"$ref": "#/definitions/downvoteCount"},
+		"parentItem": {"$ref": "Question.json#/definitions/possibleRef"},
+		"upvoteCount": {"$ref": "#/definitions/upvoteCount"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -37,6 +44,16 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"downvoteCount": {
+			"title": "Downvote Count",
+			"description": "The number of downvotes this question, answer or comment has received from the community.",
+			"type": "integer"
+		},
+		"upvoteCount": {
+			"title": "Upvote Count",
+			"description": "The number of upvotes this question, answer or comment has received from the community.",
+			"type": "integer"
 		}
 	}
 }

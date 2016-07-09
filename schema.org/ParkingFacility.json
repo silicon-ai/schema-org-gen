@@ -1,6 +1,7 @@
 {
 	"id": "ParkingFacility.json",
 	"title": "Parking Facility",
+	"description": "A parking lot or other parking facility.",
 	"format": "http://schema.org/ParkingFacility",
 	"media": {"type": "application/json;profile=http://schema.org/ParkingFacility"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

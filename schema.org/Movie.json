@@ -1,17 +1,27 @@
 {
 	"id": "Movie.json",
 	"title": "Movie",
+	"description": "A movie.",
 	"format": "http://schema.org/Movie",
 	"media": {"type": "application/json;profile=http://schema.org/Movie"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {
 		"actor": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"countryOfOrigin": {"$ref": "Country.json#/definitions/possibleRef"},
 		"director": {"$ref": "Person.json#/definitions/possibleRef"},
 		"duration": {"$ref": "Duration.json#/definitions/possibleRef"},
 		"musicBy": {"$ref": "#/definitions/musicBy"},
-		"producer": {"$ref": "Person.json#/definitions/possibleRef"},
 		"productionCompany": {"$ref": "Organization.json#/definitions/possibleRef"},
+		"subtitleLanguage": {
+			"oneOf": [
+				{"$ref": "#/definitions/subtitleLanguage"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/subtitleLanguage"}
+				}
+			]
+		},
 		"trailer": {"$ref": "VideoObject.json#/definitions/possibleRef"}
 	},
 	"definitions": {
@@ -50,8 +60,13 @@
 		},
 		"musicBy": {
 			"title": "Music by",
-			"description": "The composer of the movie or TV/radio soundtrack.",
+			"description": "The composer of the soundtrack.",
 			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "MusicGroup.json#/definitions/possibleRef"}]
+		},
+		"subtitleLanguage": {
+			"title": "Subtitle Language",
+			"description": "Languages in which subtitles/captions are available, in IETF BCP 47 standard format.",
+			"anyOf": [{"type": "string"}, {"$ref": "Language.json#/definitions/possibleRef"}]
 		}
 	}
 }

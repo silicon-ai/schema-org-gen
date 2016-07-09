@@ -1,6 +1,7 @@
 {
 	"id": "HobbyShop.json",
 	"title": "Hobby Shop",
+	"description": "A store that sells materials useful or necessary for various hobbies.",
 	"format": "http://schema.org/HobbyShop",
 	"media": {"type": "application/json;profile=http://schema.org/HobbyShop"},
 	"allOf": [{"$ref": "Store.json"}],

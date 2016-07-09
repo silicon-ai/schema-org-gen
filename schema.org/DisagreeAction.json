@@ -1,6 +1,7 @@
 {
 	"id": "DisagreeAction.json",
 	"title": "Disagree Action",
+	"description": "The act of expressing a difference of opinion with the object. An agent disagrees to/about an object (a proposition, topic or theme) with participants.",
 	"format": "http://schema.org/DisagreeAction",
 	"media": {"type": "application/json;profile=http://schema.org/DisagreeAction"},
 	"allOf": [{"$ref": "ReactAction.json"}],

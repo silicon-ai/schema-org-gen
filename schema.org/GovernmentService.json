@@ -1,6 +1,7 @@
 {
 	"id": "GovernmentService.json",
 	"title": "Government Service",
+	"description": "A service provided by a government organization, e.g. food stamps, veterans benefits, etc.",
 	"format": "http://schema.org/GovernmentService",
 	"media": {"type": "application/json;profile=http://schema.org/GovernmentService"},
 	"allOf": [{"$ref": "Service.json"}],

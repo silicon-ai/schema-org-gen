@@ -1,6 +1,7 @@
 {
 	"id": "LegislativeBuilding.json",
 	"title": "Legislative Building",
+	"description": "A legislative building—for example, the state capitol.",
 	"format": "http://schema.org/LegislativeBuilding",
 	"media": {"type": "application/json;profile=http://schema.org/LegislativeBuilding"},
 	"allOf": [{"$ref": "GovernmentBuilding.json"}],

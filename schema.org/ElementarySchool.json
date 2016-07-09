@@ -1,6 +1,7 @@
 {
 	"id": "ElementarySchool.json",
 	"title": "Elementary School",
+	"description": "An elementary school.",
 	"format": "http://schema.org/ElementarySchool",
 	"media": {"type": "application/json;profile=http://schema.org/ElementarySchool"},
 	"allOf": [{"$ref": "EducationalOrganization.json"}],

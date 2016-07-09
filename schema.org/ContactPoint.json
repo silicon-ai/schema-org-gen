@@ -1,13 +1,17 @@
 {
 	"id": "ContactPoint.json",
 	"title": "Contact Point",
+	"description": "A contact point—for example, a Customer Complaints department.",
 	"format": "http://schema.org/ContactPoint",
 	"media": {"type": "application/json;profile=http://schema.org/ContactPoint"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
 	"type": "object",
 	"properties": {
-		"areaServed": {"$ref": "AdministrativeArea.json#/definitions/possibleRef"},
-		"availableLanguage": {"$ref": "Language.json#/definitions/possibleRefArray"},
+		"areaServed": {"$ref": "#/definitions/areaServed"},
+		"availableLanguage": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/availableLanguage"}
+		},
 		"contactOption": {"$ref": "ContactPointOption.json#/definitions/possibleRefArray"},
 		"contactType": {
 			"type": "array",
@@ -55,6 +59,16 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"areaServed": {
+			"title": "Area Served",
+			"description": "The geographic area where a service or offered item is provided. Supersedes serviceArea.",
+			"anyOf": [{"type": "string"}, {"$ref": "GeoShape.json#/definitions/possibleRef"}, {"$ref": "AdministrativeArea.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
+		},
+		"availableLanguage": {
+			"title": "Available Language",
+			"description": "A language someone may use with the item. Please use one of the language codes from the IETF BCP 47 standard. See also inLanguage.",
+			"anyOf": [{"type": "string"}, {"$ref": "Language.json#/definitions/possibleRef"}]
 		},
 		"contactType": {
 			"title": "Contact Type",

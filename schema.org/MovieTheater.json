@@ -1,9 +1,12 @@
 {
 	"id": "MovieTheater.json",
 	"title": "Movie Theater",
+	"description": "A movie theater.",
 	"format": "http://schema.org/MovieTheater",
 	"media": {"type": "application/json;profile=http://schema.org/MovieTheater"},
 	"allOf": [{"$ref": "CivicStructure.json"}, {"$ref": "EntertainmentBusiness.json"}],
+	"type": "object",
+	"properties": {"screenCount": {"$ref": "#/definitions/screenCount"}},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -37,6 +40,11 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"screenCount": {
+			"title": "Screen Count",
+			"description": "The number of screens in the movie theater.",
+			"type": "number"
 		}
 	}
 }

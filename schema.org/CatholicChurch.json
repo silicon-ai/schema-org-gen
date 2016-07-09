@@ -1,6 +1,7 @@
 {
 	"id": "CatholicChurch.json",
 	"title": "Catholic Church",
+	"description": "A Catholic church.",
 	"format": "http://schema.org/CatholicChurch",
 	"media": {"type": "application/json;profile=http://schema.org/CatholicChurch"},
 	"allOf": [{"$ref": "PlaceOfWorship.json"}],

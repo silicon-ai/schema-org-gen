@@ -1,16 +1,18 @@
 {
 	"id": "ItemList.json",
 	"title": "Item List",
+	"description": "A list of items of any sort—for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.",
 	"format": "http://schema.org/ItemList",
 	"media": {"type": "application/json;profile=http://schema.org/ItemList"},
-	"allOf": [{"$ref": "CreativeWork.json"}],
+	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {
 		"itemListElement": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/itemListElement"}
 		},
-		"itemListOrder": {"$ref": "#/definitions/itemListOrder"}
+		"itemListOrder": {"$ref": "#/definitions/itemListOrder"},
+		"numberOfItems": {"$ref": "#/definitions/numberOfItems"}
 	},
 	"definitions": {
 		"array": {
@@ -48,13 +50,18 @@
 		},
 		"itemListElement": {
 			"title": "Item List Element",
-			"description": "A single list item.",
-			"type": "string"
+			"description": "For itemListElement values, you can use simple strings (e.g. \"Peter\", \"Paul\", \"Mary\"), existing entities, or use ListItem.\n    \n    Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\n    \n    Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.",
+			"anyOf": [{"$ref": "ListItem.json#/definitions/possibleRef"}, {"type": "string"}, {"$ref": "Thing.json#/definitions/possibleRef"}]
 		},
 		"itemListOrder": {
 			"title": "Item List Order",
 			"description": "Type of ordering (e.g. Ascending, Descending, Unordered).",
-			"type": "string"
+			"anyOf": [{"$ref": "ItemListOrderType.json#/definitions/possibleRef"}, {"type": "string"}]
+		},
+		"numberOfItems": {
+			"title": "Number of Items",
+			"description": "The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.",
+			"type": "integer"
 		}
 	}
 }

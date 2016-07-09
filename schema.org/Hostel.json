@@ -1,6 +1,7 @@
 {
 	"id": "Hostel.json",
 	"title": "Hostel",
+	"description": "A hostel - cheap accommodation, often in shared dormitories.",
 	"format": "http://schema.org/Hostel",
 	"media": {"type": "application/json;profile=http://schema.org/Hostel"},
 	"allOf": [{"$ref": "LodgingBusiness.json"}],

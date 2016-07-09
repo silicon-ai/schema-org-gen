@@ -1,6 +1,7 @@
 {
 	"id": "SeaBodyOfWater.json",
 	"title": "Sea Body of Water",
+	"description": "A sea (for example, the Caspian sea).",
 	"format": "http://schema.org/SeaBodyOfWater",
 	"media": {"type": "application/json;profile=http://schema.org/SeaBodyOfWater"},
 	"allOf": [{"$ref": "BodyOfWater.json"}],

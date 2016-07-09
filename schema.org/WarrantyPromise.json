@@ -1,6 +1,7 @@
 {
 	"id": "WarrantyPromise.json",
 	"title": "Warranty Promise",
+	"description": "A structured value representing the duration and scope of services that will be provided to a customer free of charge in case of a defect or malfunction of a product.",
 	"format": "http://schema.org/WarrantyPromise",
 	"media": {"type": "application/json;profile=http://schema.org/WarrantyPromise"},
 	"allOf": [{"$ref": "StructuredValue.json"}],

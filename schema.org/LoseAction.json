@@ -1,6 +1,7 @@
 {
 	"id": "LoseAction.json",
 	"title": "Lose Action",
+	"description": "The act of being defeated in a competitive activity.",
 	"format": "http://schema.org/LoseAction",
 	"media": {"type": "application/json;profile=http://schema.org/LoseAction"},
 	"allOf": [{"$ref": "AchieveAction.json"}],

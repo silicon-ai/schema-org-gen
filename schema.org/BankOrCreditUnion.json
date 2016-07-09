@@ -1,6 +1,7 @@
 {
 	"id": "BankOrCreditUnion.json",
 	"title": "Bank or Credit Union",
+	"description": "Bank or credit union.",
 	"format": "http://schema.org/BankOrCreditUnion",
 	"media": {"type": "application/json;profile=http://schema.org/BankOrCreditUnion"},
 	"allOf": [{"$ref": "FinancialService.json"}],

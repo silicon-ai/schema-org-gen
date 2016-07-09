@@ -1,9 +1,22 @@
 {
 	"id": "RadioSeries.json",
 	"title": "Radio Series",
+	"description": "CreativeWorkSeries dedicated to radio broadcast and associated online delivery.",
 	"format": "http://schema.org/RadioSeries",
 	"media": {"type": "application/json;profile=http://schema.org/RadioSeries"},
-	"allOf": [{"$ref": "Series.json"}],
+	"allOf": [{"$ref": "CreativeWorkSeries.json"}],
+	"type": "object",
+	"properties": {
+		"actor": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"containsSeason": {"$ref": "CreativeWorkSeason.json#/definitions/possibleRefArray"},
+		"director": {"$ref": "Person.json#/definitions/possibleRef"},
+		"episode": {"$ref": "Episode.json#/definitions/possibleRefArray"},
+		"musicBy": {"$ref": "#/definitions/musicBy"},
+		"numberOfEpisodes": {"$ref": "#/definitions/numberOfEpisodes"},
+		"numberOfSeasons": {"$ref": "#/definitions/numberOfSeasons"},
+		"productionCompany": {"$ref": "Organization.json#/definitions/possibleRef"},
+		"trailer": {"$ref": "VideoObject.json#/definitions/possibleRef"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -37,6 +50,21 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"musicBy": {
+			"title": "Music by",
+			"description": "The composer of the soundtrack.",
+			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "MusicGroup.json#/definitions/possibleRef"}]
+		},
+		"numberOfEpisodes": {
+			"title": "Number of Episodes",
+			"description": "The number of episodes in this season or series.",
+			"type": "integer"
+		},
+		"numberOfSeasons": {
+			"title": "Number of Seasons",
+			"description": "The number of seasons in this series.",
+			"type": "integer"
 		}
 	}
 }

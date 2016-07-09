@@ -1,6 +1,7 @@
 {
 	"id": "ReadAction.json",
 	"title": "Read Action",
+	"description": "The act of consuming written content.",
 	"format": "http://schema.org/ReadAction",
 	"media": {"type": "application/json;profile=http://schema.org/ReadAction"},
 	"allOf": [{"$ref": "ConsumeAction.json"}],

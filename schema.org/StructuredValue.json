@@ -1,6 +1,7 @@
 {
 	"id": "StructuredValue.json",
 	"title": "Structured Value",
+	"description": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
 	"format": "http://schema.org/StructuredValue",
 	"media": {"type": "application/json;profile=http://schema.org/StructuredValue"},
 	"allOf": [{"$ref": "Intangible.json"}],

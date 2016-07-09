@@ -1,6 +1,7 @@
 {
 	"id": "Mosque.json",
 	"title": "Mosque",
+	"description": "A mosque.",
 	"format": "http://schema.org/Mosque",
 	"media": {"type": "application/json;profile=http://schema.org/Mosque"},
 	"allOf": [{"$ref": "PlaceOfWorship.json"}],

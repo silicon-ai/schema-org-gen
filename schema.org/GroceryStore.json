@@ -1,6 +1,7 @@
 {
 	"id": "GroceryStore.json",
 	"title": "Grocery Store",
+	"description": "A grocery store.",
 	"format": "http://schema.org/GroceryStore",
 	"media": {"type": "application/json;profile=http://schema.org/GroceryStore"},
 	"allOf": [{"$ref": "Store.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "TattooParlor.json",
 	"title": "Tattoo Parlor",
+	"description": "A tattoo parlor.",
 	"format": "http://schema.org/TattooParlor",
 	"media": {"type": "application/json;profile=http://schema.org/TattooParlor"},
 	"allOf": [{"$ref": "HealthAndBeautyBusiness.json"}],

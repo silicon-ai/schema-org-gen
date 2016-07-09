@@ -1,6 +1,7 @@
 {
 	"id": "ReviewAction.json",
 	"title": "Review Action",
+	"description": "The act of producing a balanced opinion about the object for an audience. An agent reviews an object with participants resulting in a review.",
 	"format": "http://schema.org/ReviewAction",
 	"media": {"type": "application/json;profile=http://schema.org/ReviewAction"},
 	"allOf": [{"$ref": "AssessAction.json"}],

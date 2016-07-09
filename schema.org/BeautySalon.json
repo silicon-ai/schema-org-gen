@@ -1,6 +1,7 @@
 {
 	"id": "BeautySalon.json",
 	"title": "Beauty Salon",
+	"description": "Beauty salon.",
 	"format": "http://schema.org/BeautySalon",
 	"media": {"type": "application/json;profile=http://schema.org/BeautySalon"},
 	"allOf": [{"$ref": "HealthAndBeautyBusiness.json"}],

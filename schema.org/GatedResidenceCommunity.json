@@ -1,6 +1,7 @@
 {
 	"id": "GatedResidenceCommunity.json",
 	"title": "Gated Residence Community",
+	"description": "Residence type: Gated community.",
 	"format": "http://schema.org/GatedResidenceCommunity",
 	"media": {"type": "application/json;profile=http://schema.org/GatedResidenceCommunity"},
 	"allOf": [{"$ref": "Residence.json"}],

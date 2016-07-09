@@ -1,9 +1,10 @@
 {
 	"id": "Electrician.json",
 	"title": "Electrician",
+	"description": "An electrician.",
 	"format": "http://schema.org/Electrician",
 	"media": {"type": "application/json;profile=http://schema.org/Electrician"},
-	"allOf": [{"$ref": "ProfessionalService.json"}, {"$ref": "HomeAndConstructionBusiness.json"}],
+	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

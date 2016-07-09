@@ -1,6 +1,7 @@
 {
 	"id": "HVACBusiness.json",
 	"title": "HVAC Business",
+	"description": "A business that provide Heating, Ventilation and Air Conditioning services.",
 	"format": "http://schema.org/HVACBusiness",
 	"media": {"type": "application/json;profile=http://schema.org/HVACBusiness"},
 	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],

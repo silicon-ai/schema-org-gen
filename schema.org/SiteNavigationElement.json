@@ -1,6 +1,7 @@
 {
 	"id": "SiteNavigationElement.json",
 	"title": "Site Navigation Element",
+	"description": "A navigation element of the page.",
 	"format": "http://schema.org/SiteNavigationElement",
 	"media": {"type": "application/json;profile=http://schema.org/SiteNavigationElement"},
 	"allOf": [{"$ref": "WebPageElement.json"}],

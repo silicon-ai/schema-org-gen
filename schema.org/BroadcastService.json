@@ -1,12 +1,15 @@
 {
 	"id": "BroadcastService.json",
 	"title": "Broadcast Service",
+	"description": "A delivery service through which content is provided via broadcast over the air or online.",
 	"format": "http://schema.org/BroadcastService",
 	"media": {"type": "application/json;profile=http://schema.org/BroadcastService"},
-	"allOf": [{"$ref": "Thing.json"}],
+	"allOf": [{"$ref": "Service.json"}],
 	"type": "object",
 	"properties": {
-		"area": {"$ref": "Place.json#/definitions/possibleRef"},
+		"broadcastAffiliateOf": {"$ref": "Organization.json#/definitions/possibleRef"},
+		"broadcastDisplayName": {"$ref": "#/definitions/broadcastDisplayName"},
+		"broadcastTimezone": {"$ref": "#/definitions/broadcastTimezone"},
 		"broadcaster": {"$ref": "Organization.json#/definitions/possibleRef"},
 		"parentService": {"$ref": "BroadcastService.json#/definitions/possibleRefArray"}
 	},
@@ -43,6 +46,16 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"broadcastDisplayName": {
+			"title": "Broadcast Display Name",
+			"description": "The name displayed in the channel guide. For many US affiliates, it is the network name.",
+			"type": "string"
+		},
+		"broadcastTimezone": {
+			"title": "Broadcast Timezone",
+			"description": "The timezone in ISO 8601 format for which the service bases its broadcasts.",
+			"type": "string"
 		}
 	}
 }

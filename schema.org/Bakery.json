@@ -1,6 +1,7 @@
 {
 	"id": "Bakery.json",
 	"title": "Bakery",
+	"description": "A bakery.",
 	"format": "http://schema.org/Bakery",
 	"media": {"type": "application/json;profile=http://schema.org/Bakery"},
 	"allOf": [{"$ref": "FoodEstablishment.json"}],

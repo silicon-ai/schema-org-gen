@@ -1,6 +1,7 @@
 {
 	"id": "TrainStation.json",
 	"title": "Train Station",
+	"description": "A train station.",
 	"format": "http://schema.org/TrainStation",
 	"media": {"type": "application/json;profile=http://schema.org/TrainStation"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

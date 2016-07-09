@@ -1,21 +1,35 @@
 {
 	"id": "Event.json",
 	"title": "Event",
+	"description": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the 'offers' property. Repeated events may be structured as separate Event objects.",
 	"format": "http://schema.org/Event",
 	"media": {"type": "application/json;profile=http://schema.org/Event"},
 	"allOf": [{"$ref": "Thing.json"}],
 	"type": "object",
 	"properties": {
+		"actor": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"aggregateRating": {"$ref": "AggregateRating.json#/definitions/possibleRef"},
 		"attendee": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/attendee"}
 		},
+		"composer": {"$ref": "#/definitions/composer"},
+		"contributor": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/contributor"}
+		},
+		"director": {"$ref": "Person.json#/definitions/possibleRef"},
 		"doorTime": {"$ref": "#/definitions/doorTime"},
 		"duration": {"$ref": "Duration.json#/definitions/possibleRef"},
 		"endDate": {"$ref": "#/definitions/endDate"},
 		"eventStatus": {"$ref": "EventStatusType.json#/definitions/possibleRefArray"},
+		"inLanguage": {"$ref": "#/definitions/inLanguage"},
 		"location": {"$ref": "#/definitions/location"},
 		"offers": {"$ref": "Offer.json#/definitions/possibleRefArray"},
+		"organizer": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/organizer"}
+		},
 		"performer": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/performer"}
@@ -24,10 +38,27 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/previousStartDate"}
 		},
+		"recordedIn": {"$ref": "CreativeWork.json#/definitions/possibleRef"},
+		"review": {"$ref": "Review.json#/definitions/possibleRefArray"},
+		"sponsor": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/sponsor"}
+		},
 		"startDate": {"$ref": "#/definitions/startDate"},
 		"subEvent": {"$ref": "Event.json#/definitions/possibleRefArray"},
 		"superEvent": {"$ref": "Event.json#/definitions/possibleRefArray"},
-		"typicalAgeRange": {"$ref": "#/definitions/typicalAgeRange"}
+		"translator": {
+			"oneOf": [
+				{"$ref": "#/definitions/translator"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/translator"}
+				}
+			]
+		},
+		"typicalAgeRange": {"$ref": "#/definitions/typicalAgeRange"},
+		"workFeatured": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
+		"workPerformed": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"}
 	},
 	"definitions": {
 		"array": {
@@ -36,7 +67,17 @@
 		},
 		"attendee": {
 			"title": "Attendee",
-			"description": "A person or organization attending the event.",
+			"description": "A person or organization attending the event. Supersedes attendees.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"composer": {
+			"title": "Composer",
+			"description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"contributor": {
+			"title": "Contributor",
+			"description": "A secondary contributor to the CreativeWork or Event.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"doorTime": {
@@ -47,18 +88,28 @@
 		},
 		"endDate": {
 			"title": "End Date",
-			"description": "The end date and time of the event or item (in ISO 8601 date format).",
+			"description": "The end date and time of the item (in ISO 8601 date format).",
 			"type": "string",
 			"format": "date-time"
 		},
+		"inLanguage": {
+			"title": "In Language",
+			"description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
+			"anyOf": [{"type": "string"}, {"$ref": "Language.json#/definitions/possibleRef"}]
+		},
 		"location": {
 			"title": "Location",
-			"description": "The location of the event, organization or action.",
-			"anyOf": [{"$ref": "PostalAddress.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
+			"description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+			"anyOf": [{"type": "string"}, {"$ref": "PostalAddress.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
+		},
+		"organizer": {
+			"title": "Organizer",
+			"description": "An organizer of an Event.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"performer": {
 			"title": "Performer",
-			"description": "A performer at the event—for example, a presenter, musician, musical group or actor.",
+			"description": "A performer at the event—for example, a presenter, musician, musical group or actor. Supersedes performers.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"possibleRef": {
@@ -96,11 +147,21 @@
 			"type": "string",
 			"format": "date"
 		},
+		"sponsor": {
+			"title": "Sponsor",
+			"description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
 		"startDate": {
 			"title": "Start Date",
-			"description": "The start date and time of the event or item (in ISO 8601 date format).",
+			"description": "The start date and time of the item (in ISO 8601 date format).",
 			"type": "string",
 			"format": "date-time"
+		},
+		"translator": {
+			"title": "Translator",
+			"description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"typicalAgeRange": {
 			"title": "Typical Age Range",

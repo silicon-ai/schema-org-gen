@@ -1,9 +1,10 @@
 {
 	"id": "LockerDelivery.json",
 	"title": "Locker Delivery",
+	"description": "A DeliveryMethod in which an item is made available via locker.",
 	"format": "http://schema.org/LockerDelivery",
 	"media": {"type": "application/json;profile=http://schema.org/LockerDelivery"},
-	"allOf": [{"$ref": "DeliveryMethod.json"}],
+	"type": "object",
 	"definitions": {
 		"array": {
 			"type": "array",

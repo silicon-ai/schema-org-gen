@@ -1,6 +1,7 @@
 {
 	"id": "WatchAction.json",
 	"title": "Watch Action",
+	"description": "The act of consuming dynamic/moving visual content.",
 	"format": "http://schema.org/WatchAction",
 	"media": {"type": "application/json;profile=http://schema.org/WatchAction"},
 	"allOf": [{"$ref": "ConsumeAction.json"}],

@@ -1,9 +1,15 @@
 {
 	"id": "BroadcastEvent.json",
 	"title": "Broadcast Event",
+	"description": "An over the air or online broadcast event.",
 	"format": "http://schema.org/BroadcastEvent",
 	"media": {"type": "application/json;profile=http://schema.org/BroadcastEvent"},
 	"allOf": [{"$ref": "PublicationEvent.json"}],
+	"type": "object",
+	"properties": {
+		"broadcastOfEvent": {"$ref": "Event.json#/definitions/possibleRef"},
+		"isLiveBroadcast": {"$ref": "#/definitions/isLiveBroadcast"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -37,6 +43,11 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"isLiveBroadcast": {
+			"title": "Is Live Broadcast",
+			"description": "True is the broadcast is of a live event.",
+			"type": "boolean"
 		}
 	}
 }

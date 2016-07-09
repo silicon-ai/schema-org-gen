@@ -1,6 +1,7 @@
 {
 	"id": "TaxiStand.json",
 	"title": "Taxi Stand",
+	"description": "A taxi stand.",
 	"format": "http://schema.org/TaxiStand",
 	"media": {"type": "application/json;profile=http://schema.org/TaxiStand"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

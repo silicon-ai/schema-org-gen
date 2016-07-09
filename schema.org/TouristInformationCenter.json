@@ -1,6 +1,7 @@
 {
 	"id": "TouristInformationCenter.json",
 	"title": "Tourist Information Center",
+	"description": "A tourist information center.",
 	"format": "http://schema.org/TouristInformationCenter",
 	"media": {"type": "application/json;profile=http://schema.org/TouristInformationCenter"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

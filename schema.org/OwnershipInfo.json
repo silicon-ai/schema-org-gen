@@ -1,6 +1,7 @@
 {
 	"id": "OwnershipInfo.json",
 	"title": "Ownership Info",
+	"description": "A structured value providing information about when a certain organization or person owned a certain product.",
 	"format": "http://schema.org/OwnershipInfo",
 	"media": {"type": "application/json;profile=http://schema.org/OwnershipInfo"},
 	"allOf": [{"$ref": "StructuredValue.json"}],

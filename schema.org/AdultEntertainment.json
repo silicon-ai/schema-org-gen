@@ -1,6 +1,7 @@
 {
 	"id": "AdultEntertainment.json",
 	"title": "Adult Entertainment",
+	"description": "An adult entertainment establishment.",
 	"format": "http://schema.org/AdultEntertainment",
 	"media": {"type": "application/json;profile=http://schema.org/AdultEntertainment"},
 	"allOf": [{"$ref": "EntertainmentBusiness.json"}],

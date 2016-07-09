@@ -1,6 +1,7 @@
 {
 	"id": "DanceGroup.json",
 	"title": "Dance Group",
+	"description": "A dance group—for example, the Alvin Ailey Dance Theater or Riverdance.",
 	"format": "http://schema.org/DanceGroup",
 	"media": {"type": "application/json;profile=http://schema.org/DanceGroup"},
 	"allOf": [{"$ref": "PerformingGroup.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "AutoPartsStore.json",
 	"title": "Auto Parts Store",
+	"description": "An auto parts store.",
 	"format": "http://schema.org/AutoPartsStore",
 	"media": {"type": "application/json;profile=http://schema.org/AutoPartsStore"},
 	"allOf": [{"$ref": "AutomotiveBusiness.json"}, {"$ref": "Store.json"}],

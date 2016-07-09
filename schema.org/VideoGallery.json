@@ -1,6 +1,7 @@
 {
 	"id": "VideoGallery.json",
 	"title": "Video Gallery",
+	"description": "Web page type: Video gallery page.",
 	"format": "http://schema.org/VideoGallery",
 	"media": {"type": "application/json;profile=http://schema.org/VideoGallery"},
 	"allOf": [{"$ref": "CollectionPage.json"}],

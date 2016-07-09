@@ -1,6 +1,7 @@
 {
 	"id": "TipAction.json",
 	"title": "Tip Action",
+	"description": "The act of giving money voluntarily to a beneficiary in recognition of services rendered.",
 	"format": "http://schema.org/TipAction",
 	"media": {"type": "application/json;profile=http://schema.org/TipAction"},
 	"allOf": [{"$ref": "TradeAction.json"}],

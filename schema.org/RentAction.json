@@ -1,6 +1,7 @@
 {
 	"id": "RentAction.json",
 	"title": "Rent Action",
+	"description": "The act of giving money in return for temporary use, but not ownership, of an object such as a vehicle or property. For example, an agent rents a property from a landlord in exchange for a periodic payment.",
 	"format": "http://schema.org/RentAction",
 	"media": {"type": "application/json;profile=http://schema.org/RentAction"},
 	"allOf": [{"$ref": "TradeAction.json"}],
@@ -48,7 +49,7 @@
 		},
 		"landlord": {
 			"title": "Landlord",
-			"description": "A sub property of participant. The owner of the real estate property. Sub property of destination or participant?",
+			"description": "A sub property of participant. The owner of the real estate property.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		}
 	}

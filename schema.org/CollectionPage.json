@@ -1,6 +1,7 @@
 {
 	"id": "CollectionPage.json",
 	"title": "Collection Page",
+	"description": "Web page type: Collection page.",
 	"format": "http://schema.org/CollectionPage",
 	"media": {"type": "application/json;profile=http://schema.org/CollectionPage"},
 	"allOf": [{"$ref": "WebPage.json"}],

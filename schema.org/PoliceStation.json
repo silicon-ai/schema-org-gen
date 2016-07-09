@@ -1,6 +1,7 @@
 {
 	"id": "PoliceStation.json",
 	"title": "Police Station",
+	"description": "A police station.",
 	"format": "http://schema.org/PoliceStation",
 	"media": {"type": "application/json;profile=http://schema.org/PoliceStation"},
 	"allOf": [{"$ref": "CivicStructure.json"}, {"$ref": "EmergencyService.json"}],

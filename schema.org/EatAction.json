@@ -1,6 +1,7 @@
 {
 	"id": "EatAction.json",
 	"title": "Eat Action",
+	"description": "The act of swallowing solid objects.",
 	"format": "http://schema.org/EatAction",
 	"media": {"type": "application/json;profile=http://schema.org/EatAction"},
 	"allOf": [{"$ref": "ConsumeAction.json"}],

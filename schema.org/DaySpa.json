@@ -1,6 +1,7 @@
 {
 	"id": "DaySpa.json",
 	"title": "Day Spa",
+	"description": "A day spa.",
 	"format": "http://schema.org/DaySpa",
 	"media": {"type": "application/json;profile=http://schema.org/DaySpa"},
 	"allOf": [{"$ref": "HealthAndBeautyBusiness.json"}],

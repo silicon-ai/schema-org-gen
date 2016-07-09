@@ -1,6 +1,7 @@
 {
 	"id": "TouristAttraction.json",
 	"title": "Tourist Attraction",
+	"description": "A tourist attraction.",
 	"format": "http://schema.org/TouristAttraction",
 	"media": {"type": "application/json;profile=http://schema.org/TouristAttraction"},
 	"allOf": [{"$ref": "Place.json"}],

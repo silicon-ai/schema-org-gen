@@ -1,16 +1,10 @@
 {
 	"id": "AllocateAction.json",
 	"title": "Allocate Action",
+	"description": "The act of organizing tasks/objects/events by associating resources to it.",
 	"format": "http://schema.org/AllocateAction",
 	"media": {"type": "application/json;profile=http://schema.org/AllocateAction"},
 	"allOf": [{"$ref": "OrganizeAction.json"}],
-	"type": "object",
-	"properties": {
-		"purpose": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/purpose"}
-		}
-	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -44,11 +38,6 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
-		},
-		"purpose": {
-			"title": "Purpose",
-			"description": "A goal towards an action is taken. Can be concrete or abstract.",
-			"anyOf": [{"$ref": "Thing.json#/definitions/possibleRef"}, {"$ref": "MedicalDevicePurpose.json#/definitions/possibleRef"}]
 		}
 	}
 }

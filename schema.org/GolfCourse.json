@@ -1,6 +1,7 @@
 {
 	"id": "GolfCourse.json",
 	"title": "Golf Course",
+	"description": "A golf course.",
 	"format": "http://schema.org/GolfCourse",
 	"media": {"type": "application/json;profile=http://schema.org/GolfCourse"},
 	"allOf": [{"$ref": "SportsActivityLocation.json"}],

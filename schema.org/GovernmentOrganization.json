@@ -1,6 +1,7 @@
 {
 	"id": "GovernmentOrganization.json",
 	"title": "Government Organization",
+	"description": "A governmental organization or agency.",
 	"format": "http://schema.org/GovernmentOrganization",
 	"media": {"type": "application/json;profile=http://schema.org/GovernmentOrganization"},
 	"allOf": [{"$ref": "Organization.json"}],

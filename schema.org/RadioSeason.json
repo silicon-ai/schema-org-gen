@@ -1,9 +1,10 @@
 {
 	"id": "RadioSeason.json",
 	"title": "Radio Season",
+	"description": "Season dedicated to radio broadcast and associated online delivery.",
 	"format": "http://schema.org/RadioSeason",
 	"media": {"type": "application/json;profile=http://schema.org/RadioSeason"},
-	"allOf": [{"$ref": "Season.json"}],
+	"allOf": [{"$ref": "CreativeWorkSeason.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

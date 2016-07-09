@@ -1,9 +1,10 @@
 {
 	"id": "Dentist.json",
 	"title": "Dentist",
+	"description": "A dentist.",
 	"format": "http://schema.org/Dentist",
 	"media": {"type": "application/json;profile=http://schema.org/Dentist"},
-	"allOf": [{"$ref": "MedicalOrganization.json"}, {"$ref": "ProfessionalService.json"}],
+	"allOf": [{"$ref": "MedicalBusiness.json"}, {"$ref": "MedicalOrganization.json"}, {"$ref": "ProfessionalService.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

@@ -1,12 +1,13 @@
 {
 	"id": "BusinessAudience.json",
 	"title": "Business Audience",
+	"description": "A set of characteristics belonging to businesses, e.g. who compose an item's target audience.",
 	"format": "http://schema.org/BusinessAudience",
 	"media": {"type": "application/json;profile=http://schema.org/BusinessAudience"},
 	"allOf": [{"$ref": "Audience.json"}],
 	"type": "object",
 	"properties": {
-		"numberofEmployees": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
+		"numberOfEmployees": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
 		"yearlyRevenue": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
 		"yearsInOperation": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}
 	},

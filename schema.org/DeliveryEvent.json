@@ -1,6 +1,7 @@
 {
 	"id": "DeliveryEvent.json",
 	"title": "Delivery Event",
+	"description": "An event involving the delivery of an item.",
 	"format": "http://schema.org/DeliveryEvent",
 	"media": {"type": "application/json;profile=http://schema.org/DeliveryEvent"},
 	"allOf": [{"$ref": "Event.json"}],

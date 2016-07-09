@@ -1,6 +1,7 @@
 {
 	"id": "BowlingAlley.json",
 	"title": "Bowling Alley",
+	"description": "A bowling alley.",
 	"format": "http://schema.org/BowlingAlley",
 	"media": {"type": "application/json;profile=http://schema.org/BowlingAlley"},
 	"allOf": [{"$ref": "SportsActivityLocation.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "ProductModel.json",
 	"title": "Product Model",
+	"description": "A datasheet or vendor specification of a product (in the sense of a prototypical description).",
 	"format": "http://schema.org/ProductModel",
 	"media": {"type": "application/json;profile=http://schema.org/ProductModel"},
 	"allOf": [{"$ref": "Product.json"}],

@@ -1,9 +1,10 @@
 {
 	"id": "Plumber.json",
 	"title": "Plumber",
+	"description": "A plumbing service.",
 	"format": "http://schema.org/Plumber",
 	"media": {"type": "application/json;profile=http://schema.org/Plumber"},
-	"allOf": [{"$ref": "ProfessionalService.json"}, {"$ref": "HomeAndConstructionBusiness.json"}],
+	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

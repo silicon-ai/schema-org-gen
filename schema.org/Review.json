@@ -1,6 +1,7 @@
 {
 	"id": "Review.json",
 	"title": "Review",
+	"description": "A review of an item - for example, of a restaurant, movie, or store.",
 	"format": "http://schema.org/Review",
 	"media": {"type": "application/json;profile=http://schema.org/Review"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
@@ -46,7 +47,7 @@
 		},
 		"reviewBody": {
 			"title": "Review Body",
-			"description": "The actual body of the review",
+			"description": "The actual body of the review.",
 			"type": "string"
 		}
 	}

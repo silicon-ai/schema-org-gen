@@ -1,6 +1,7 @@
 {
 	"id": "SomeProducts.json",
 	"title": "Some Products",
+	"description": "A placeholder for multiple similar products of the same kind.",
 	"format": "http://schema.org/SomeProducts",
 	"media": {"type": "application/json;profile=http://schema.org/SomeProducts"},
 	"allOf": [{"$ref": "Product.json"}],

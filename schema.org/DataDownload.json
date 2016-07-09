@@ -1,6 +1,7 @@
 {
 	"id": "DataDownload.json",
 	"title": "Data Download",
+	"description": "A dataset in downloadable form.",
 	"format": "http://schema.org/DataDownload",
 	"media": {"type": "application/json;profile=http://schema.org/DataDownload"},
 	"allOf": [{"$ref": "MediaObject.json"}],

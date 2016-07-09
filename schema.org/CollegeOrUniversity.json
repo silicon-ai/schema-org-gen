@@ -1,6 +1,7 @@
 {
 	"id": "CollegeOrUniversity.json",
 	"title": "College or University",
+	"description": "A college, university, or other third-level educational institution.",
 	"format": "http://schema.org/CollegeOrUniversity",
 	"media": {"type": "application/json;profile=http://schema.org/CollegeOrUniversity"},
 	"allOf": [{"$ref": "EducationalOrganization.json"}],

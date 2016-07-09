@@ -1,6 +1,7 @@
 {
 	"id": "WinAction.json",
 	"title": "Win Action",
+	"description": "The act of achieving victory in a competitive activity.",
 	"format": "http://schema.org/WinAction",
 	"media": {"type": "application/json;profile=http://schema.org/WinAction"},
 	"allOf": [{"$ref": "AchieveAction.json"}],

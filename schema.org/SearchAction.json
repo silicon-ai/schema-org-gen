@@ -1,6 +1,7 @@
 {
 	"id": "SearchAction.json",
 	"title": "Search Action",
+	"description": "The act of searching for an object.Related actions:FindAction: SearchAction generally leads to a FindAction, but not necessarily.",
 	"format": "http://schema.org/SearchAction",
 	"media": {"type": "application/json;profile=http://schema.org/SearchAction"},
 	"allOf": [{"$ref": "Action.json"}],
@@ -48,7 +49,7 @@
 		"query": {
 			"title": "Query",
 			"description": "A sub property of instrument. The query used on this action.",
-			"anyOf": [{"$ref": "Class.json#/definitions/possibleRef"}, {"type": "string"}]
+			"type": "string"
 		}
 	}
 }

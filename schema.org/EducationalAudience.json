@@ -1,6 +1,7 @@
 {
 	"id": "EducationalAudience.json",
 	"title": "Educational Audience",
+	"description": "An EducationalAudience.",
 	"format": "http://schema.org/EducationalAudience",
 	"media": {"type": "application/json;profile=http://schema.org/EducationalAudience"},
 	"allOf": [{"$ref": "Audience.json"}],
@@ -47,7 +48,7 @@
 		},
 		"educationalRole": {
 			"title": "Educational Role",
-			"description": "An educationalRole of an EducationalAudience",
+			"description": "An educationalRole of an EducationalAudience.",
 			"type": "string"
 		}
 	}

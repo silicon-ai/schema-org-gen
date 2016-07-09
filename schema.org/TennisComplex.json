@@ -1,6 +1,7 @@
 {
 	"id": "TennisComplex.json",
 	"title": "Tennis Complex",
+	"description": "A tennis complex.",
 	"format": "http://schema.org/TennisComplex",
 	"media": {"type": "application/json;profile=http://schema.org/TennisComplex"},
 	"allOf": [{"$ref": "SportsActivityLocation.json"}],

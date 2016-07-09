@@ -1,16 +1,43 @@
 {
 	"id": "OrderStatus.json",
 	"title": "Order Status",
+	"description": "Enumerated status values for Order.",
 	"format": "http://schema.org/OrderStatus",
 	"media": {"type": "application/json;profile=http://schema.org/OrderStatus"},
-	"enum": [
-		"OrderCancelled",
-		"OrderDelivered",
-		"OrderInTransit",
-		"OrderPaymentDue",
-		"OrderPickupAvailable",
-		"OrderProblem",
-		"OrderProcessing",
-		"OrderReturned"
-	]
+	"allOf": [{"$ref": "Enumeration.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
 }

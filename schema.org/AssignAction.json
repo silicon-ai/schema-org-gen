@@ -1,6 +1,7 @@
 {
 	"id": "AssignAction.json",
 	"title": "Assign Action",
+	"description": "The act of allocating an action/event/task to some destination (someone or something).",
 	"format": "http://schema.org/AssignAction",
 	"media": {"type": "application/json;profile=http://schema.org/AssignAction"},
 	"allOf": [{"$ref": "AllocateAction.json"}],

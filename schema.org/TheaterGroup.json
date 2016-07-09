@@ -1,6 +1,7 @@
 {
 	"id": "TheaterGroup.json",
 	"title": "Theater Group",
+	"description": "A theater group or company, for example, the Royal Shakespeare Company or Druid Theatre.",
 	"format": "http://schema.org/TheaterGroup",
 	"media": {"type": "application/json;profile=http://schema.org/TheaterGroup"},
 	"allOf": [{"$ref": "PerformingGroup.json"}],

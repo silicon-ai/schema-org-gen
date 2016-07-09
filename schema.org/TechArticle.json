@@ -1,6 +1,7 @@
 {
 	"id": "TechArticle.json",
 	"title": "Tech Article",
+	"description": "A technical article - Example: How-to (task) topics, step-by-step, procedural troubleshooting, specifications, etc.",
 	"format": "http://schema.org/TechArticle",
 	"media": {"type": "application/json;profile=http://schema.org/TechArticle"},
 	"allOf": [{"$ref": "Article.json"}],

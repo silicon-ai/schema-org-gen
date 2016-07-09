@@ -1,6 +1,7 @@
 {
 	"id": "Corporation.json",
 	"title": "Corporation",
+	"description": "Organization: A business corporation.",
 	"format": "http://schema.org/Corporation",
 	"media": {"type": "application/json;profile=http://schema.org/Corporation"},
 	"allOf": [{"$ref": "Organization.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "WearAction.json",
 	"title": "Wear Action",
+	"description": "The act of dressing oneself in clothing.",
 	"format": "http://schema.org/WearAction",
 	"media": {"type": "application/json;profile=http://schema.org/WearAction"},
 	"allOf": [{"$ref": "UseAction.json"}],

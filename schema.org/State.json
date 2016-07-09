@@ -1,6 +1,7 @@
 {
 	"id": "State.json",
 	"title": "State",
+	"description": "A state or province of a country.",
 	"format": "http://schema.org/State",
 	"media": {"type": "application/json;profile=http://schema.org/State"},
 	"allOf": [{"$ref": "AdministrativeArea.json"}],

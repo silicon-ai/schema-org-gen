@@ -1,11 +1,12 @@
 {
 	"id": "UpdateAction.json",
 	"title": "Update Action",
+	"description": "The act of managing by changing/editing the state of the object.",
 	"format": "http://schema.org/UpdateAction",
 	"media": {"type": "application/json;profile=http://schema.org/UpdateAction"},
 	"allOf": [{"$ref": "Action.json"}],
 	"type": "object",
-	"properties": {"collection": {"$ref": "Thing.json#/definitions/possibleRefArray"}},
+	"properties": {"targetCollection": {"$ref": "Thing.json#/definitions/possibleRefArray"}},
 	"definitions": {
 		"array": {
 			"type": "array",

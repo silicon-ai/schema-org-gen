@@ -1,6 +1,7 @@
 {
 	"id": "SportsActivityLocation.json",
 	"title": "Sports Activity Location",
+	"description": "A sports location, such as a playing field.",
 	"format": "http://schema.org/SportsActivityLocation",
 	"media": {"type": "application/json;profile=http://schema.org/SportsActivityLocation"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

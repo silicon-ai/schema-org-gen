@@ -1,11 +1,12 @@
 {
 	"id": "WriteAction.json",
 	"title": "Write Action",
+	"description": "The act of authoring written creative content.",
 	"format": "http://schema.org/WriteAction",
 	"media": {"type": "application/json;profile=http://schema.org/WriteAction"},
 	"allOf": [{"$ref": "CreateAction.json"}],
 	"type": "object",
-	"properties": {"language": {"$ref": "Language.json#/definitions/possibleRefArray"}},
+	"properties": {"inLanguage": {"$ref": "#/definitions/inLanguage"}},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -39,6 +40,11 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"inLanguage": {
+			"title": "In Language",
+			"description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
+			"anyOf": [{"type": "string"}, {"$ref": "Language.json#/definitions/possibleRef"}]
 		}
 	}
 }

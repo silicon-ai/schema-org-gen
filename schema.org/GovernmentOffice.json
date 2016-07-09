@@ -1,6 +1,7 @@
 {
 	"id": "GovernmentOffice.json",
 	"title": "Government Office",
+	"description": "A government office—for example, an IRS or DMV office.",
 	"format": "http://schema.org/GovernmentOffice",
 	"media": {"type": "application/json;profile=http://schema.org/GovernmentOffice"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

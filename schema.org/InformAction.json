@@ -1,6 +1,7 @@
 {
 	"id": "InformAction.json",
 	"title": "Inform Action",
+	"description": "The act of notifying someone of information pertinent to them, with no expectation of a response.",
 	"format": "http://schema.org/InformAction",
 	"media": {"type": "application/json;profile=http://schema.org/InformAction"},
 	"allOf": [{"$ref": "CommunicateAction.json"}],

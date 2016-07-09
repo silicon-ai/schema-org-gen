@@ -1,6 +1,7 @@
 {
 	"id": "Thing.json",
 	"title": "Thing",
+	"description": "The most generic type of item.",
 	"format": "http://schema.org/Thing",
 	"media": {"type": "application/json;profile=http://schema.org/Thing"},
 	"type": "object",
@@ -25,19 +26,33 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/description"}
 		},
+		"disambiguatingDescription": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/disambiguatingDescription"}
+		},
 		"image": {
 			"type": "array",
-			"items": {
-				"type": "string",
-				"format": "uri",
-				"links": [{
-					"rel": "http://schema.org/image",
-					"href": "{+$}",
-					"linkSource": 2
-				}]
-			}
+			"items": {"$ref": "#/definitions/image"}
+		},
+		"mainEntityOfPage": {
+			"oneOf": [
+				{"$ref": "#/definitions/mainEntityOfPage"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/mainEntityOfPage"}
+				}
+			]
 		},
 		"name": {"$ref": "#/definitions/name"},
+		"potentialAction": {
+			"oneOf": [
+				{"$ref": "Action.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "Action.json#/definitions/possibleRef"}
+				}
+			]
+		},
 		"sameAs": {
 			"type": "array",
 			"items": {
@@ -100,8 +115,35 @@
 		},
 		"description": {
 			"title": "Description",
-			"description": "A short description of the item.",
+			"description": "A description of the item.",
 			"type": "string"
+		},
+		"disambiguatingDescription": {
+			"title": "Disambiguating Description",
+			"description": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+			"type": "string"
+		},
+		"image": {
+			"title": "Image",
+			"description": "An image of the item. This can be a URL or a fully described ImageObject.",
+			"anyOf": [
+				{"$ref": "ImageObject.json#/definitions/possibleRef"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		},
+		"mainEntityOfPage": {
+			"title": "Main Entity of Page",
+			"description": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See background notes for details. Inverse property: mainEntity.",
+			"anyOf": [
+				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
 		},
 		"name": {
 			"title": "Name",

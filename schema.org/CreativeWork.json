@@ -1,6 +1,7 @@
 {
 	"id": "CreativeWork.json",
 	"title": "Creative Work",
+	"description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
 	"format": "http://schema.org/CreativeWork",
 	"media": {"type": "application/json;profile=http://schema.org/CreativeWork"},
 	"allOf": [{"$ref": "Thing.json"}],
@@ -37,11 +38,21 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/award"}
 		},
+		"character": {
+			"oneOf": [
+				{"$ref": "Person.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "Person.json#/definitions/possibleRef"}
+				}
+			]
+		},
 		"citation": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/citation"}
 		},
-		"comment": {"$ref": "UserComments.json#/definitions/possibleRefArray"},
+		"comment": {"$ref": "Comment.json#/definitions/possibleRefArray"},
+		"commentCount": {"$ref": "#/definitions/commentCount"},
 		"contentLocation": {"$ref": "Place.json#/definitions/possibleRef"},
 		"contentRating": {
 			"type": "array",
@@ -73,38 +84,67 @@
 		"educationalAlignment": {"$ref": "AlignmentObject.json#/definitions/possibleRefArray"},
 		"educationalUse": {"$ref": "#/definitions/educationalUse"},
 		"encoding": {"$ref": "MediaObject.json#/definitions/possibleRefArray"},
+		"exampleOfWork": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
+		"fileFormat": {"$ref": "#/definitions/fileFormat"},
 		"genre": {"$ref": "#/definitions/genre"},
+		"hasPart": {
+			"oneOf": [
+				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
+				}
+			]
+		},
 		"headline": {"$ref": "#/definitions/headline"},
 		"inLanguage": {"$ref": "#/definitions/inLanguage"},
-		"interactionCount": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/interactionCount"}
-		},
+		"interactionStatistic": {"$ref": "InteractionCounter.json#/definitions/possibleRef"},
 		"interactivityType": {"$ref": "#/definitions/interactivityType"},
-		"isBasedOnUrl": {
+		"isBasedOn": {
 			"type": "array",
-			"items": {
-				"type": "string",
-				"format": "uri",
-				"links": [{
-					"rel": "http://schema.org/isBasedOnUrl",
-					"href": "{+$}",
-					"linkSource": 2
-				}]
-			}
+			"items": {"$ref": "#/definitions/isBasedOn"}
 		},
 		"isFamilyFriendly": {"$ref": "#/definitions/isFamilyFriendly"},
+		"isPartOf": {"$ref": "CreativeWork.json#/definitions/possibleRef"},
 		"keywords": {"$ref": "#/definitions/keywords"},
 		"learningResourceType": {"$ref": "#/definitions/learningResourceType"},
+		"license": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/license"}
+		},
+		"locationCreated": {"$ref": "Place.json#/definitions/possibleRef"},
+		"mainEntity": {
+			"oneOf": [
+				{"$ref": "Thing.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "Thing.json#/definitions/possibleRef"}
+				}
+			]
+		},
 		"mentions": {"$ref": "Thing.json#/definitions/possibleRefArray"},
 		"offers": {"$ref": "Offer.json#/definitions/possibleRefArray"},
+		"position": {"$ref": "#/definitions/position"},
+		"producer": {"$ref": "#/definitions/producer"},
 		"provider": {"$ref": "#/definitions/provider"},
+		"publication": {"$ref": "PublicationEvent.json#/definitions/possibleRefArray"},
 		"publisher": {"$ref": "Organization.json#/definitions/possibleRef"},
 		"publishingPrinciples": {
 			"type": "string",
 			"format": "uri"
 		},
+		"recordedAt": {"$ref": "Event.json#/definitions/possibleRef"},
+		"releasedEvent": {"$ref": "PublicationEvent.json#/definitions/possibleRef"},
 		"review": {"$ref": "Review.json#/definitions/possibleRefArray"},
+		"schemaVersion": {
+			"oneOf": [
+				{"$ref": "#/definitions/schemaVersion"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/schemaVersion"}
+				}
+			]
+		},
 		"sourceOrganization": {"$ref": "Organization.json#/definitions/possibleRef"},
 		"text": {"$ref": "#/definitions/text"},
 		"thumbnailUrl": {
@@ -120,9 +160,27 @@
 			}
 		},
 		"timeRequired": {"$ref": "Duration.json#/definitions/possibleRef"},
+		"translator": {
+			"oneOf": [
+				{"$ref": "#/definitions/translator"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/translator"}
+				}
+			]
+		},
 		"typicalAgeRange": {"$ref": "#/definitions/typicalAgeRange"},
 		"version": {"$ref": "#/definitions/version"},
-		"video": {"$ref": "VideoObject.json#/definitions/possibleRefArray"}
+		"video": {"$ref": "VideoObject.json#/definitions/possibleRefArray"},
+		"workExample": {
+			"oneOf": [
+				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
+				}
+			]
+		}
 	},
 	"links": [{
 		"rel": "http://schema.org/publishingPrinciples",
@@ -131,7 +189,7 @@
 	"definitions": {
 		"accessibilityAPI": {
 			"title": "Accessibility API",
-			"description": "Indicates that the resource is compatible with the referenced accessibility API (WebSchemas wiki lists possible values).\n     ",
+			"description": "Indicates that the resource is compatible with the referenced accessibility API (WebSchemas wiki lists possible values).",
 			"type": "string"
 		},
 		"accessibilityControl": {
@@ -146,7 +204,7 @@
 		},
 		"accessibilityHazard": {
 			"title": "Accessibility Hazard",
-			"description": "A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. (WebSchemas wiki lists possible values)",
+			"description": "A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3 (WebSchemas wiki lists possible values).",
 			"type": "string"
 		},
 		"alternativeHeadline": {
@@ -165,13 +223,18 @@
 		},
 		"award": {
 			"title": "Award",
-			"description": "An award won by this person or for this creative work.",
+			"description": "An award won by or for this item. Supersedes awards.",
 			"type": "string"
 		},
 		"citation": {
 			"title": "Citation",
 			"description": "A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.",
 			"anyOf": [{"$ref": "CreativeWork.json#/definitions/possibleRef"}, {"type": "string"}]
+		},
+		"commentCount": {
+			"title": "Comment Count",
+			"description": "The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.",
+			"type": "integer"
 		},
 		"contentRating": {
 			"title": "Content Rating",
@@ -180,7 +243,7 @@
 		},
 		"contributor": {
 			"title": "Contributor",
-			"description": "A secondary contributor to the CreativeWork.",
+			"description": "A secondary contributor to the CreativeWork or Event.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"copyrightHolder": {
@@ -195,20 +258,36 @@
 		},
 		"creator": {
 			"title": "Creator",
-			"description": "The creator/author of this CreativeWork or UserComments. This is the same as the Author property for CreativeWork.",
+			"description": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"dateCreated": {
 			"title": "Date Created",
-			"description": "The date on which the CreativeWork was created.",
-			"type": "string",
-			"format": "date"
+			"description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "date"
+				},
+				{
+					"type": "string",
+					"format": "date-time"
+				}
+			]
 		},
 		"dateModified": {
 			"title": "Date Modified",
-			"description": "The date on which the CreativeWork was most recently modified.",
-			"type": "string",
-			"format": "date"
+			"description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "date"
+				},
+				{
+					"type": "string",
+					"format": "date-time"
+				}
+			]
 		},
 		"datePublished": {
 			"title": "Date Published",
@@ -221,30 +300,42 @@
 			"description": "The purpose of a work in the context of education; for example, 'assignment', 'group work'.",
 			"type": "string"
 		},
+		"fileFormat": {
+			"title": "File Format",
+			"description": "Media type (aka MIME format, see IANA site) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information.",
+			"type": "string"
+		},
 		"genre": {
 			"title": "Genre",
-			"description": "Genre of the creative work",
+			"description": "Genre of the creative work or group.",
 			"type": "string"
 		},
 		"headline": {
 			"title": "Headline",
-			"description": "Headline of the article",
+			"description": "Headline of the article.",
 			"type": "string"
 		},
 		"inLanguage": {
 			"title": "In Language",
-			"description": "The language of the content. please use one of the language codes from the IETF BCP 47 standard.",
-			"type": "string"
-		},
-		"interactionCount": {
-			"title": "Interaction Count",
-			"description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
-			"type": "string"
+			"description": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. See also availableLanguage. Supersedes language.",
+			"anyOf": [{"type": "string"}, {"$ref": "Language.json#/definitions/possibleRef"}]
 		},
 		"interactivityType": {
 			"title": "Interactivity Type",
 			"description": "The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.",
 			"type": "string"
+		},
+		"isBasedOn": {
+			"title": "Is Based On",
+			"description": "A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html. Supersedes isBasedOnUrl.",
+			"anyOf": [
+				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
+				{"$ref": "Product.json#/definitions/possibleRef"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
 		},
 		"isFamilyFriendly": {
 			"title": "Is Family Friendly",
@@ -253,13 +344,29 @@
 		},
 		"keywords": {
 			"title": "Keywords",
-			"description": "The keywords/tags used to describe this content.",
+			"description": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
 			"type": "string"
 		},
 		"learningResourceType": {
 			"title": "Learning Resource Type",
 			"description": "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
 			"type": "string"
+		},
+		"license": {
+			"title": "License",
+			"description": "A license document that applies to this content, typically indicated by URL.",
+			"anyOf": [
+				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		},
+		"position": {
+			"title": "Position",
+			"description": "The position of an item in a series or sequence of items.",
+			"anyOf": [{"type": "integer"}, {"type": "string"}]
 		},
 		"possibleRef": {
 			"oneOf": [
@@ -290,15 +397,36 @@
 				}
 			]
 		},
+		"producer": {
+			"title": "Producer",
+			"description": "The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
 		"provider": {
 			"title": "Provider",
-			"description": "The organization or agency that is providing the service.",
+			"description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. Supersedes carrier.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"schemaVersion": {
+			"title": "Schema Version",
+			"description": "Indicates (by URL or string) a particular version of a schema used in some CreativeWork. For example, a document could declare a schemaVersion using an URL such as http://schema.org/version/2.0/ if precise indication of schema version was required by some application.",
+			"anyOf": [
+				{"type": "string"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
 		},
 		"text": {
 			"title": "Text",
 			"description": "The textual content of this CreativeWork.",
 			"type": "string"
+		},
+		"translator": {
+			"title": "Translator",
+			"description": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"typicalAgeRange": {
 			"title": "Typical Age Range",

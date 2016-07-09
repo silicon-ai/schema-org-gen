@@ -1,6 +1,7 @@
 {
 	"id": "MovingCompany.json",
 	"title": "Moving Company",
+	"description": "A moving company.",
 	"format": "http://schema.org/MovingCompany",
 	"media": {"type": "application/json;profile=http://schema.org/MovingCompany"},
 	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],

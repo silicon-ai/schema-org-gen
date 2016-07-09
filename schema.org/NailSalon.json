@@ -1,6 +1,7 @@
 {
 	"id": "NailSalon.json",
 	"title": "Nail Salon",
+	"description": "A nail salon.",
 	"format": "http://schema.org/NailSalon",
 	"media": {"type": "application/json;profile=http://schema.org/NailSalon"},
 	"allOf": [{"$ref": "HealthAndBeautyBusiness.json"}],

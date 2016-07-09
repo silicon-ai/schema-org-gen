@@ -1,6 +1,7 @@
 {
 	"id": "SportsClub.json",
 	"title": "Sports Club",
+	"description": "A sports club.",
 	"format": "http://schema.org/SportsClub",
 	"media": {"type": "application/json;profile=http://schema.org/SportsClub"},
 	"allOf": [{"$ref": "SportsActivityLocation.json"}],

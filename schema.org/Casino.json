@@ -1,6 +1,7 @@
 {
 	"id": "Casino.json",
 	"title": "Casino",
+	"description": "A casino.",
 	"format": "http://schema.org/Casino",
 	"media": {"type": "application/json;profile=http://schema.org/Casino"},
 	"allOf": [{"$ref": "EntertainmentBusiness.json"}],

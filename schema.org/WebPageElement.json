@@ -1,6 +1,7 @@
 {
 	"id": "WebPageElement.json",
 	"title": "Web Page Element",
+	"description": "A web page element, like a table or an image.",
 	"format": "http://schema.org/WebPageElement",
 	"media": {"type": "application/json;profile=http://schema.org/WebPageElement"},
 	"allOf": [{"$ref": "CreativeWork.json"}],

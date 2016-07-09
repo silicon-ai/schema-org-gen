@@ -1,9 +1,10 @@
 {
 	"id": "RoofingContractor.json",
 	"title": "Roofing Contractor",
+	"description": "A roofing contractor.",
 	"format": "http://schema.org/RoofingContractor",
 	"media": {"type": "application/json;profile=http://schema.org/RoofingContractor"},
-	"allOf": [{"$ref": "ProfessionalService.json"}, {"$ref": "HomeAndConstructionBusiness.json"}],
+	"allOf": [{"$ref": "HomeAndConstructionBusiness.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

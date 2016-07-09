@@ -1,6 +1,7 @@
 {
 	"id": "PaymentChargeSpecification.json",
 	"title": "Payment Charge Specification",
+	"description": "The costs of settling the payment using a particular payment method.",
 	"format": "http://schema.org/PaymentChargeSpecification",
 	"media": {"type": "application/json;profile=http://schema.org/PaymentChargeSpecification"},
 	"allOf": [{"$ref": "PriceSpecification.json"}],

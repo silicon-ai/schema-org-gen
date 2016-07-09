@@ -1,6 +1,7 @@
 {
 	"id": "EndorseAction.json",
 	"title": "Endorse Action",
+	"description": "An agent approves/certifies/likes/supports/sanction an object.",
 	"format": "http://schema.org/EndorseAction",
 	"media": {"type": "application/json;profile=http://schema.org/EndorseAction"},
 	"allOf": [{"$ref": "ReactAction.json"}],

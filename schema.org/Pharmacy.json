@@ -1,9 +1,10 @@
 {
 	"id": "Pharmacy.json",
 	"title": "Pharmacy",
+	"description": "A pharmacy or drugstore.",
 	"format": "http://schema.org/Pharmacy",
 	"media": {"type": "application/json;profile=http://schema.org/Pharmacy"},
-	"allOf": [{"$ref": "MedicalOrganization.json"}],
+	"allOf": [{"$ref": "MedicalBusiness.json"}, {"$ref": "MedicalOrganization.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

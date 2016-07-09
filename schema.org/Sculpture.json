@@ -1,6 +1,7 @@
 {
 	"id": "Sculpture.json",
 	"title": "Sculpture",
+	"description": "A piece of sculpture.",
 	"format": "http://schema.org/Sculpture",
 	"media": {"type": "application/json;profile=http://schema.org/Sculpture"},
 	"allOf": [{"$ref": "CreativeWork.json"}],

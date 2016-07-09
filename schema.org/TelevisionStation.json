@@ -1,9 +1,12 @@
 {
 	"id": "TelevisionStation.json",
 	"title": "Television Station",
+	"description": "A television station.",
 	"format": "http://schema.org/TelevisionStation",
 	"media": {"type": "application/json;profile=http://schema.org/TelevisionStation"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],
+	"type": "object",
+	"properties": {"videoFormat": {"$ref": "#/definitions/videoFormat"}},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -37,6 +40,11 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"videoFormat": {
+			"title": "Video Format",
+			"description": "The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).",
+			"type": "string"
 		}
 	}
 }

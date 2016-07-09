@@ -1,6 +1,7 @@
 {
 	"id": "Distance.json",
 	"title": "Distance",
+	"description": "Properties that take Distances as values are of the form '<Number> <Length unit of measure>'. E.g., '7 ft'.",
 	"format": "http://schema.org/Distance",
 	"media": {"type": "application/json;profile=http://schema.org/Distance"},
 	"allOf": [{"$ref": "Quantity.json"}],

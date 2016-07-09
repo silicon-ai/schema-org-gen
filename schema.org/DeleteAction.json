@@ -1,6 +1,7 @@
 {
 	"id": "DeleteAction.json",
 	"title": "Delete Action",
+	"description": "The act of editing a recipient by removing one of its objects.",
 	"format": "http://schema.org/DeleteAction",
 	"media": {"type": "application/json;profile=http://schema.org/DeleteAction"},
 	"allOf": [{"$ref": "UpdateAction.json"}],

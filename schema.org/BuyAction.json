@@ -1,17 +1,12 @@
 {
 	"id": "BuyAction.json",
 	"title": "Buy Action",
+	"description": "The act of giving money to a seller in exchange for goods or services rendered. An agent buys an object, product, or service from a seller for a price. Reciprocal of SellAction.",
 	"format": "http://schema.org/BuyAction",
 	"media": {"type": "application/json;profile=http://schema.org/BuyAction"},
 	"allOf": [{"$ref": "TradeAction.json"}],
 	"type": "object",
-	"properties": {
-		"vendor": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/vendor"}
-		},
-		"warrantyPromise": {"$ref": "WarrantyPromise.json#/definitions/possibleRef"}
-	},
+	"properties": {"seller": {"$ref": "#/definitions/seller"}},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -46,9 +41,9 @@
 				}
 			]
 		},
-		"vendor": {
-			"title": "Vendor",
-			"description": "A sub property of participant. The seller.The participant/person/organization that sold the object.",
+		"seller": {
+			"title": "Seller",
+			"description": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider. Supersedes merchant, vendor.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		}
 	}

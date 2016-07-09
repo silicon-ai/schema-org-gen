@@ -1,6 +1,7 @@
 {
 	"id": "ViewAction.json",
 	"title": "View Action",
+	"description": "The act of consuming static visual content.",
 	"format": "http://schema.org/ViewAction",
 	"media": {"type": "application/json;profile=http://schema.org/ViewAction"},
 	"allOf": [{"$ref": "ConsumeAction.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "ApplyAction.json",
 	"title": "Apply Action",
+	"description": "The act of registering to an organization/service without the guarantee to receive it. Related actions:RegisterAction: Unlike RegisterAction, ApplyAction has no guarantees that the application will be accepted.",
 	"format": "http://schema.org/ApplyAction",
 	"media": {"type": "application/json;profile=http://schema.org/ApplyAction"},
 	"allOf": [{"$ref": "OrganizeAction.json"}],

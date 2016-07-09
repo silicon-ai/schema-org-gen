@@ -1,6 +1,7 @@
 {
 	"id": "DataCatalog.json",
 	"title": "Data Catalog",
+	"description": "A collection of datasets.",
 	"format": "http://schema.org/DataCatalog",
 	"media": {"type": "application/json;profile=http://schema.org/DataCatalog"},
 	"allOf": [{"$ref": "CreativeWork.json"}],

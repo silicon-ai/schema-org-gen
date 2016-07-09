@@ -1,6 +1,7 @@
 {
 	"id": "PrependAction.json",
 	"title": "Prepend Action",
+	"description": "The act of inserting at the beginning if an ordered collection.",
 	"format": "http://schema.org/PrependAction",
 	"media": {"type": "application/json;profile=http://schema.org/PrependAction"},
 	"allOf": [{"$ref": "InsertAction.json"}],

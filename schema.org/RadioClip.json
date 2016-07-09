@@ -1,6 +1,7 @@
 {
 	"id": "RadioClip.json",
 	"title": "Radio Clip",
+	"description": "A short radio program or a segment/part of a radio program.",
 	"format": "http://schema.org/RadioClip",
 	"media": {"type": "application/json;profile=http://schema.org/RadioClip"},
 	"allOf": [{"$ref": "Clip.json"}],

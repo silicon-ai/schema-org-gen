@@ -1,6 +1,7 @@
 {
 	"id": "ContactPage.json",
 	"title": "Contact Page",
+	"description": "Web page type: Contact page.",
 	"format": "http://schema.org/ContactPage",
 	"media": {"type": "application/json;profile=http://schema.org/ContactPage"},
 	"allOf": [{"$ref": "WebPage.json"}],

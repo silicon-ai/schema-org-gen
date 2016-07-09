@@ -1,6 +1,7 @@
 {
 	"id": "TheaterEvent.json",
 	"title": "Theater Event",
+	"description": "Event type: Theater performance.",
 	"format": "http://schema.org/TheaterEvent",
 	"media": {"type": "application/json;profile=http://schema.org/TheaterEvent"},
 	"allOf": [{"$ref": "Event.json"}],

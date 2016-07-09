@@ -1,6 +1,7 @@
 {
 	"id": "ParentAudience.json",
 	"title": "Parent Audience",
+	"description": "A set of characteristics describing parents, who can be interested in viewing some content.",
 	"format": "http://schema.org/ParentAudience",
 	"media": {"type": "application/json;profile=http://schema.org/ParentAudience"},
 	"allOf": [{"$ref": "PeopleAudience.json"}],
@@ -45,12 +46,12 @@
 		},
 		"childMaxAge": {
 			"title": "Child Max Age",
-			"description": "Maximal age of the child",
+			"description": "Maximal age of the child.",
 			"type": "number"
 		},
 		"childMinAge": {
 			"title": "Child Min Age",
-			"description": "Minimal age of the child",
+			"description": "Minimal age of the child.",
 			"type": "number"
 		}
 	}

@@ -1,6 +1,7 @@
 {
 	"id": "Canal.json",
 	"title": "Canal",
+	"description": "A canal, like the Panama Canal.",
 	"format": "http://schema.org/Canal",
 	"media": {"type": "application/json;profile=http://schema.org/Canal"},
 	"allOf": [{"$ref": "BodyOfWater.json"}],

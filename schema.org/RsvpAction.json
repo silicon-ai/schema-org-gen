@@ -1,9 +1,24 @@
 {
 	"id": "RsvpAction.json",
 	"title": "Rsvp Action",
+	"description": "The act of notifying an event organizer as to whether you expect to attend the event.",
 	"format": "http://schema.org/RsvpAction",
 	"media": {"type": "application/json;profile=http://schema.org/RsvpAction"},
 	"allOf": [{"$ref": "InformAction.json"}],
+	"type": "object",
+	"properties": {
+		"additionalNumberOfGuests": {
+			"oneOf": [
+				{"$ref": "#/definitions/additionalNumberOfGuests"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/additionalNumberOfGuests"}
+				}
+			]
+		},
+		"comment": {"$ref": "Comment.json#/definitions/possibleRefArray"},
+		"rsvpResponse": {"$ref": "RsvpResponseType.json#/definitions/possibleRef"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -37,6 +52,11 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"additionalNumberOfGuests": {
+			"title": "Additional Number of Guests",
+			"description": "If responding yes, the number of guests who will attend in addition to the invitee.",
+			"type": "number"
 		}
 	}
 }

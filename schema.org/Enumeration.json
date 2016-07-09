@@ -1,6 +1,7 @@
 {
 	"id": "Enumeration.json",
 	"title": "Enumeration",
+	"description": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
 	"format": "http://schema.org/Enumeration",
 	"media": {"type": "application/json;profile=http://schema.org/Enumeration"},
 	"allOf": [{"$ref": "Intangible.json"}],

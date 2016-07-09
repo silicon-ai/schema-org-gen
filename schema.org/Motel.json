@@ -1,6 +1,7 @@
 {
 	"id": "Motel.json",
 	"title": "Motel",
+	"description": "A motel.",
 	"format": "http://schema.org/Motel",
 	"media": {"type": "application/json;profile=http://schema.org/Motel"},
 	"allOf": [{"$ref": "LodgingBusiness.json"}],

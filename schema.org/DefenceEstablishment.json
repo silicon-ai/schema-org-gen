@@ -1,6 +1,7 @@
 {
 	"id": "DefenceEstablishment.json",
 	"title": "Defence Establishment",
+	"description": "A defence establishment, such as an army or navy base.",
 	"format": "http://schema.org/DefenceEstablishment",
 	"media": {"type": "application/json;profile=http://schema.org/DefenceEstablishment"},
 	"allOf": [{"$ref": "GovernmentBuilding.json"}],

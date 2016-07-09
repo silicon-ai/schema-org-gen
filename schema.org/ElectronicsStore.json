@@ -1,6 +1,7 @@
 {
 	"id": "ElectronicsStore.json",
 	"title": "Electronics Store",
+	"description": "An electronics store.",
 	"format": "http://schema.org/ElectronicsStore",
 	"media": {"type": "application/json;profile=http://schema.org/ElectronicsStore"},
 	"allOf": [{"$ref": "Store.json"}],

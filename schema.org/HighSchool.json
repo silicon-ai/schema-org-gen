@@ -1,6 +1,7 @@
 {
 	"id": "HighSchool.json",
 	"title": "High School",
+	"description": "A high school.",
 	"format": "http://schema.org/HighSchool",
 	"media": {"type": "application/json;profile=http://schema.org/HighSchool"},
 	"allOf": [{"$ref": "EducationalOrganization.json"}],

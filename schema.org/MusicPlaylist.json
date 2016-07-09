@@ -1,13 +1,17 @@
 {
 	"id": "MusicPlaylist.json",
 	"title": "Music Playlist",
+	"description": "A collection of music tracks in playlist form.",
 	"format": "http://schema.org/MusicPlaylist",
 	"media": {"type": "application/json;profile=http://schema.org/MusicPlaylist"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {
 		"numTracks": {"$ref": "#/definitions/numTracks"},
-		"track": {"$ref": "MusicRecording.json#/definitions/possibleRefArray"}
+		"track": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/track"}
+		}
 	},
 	"definitions": {
 		"array": {
@@ -47,6 +51,11 @@
 			"title": "Num Tracks",
 			"description": "The number of tracks in this album or playlist.",
 			"type": "integer"
+		},
+		"track": {
+			"title": "Track",
+			"description": "A music recording (track)—usually a single song. If an ItemList is given, the list should contain items of type MusicRecording. Supersedes tracks.",
+			"anyOf": [{"$ref": "MusicRecording.json#/definitions/possibleRef"}, {"$ref": "ItemList.json#/definitions/possibleRef"}]
 		}
 	}
 }

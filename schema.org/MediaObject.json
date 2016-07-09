@@ -1,6 +1,7 @@
 {
 	"id": "MediaObject.json",
 	"title": "Media Object",
+	"description": "An image, video, or audio object embedded in a web page. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).",
 	"format": "http://schema.org/MediaObject",
 	"media": {"type": "application/json;profile=http://schema.org/MediaObject"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
@@ -27,7 +28,6 @@
 			"items": {"$ref": "#/definitions/playerType"}
 		},
 		"productionCompany": {"$ref": "Organization.json#/definitions/possibleRef"},
-		"publication": {"$ref": "PublicationEvent.json#/definitions/possibleRefArray"},
 		"regionsAllowed": {"$ref": "Place.json#/definitions/possibleRef"},
 		"requiresSubscription": {"$ref": "#/definitions/requiresSubscription"},
 		"uploadDate": {"$ref": "#/definitions/uploadDate"},

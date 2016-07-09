@@ -1,6 +1,7 @@
 {
 	"id": "Person.json",
 	"title": "Person",
+	"description": "A person (alive, dead, undead, or fictional).",
 	"format": "http://schema.org/Person",
 	"media": {"type": "application/json;profile=http://schema.org/Person"},
 	"allOf": [{"$ref": "Thing.json"}],
@@ -10,19 +11,27 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/additionalName"}
 		},
-		"address": {"$ref": "PostalAddress.json#/definitions/possibleRef"},
+		"address": {"$ref": "#/definitions/address"},
 		"affiliation": {"$ref": "Organization.json#/definitions/possibleRefArray"},
-		"alumniOf": {"$ref": "EducationalOrganization.json#/definitions/possibleRefArray"},
+		"alumniOf": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/alumniOf"}
+		},
 		"award": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/award"}
 		},
 		"birthDate": {"$ref": "#/definitions/birthDate"},
+		"birthPlace": {"$ref": "Place.json#/definitions/possibleRef"},
 		"brand": {"$ref": "#/definitions/brand"},
 		"children": {"$ref": "Person.json#/definitions/possibleRefArray"},
-		"colleague": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"colleague": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/colleague"}
+		},
 		"contactPoint": {"$ref": "ContactPoint.json#/definitions/possibleRefArray"},
 		"deathDate": {"$ref": "#/definitions/deathDate"},
+		"deathPlace": {"$ref": "Place.json#/definitions/possibleRef"},
 		"duns": {"$ref": "#/definitions/duns"},
 		"email": {
 			"type": "array",
@@ -37,7 +46,17 @@
 			"items": {"$ref": "#/definitions/givenName"}
 		},
 		"globalLocationNumber": {"$ref": "#/definitions/globalLocationNumber"},
+		"hasOfferCatalog": {
+			"oneOf": [
+				{"$ref": "OfferCatalog.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "OfferCatalog.json#/definitions/possibleRef"}
+				}
+			]
+		},
 		"hasPOS": {"$ref": "Place.json#/definitions/possibleRefArray"},
+		"height": {"$ref": "#/definitions/height"},
 		"homeLocation": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/homeLocation"}
@@ -50,17 +69,17 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/honorificSuffix"}
 		},
-		"interactionCount": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/interactionCount"}
-		},
 		"isicV4": {"$ref": "#/definitions/isicV4"},
 		"jobTitle": {"$ref": "#/definitions/jobTitle"},
 		"knows": {"$ref": "Person.json#/definitions/possibleRef"},
 		"makesOffer": {"$ref": "Offer.json#/definitions/possibleRefArray"},
-		"memberOf": {"$ref": "Organization.json#/definitions/possibleRefArray"},
+		"memberOf": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/memberOf"}
+		},
 		"naics": {"$ref": "#/definitions/naics"},
 		"nationality": {"$ref": "Country.json#/definitions/possibleRefArray"},
+		"netWorth": {"$ref": "#/definitions/netWorth"},
 		"owns": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/owns"}
@@ -70,10 +89,15 @@
 		"relatedTo": {"$ref": "Person.json#/definitions/possibleRef"},
 		"seeks": {"$ref": "Demand.json#/definitions/possibleRefArray"},
 		"sibling": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"sponsor": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/sponsor"}
+		},
 		"spouse": {"$ref": "Person.json#/definitions/possibleRef"},
 		"taxID": {"$ref": "#/definitions/taxID"},
 		"telephone": {"$ref": "#/definitions/telephone"},
 		"vatID": {"$ref": "#/definitions/vatID"},
+		"weight": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
 		"workLocation": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/workLocation"}
@@ -86,13 +110,23 @@
 			"description": "An additional name for a Person, can be used for a middle name.",
 			"type": "string"
 		},
+		"address": {
+			"title": "Address",
+			"description": "Physical address of the item.",
+			"anyOf": [{"type": "string"}, {"$ref": "PostalAddress.json#/definitions/possibleRef"}]
+		},
+		"alumniOf": {
+			"title": "Alumni of",
+			"description": "An organization that the person is an alumni of. Inverse property: alumni.",
+			"anyOf": [{"$ref": "EducationalOrganization.json#/definitions/possibleRef"}, {"$ref": "Organization.json#/definitions/possibleRef"}]
+		},
 		"array": {
 			"type": "array",
 			"items": {"$ref": "#"}
 		},
 		"award": {
 			"title": "Award",
-			"description": "An award won by this person or for this creative work.",
+			"description": "An award won by or for this item. Supersedes awards.",
 			"type": "string"
 		},
 		"birthDate": {
@@ -105,6 +139,17 @@
 			"title": "Brand",
 			"description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Brand.json#/definitions/possibleRef"}]
+		},
+		"colleague": {
+			"title": "Colleague",
+			"description": "A colleague of the person. Supersedes colleagues.",
+			"anyOf": [
+				{"$ref": "Person.json#/definitions/possibleRef"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
 		},
 		"deathDate": {
 			"title": "Death Date",
@@ -124,7 +169,7 @@
 		},
 		"familyName": {
 			"title": "Family Name",
-			"description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the Name property.",
+			"description": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
 			"type": "string"
 		},
 		"faxNumber": {
@@ -134,18 +179,23 @@
 		},
 		"gender": {
 			"title": "Gender",
-			"description": "Gender of the person.",
-			"type": "string"
+			"description": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender.",
+			"anyOf": [{"$ref": "GenderType.json#/definitions/possibleRef"}, {"type": "string"}]
 		},
 		"givenName": {
 			"title": "Given Name",
-			"description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the Name property.",
+			"description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
 			"type": "string"
 		},
 		"globalLocationNumber": {
 			"title": "Global Location Number",
 			"description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
 			"type": "string"
+		},
+		"height": {
+			"title": "Height",
+			"description": "The height of the item.",
+			"anyOf": [{"$ref": "Distance.json#/definitions/possibleRef"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
 		},
 		"homeLocation": {
 			"title": "Home Location",
@@ -162,11 +212,6 @@
 			"description": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
 			"type": "string"
 		},
-		"interactionCount": {
-			"title": "Interaction Count",
-			"description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
-			"type": "string"
-		},
 		"isicV4": {
 			"title": "Isic V4",
 			"description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
@@ -177,10 +222,20 @@
 			"description": "The job title of the person (for example, Financial Manager).",
 			"type": "string"
 		},
+		"memberOf": {
+			"title": "Member of",
+			"description": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "ProgramMembership.json#/definitions/possibleRef"}]
+		},
 		"naics": {
 			"title": "Naics",
 			"description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
 			"type": "string"
+		},
+		"netWorth": {
+			"title": "Net Worth",
+			"description": "The total financial value of the organization or person as calculated by subtracting assets from liabilities.",
+			"anyOf": [{"$ref": "MonetaryAmount.json#/definitions/possibleRef"}, {"$ref": "PriceSpecification.json#/definitions/possibleRef"}]
 		},
 		"owns": {
 			"title": "Owns",
@@ -216,6 +271,11 @@
 				}
 			]
 		},
+		"sponsor": {
+			"title": "Sponsor",
+			"description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
 		"taxID": {
 			"title": "Tax ID",
 			"description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
@@ -228,7 +288,7 @@
 		},
 		"vatID": {
 			"title": "Vat ID",
-			"description": "The Value-added Tax ID of the organisation or person.",
+			"description": "The Value-added Tax ID of the organization or person.",
 			"type": "string"
 		},
 		"workLocation": {

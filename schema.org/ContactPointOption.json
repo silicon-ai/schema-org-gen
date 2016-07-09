@@ -1,7 +1,43 @@
 {
 	"id": "ContactPointOption.json",
 	"title": "Contact Point Option",
+	"description": "Enumerated options related to a ContactPoint.",
 	"format": "http://schema.org/ContactPointOption",
 	"media": {"type": "application/json;profile=http://schema.org/ContactPointOption"},
-	"enum": ["HearingImpairedSupported", "TollFree"]
+	"allOf": [{"$ref": "Enumeration.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
 }

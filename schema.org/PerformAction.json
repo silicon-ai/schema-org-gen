@@ -1,6 +1,7 @@
 {
 	"id": "PerformAction.json",
 	"title": "Perform Action",
+	"description": "The act of participating in performance arts.",
 	"format": "http://schema.org/PerformAction",
 	"media": {"type": "application/json;profile=http://schema.org/PerformAction"},
 	"allOf": [{"$ref": "PlayAction.json"}],

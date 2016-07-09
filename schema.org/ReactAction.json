@@ -1,6 +1,7 @@
 {
 	"id": "ReactAction.json",
 	"title": "React Action",
+	"description": "The act of responding instinctively and emotionally to an object, expressing a sentiment.",
 	"format": "http://schema.org/ReactAction",
 	"media": {"type": "application/json;profile=http://schema.org/ReactAction"},
 	"allOf": [{"$ref": "AssessAction.json"}],

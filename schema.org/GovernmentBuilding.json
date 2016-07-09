@@ -1,6 +1,7 @@
 {
 	"id": "GovernmentBuilding.json",
 	"title": "Government Building",
+	"description": "A government building.",
 	"format": "http://schema.org/GovernmentBuilding",
 	"media": {"type": "application/json;profile=http://schema.org/GovernmentBuilding"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

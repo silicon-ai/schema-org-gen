@@ -1,6 +1,7 @@
 {
 	"id": "Specialty.json",
 	"title": "Specialty",
+	"description": "Any branch of a field in which people typically develop specific expertise, usually after significant study, time, and effort.",
 	"format": "http://schema.org/Specialty",
 	"media": {"type": "application/json;profile=http://schema.org/Specialty"},
 	"allOf": [{"$ref": "Enumeration.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "AboutPage.json",
 	"title": "About Page",
+	"description": "Web page type: About page.",
 	"format": "http://schema.org/AboutPage",
 	"media": {"type": "application/json;profile=http://schema.org/AboutPage"},
 	"allOf": [{"$ref": "WebPage.json"}],

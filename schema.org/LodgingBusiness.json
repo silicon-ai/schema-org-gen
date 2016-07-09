@@ -1,6 +1,7 @@
 {
 	"id": "LodgingBusiness.json",
 	"title": "Lodging Business",
+	"description": "A lodging business, such as a motel, hotel, or inn.",
 	"format": "http://schema.org/LodgingBusiness",
 	"media": {"type": "application/json;profile=http://schema.org/LodgingBusiness"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

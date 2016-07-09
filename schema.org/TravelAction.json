@@ -1,6 +1,7 @@
 {
 	"id": "TravelAction.json",
 	"title": "Travel Action",
+	"description": "The act of traveling from an fromLocation to a destination by a specified mode of transport, optionally with participants.",
 	"format": "http://schema.org/TravelAction",
 	"media": {"type": "application/json;profile=http://schema.org/TravelAction"},
 	"allOf": [{"$ref": "MoveAction.json"}],

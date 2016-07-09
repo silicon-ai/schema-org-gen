@@ -1,6 +1,7 @@
 {
 	"id": "Florist.json",
 	"title": "Florist",
+	"description": "A florist.",
 	"format": "http://schema.org/Florist",
 	"media": {"type": "application/json;profile=http://schema.org/Florist"},
 	"allOf": [{"$ref": "Store.json"}],

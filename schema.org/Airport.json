@@ -1,9 +1,31 @@
 {
 	"id": "Airport.json",
 	"title": "Airport",
+	"description": "An airport.",
 	"format": "http://schema.org/Airport",
 	"media": {"type": "application/json;profile=http://schema.org/Airport"},
 	"allOf": [{"$ref": "CivicStructure.json"}],
+	"type": "object",
+	"properties": {
+		"iataCode": {
+			"oneOf": [
+				{"$ref": "#/definitions/iataCode"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/iataCode"}
+				}
+			]
+		},
+		"icaoCode": {
+			"oneOf": [
+				{"$ref": "#/definitions/icaoCode"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/icaoCode"}
+				}
+			]
+		}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -37,6 +59,16 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
+		},
+		"iataCode": {
+			"title": "Iata Code",
+			"description": "IATA identifier for an airline or airport.",
+			"type": "string"
+		},
+		"icaoCode": {
+			"title": "Icao Code",
+			"description": "ICAO identifier for an airport.",
+			"type": "string"
 		}
 	}
 }

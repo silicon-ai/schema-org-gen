@@ -1,11 +1,10 @@
 {
 	"id": "TVClip.json",
 	"title": "TV Clip",
+	"description": "A short TV program or a segment/part of a TV program.",
 	"format": "http://schema.org/TVClip",
 	"media": {"type": "application/json;profile=http://schema.org/TVClip"},
 	"allOf": [{"$ref": "Clip.json"}],
-	"type": "object",
-	"properties": {"partOfTVSeries": {"$ref": "TVSeries.json#/definitions/possibleRef"}},
 	"definitions": {
 		"array": {
 			"type": "array",

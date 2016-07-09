@@ -1,6 +1,7 @@
 {
 	"id": "InteractAction.json",
 	"title": "Interact Action",
+	"description": "The act of interacting with another person or organization.",
 	"format": "http://schema.org/InteractAction",
 	"media": {"type": "application/json;profile=http://schema.org/InteractAction"},
 	"allOf": [{"$ref": "Action.json"}],

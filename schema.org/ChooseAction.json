@@ -1,14 +1,15 @@
 {
 	"id": "ChooseAction.json",
 	"title": "Choose Action",
+	"description": "The act of expressing a preference from a set of options or a large or unbounded set of choices/options.",
 	"format": "http://schema.org/ChooseAction",
 	"media": {"type": "application/json;profile=http://schema.org/ChooseAction"},
 	"allOf": [{"$ref": "AssessAction.json"}],
 	"type": "object",
 	"properties": {
-		"option": {
+		"actionOption": {
 			"type": "array",
-			"items": {"$ref": "#/definitions/option"}
+			"items": {"$ref": "#/definitions/actionOption"}
 		}
 	},
 	"definitions": {
@@ -45,9 +46,9 @@
 				}
 			]
 		},
-		"option": {
-			"title": "Option",
-			"description": "A sub property of object. The options subject to this action.",
+		"actionOption": {
+			"title": "Action Option",
+			"description": "A sub property of object. The options subject to this action. Supersedes option.",
 			"anyOf": [{"type": "string"}, {"$ref": "Thing.json#/definitions/possibleRef"}]
 		}
 	}

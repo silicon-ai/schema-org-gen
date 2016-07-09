@@ -1,6 +1,7 @@
 {
 	"id": "AutoDealer.json",
 	"title": "Auto Dealer",
+	"description": "An car dealership.",
 	"format": "http://schema.org/AutoDealer",
 	"media": {"type": "application/json;profile=http://schema.org/AutoDealer"},
 	"allOf": [{"$ref": "AutomotiveBusiness.json"}],

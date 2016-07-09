@@ -1,6 +1,7 @@
 {
 	"id": "DrawAction.json",
 	"title": "Draw Action",
+	"description": "The act of producing a visual/graphical representation of an object, typically with a pen/pencil and paper as instruments.",
 	"format": "http://schema.org/DrawAction",
 	"media": {"type": "application/json;profile=http://schema.org/DrawAction"},
 	"allOf": [{"$ref": "CreateAction.json"}],

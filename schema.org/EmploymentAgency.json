@@ -1,6 +1,7 @@
 {
 	"id": "EmploymentAgency.json",
 	"title": "Employment Agency",
+	"description": "An employment agency.",
 	"format": "http://schema.org/EmploymentAgency",
 	"media": {"type": "application/json;profile=http://schema.org/EmploymentAgency"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

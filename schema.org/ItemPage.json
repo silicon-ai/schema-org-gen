@@ -1,6 +1,7 @@
 {
 	"id": "ItemPage.json",
 	"title": "Item Page",
+	"description": "A page devoted to a single item, such as a particular product or hotel.",
 	"format": "http://schema.org/ItemPage",
 	"media": {"type": "application/json;profile=http://schema.org/ItemPage"},
 	"allOf": [{"$ref": "WebPage.json"}],

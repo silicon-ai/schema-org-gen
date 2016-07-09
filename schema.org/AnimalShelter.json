@@ -1,6 +1,7 @@
 {
 	"id": "AnimalShelter.json",
 	"title": "Animal Shelter",
+	"description": "Animal shelter.",
 	"format": "http://schema.org/AnimalShelter",
 	"media": {"type": "application/json;profile=http://schema.org/AnimalShelter"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

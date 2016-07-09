@@ -1,15 +1,18 @@
 {
 	"id": "Brand.json",
 	"title": "Brand",
+	"description": "A brand is a name used by an organization or business person for labeling a product, product group, or similar.",
 	"format": "http://schema.org/Brand",
 	"media": {"type": "application/json;profile=http://schema.org/Brand"},
 	"allOf": [{"$ref": "Intangible.json"}],
 	"type": "object",
 	"properties": {
+		"aggregateRating": {"$ref": "AggregateRating.json#/definitions/possibleRef"},
 		"logo": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/logo"}
-		}
+		},
+		"review": {"$ref": "Review.json#/definitions/possibleRefArray"}
 	},
 	"definitions": {
 		"array": {
@@ -47,7 +50,7 @@
 		},
 		"logo": {
 			"title": "Logo",
-			"description": "A logo associated with an organization.",
+			"description": "An associated logo.",
 			"anyOf": [
 				{
 					"type": "string",

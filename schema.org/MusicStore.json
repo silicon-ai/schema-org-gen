@@ -1,6 +1,7 @@
 {
 	"id": "MusicStore.json",
 	"title": "Music Store",
+	"description": "A music store.",
 	"format": "http://schema.org/MusicStore",
 	"media": {"type": "application/json;profile=http://schema.org/MusicStore"},
 	"allOf": [{"$ref": "Store.json"}],

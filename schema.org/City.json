@@ -1,6 +1,7 @@
 {
 	"id": "City.json",
 	"title": "City",
+	"description": "A city or town.",
 	"format": "http://schema.org/City",
 	"media": {"type": "application/json;profile=http://schema.org/City"},
 	"allOf": [{"$ref": "AdministrativeArea.json"}],

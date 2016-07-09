@@ -1,6 +1,7 @@
 {
 	"id": "DrinkAction.json",
 	"title": "Drink Action",
+	"description": "The act of swallowing liquids.",
 	"format": "http://schema.org/DrinkAction",
 	"media": {"type": "application/json;profile=http://schema.org/DrinkAction"},
 	"allOf": [{"$ref": "ConsumeAction.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "MotorcycleRepair.json",
 	"title": "Motorcycle Repair",
+	"description": "A motorcycle repair shop.",
 	"format": "http://schema.org/MotorcycleRepair",
 	"media": {"type": "application/json;profile=http://schema.org/MotorcycleRepair"},
 	"allOf": [{"$ref": "AutomotiveBusiness.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "Cemetery.json",
 	"title": "Cemetery",
+	"description": "A graveyard.",
 	"format": "http://schema.org/Cemetery",
 	"media": {"type": "application/json;profile=http://schema.org/Cemetery"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

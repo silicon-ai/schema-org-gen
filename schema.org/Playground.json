@@ -1,6 +1,7 @@
 {
 	"id": "Playground.json",
 	"title": "Playground",
+	"description": "A playground.",
 	"format": "http://schema.org/Playground",
 	"media": {"type": "application/json;profile=http://schema.org/Playground"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "GasStation.json",
 	"title": "Gas Station",
+	"description": "A gas station.",
 	"format": "http://schema.org/GasStation",
 	"media": {"type": "application/json;profile=http://schema.org/GasStation"},
 	"allOf": [{"$ref": "AutomotiveBusiness.json"}],

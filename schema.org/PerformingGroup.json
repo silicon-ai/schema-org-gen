@@ -1,6 +1,7 @@
 {
 	"id": "PerformingGroup.json",
 	"title": "Performing Group",
+	"description": "A performance group, such as a band, an orchestra, or a circus.",
 	"format": "http://schema.org/PerformingGroup",
 	"media": {"type": "application/json;profile=http://schema.org/PerformingGroup"},
 	"allOf": [{"$ref": "Organization.json"}],

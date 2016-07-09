@@ -1,19 +1,14 @@
 {
 	"id": "TransferAction.json",
 	"title": "Transfer Action",
+	"description": "The act of transferring/moving (abstract or concrete) animate or inanimate objects from one place to another.",
 	"format": "http://schema.org/TransferAction",
 	"media": {"type": "application/json;profile=http://schema.org/TransferAction"},
 	"allOf": [{"$ref": "Action.json"}],
 	"type": "object",
 	"properties": {
-		"fromLocation": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/fromLocation"}
-		},
-		"toLocation": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/toLocation"}
-		}
+		"fromLocation": {"$ref": "Place.json#/definitions/possibleRefArray"},
+		"toLocation": {"$ref": "Place.json#/definitions/possibleRefArray"}
 	},
 	"definitions": {
 		"array": {
@@ -48,16 +43,6 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
-		},
-		"fromLocation": {
-			"title": "From Location",
-			"description": "A sub property of location. The original location of the object or the agent before the action.",
-			"anyOf": [{"$ref": "Place.json#/definitions/possibleRef"}, {"type": "number"}]
-		},
-		"toLocation": {
-			"title": "To Location",
-			"description": "A sub property of location. The final location of the object or the agent after the action.",
-			"anyOf": [{"$ref": "Place.json#/definitions/possibleRef"}, {"type": "number"}]
 		}
 	}
 }

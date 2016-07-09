@@ -1,6 +1,7 @@
 {
 	"id": "ComputerStore.json",
 	"title": "Computer Store",
+	"description": "A computer store.",
 	"format": "http://schema.org/ComputerStore",
 	"media": {"type": "application/json;profile=http://schema.org/ComputerStore"},
 	"allOf": [{"$ref": "Store.json"}],

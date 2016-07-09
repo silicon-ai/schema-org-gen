@@ -1,6 +1,7 @@
 {
 	"id": "FilmAction.json",
 	"title": "Film Action",
+	"description": "The act of capturing sound and moving images on film, video, or digitally.",
 	"format": "http://schema.org/FilmAction",
 	"media": {"type": "application/json;profile=http://schema.org/FilmAction"},
 	"allOf": [{"$ref": "CreateAction.json"}],

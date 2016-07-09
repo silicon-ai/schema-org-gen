@@ -1,6 +1,7 @@
 {
 	"id": "Store.json",
 	"title": "Store",
+	"description": "A retail good store.",
 	"format": "http://schema.org/Store",
 	"media": {"type": "application/json;profile=http://schema.org/Store"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

@@ -1,14 +1,12 @@
 {
 	"id": "SellAction.json",
 	"title": "Sell Action",
+	"description": "The act of taking money from a buyer in exchange for goods or services rendered. An agent sells an object, product, or service to a buyer for a price. Reciprocal of BuyAction.",
 	"format": "http://schema.org/SellAction",
 	"media": {"type": "application/json;profile=http://schema.org/SellAction"},
 	"allOf": [{"$ref": "TradeAction.json"}],
 	"type": "object",
-	"properties": {
-		"buyer": {"$ref": "Person.json#/definitions/possibleRefArray"},
-		"warrantyPromise": {"$ref": "WarrantyPromise.json#/definitions/possibleRef"}
-	},
+	"properties": {"buyer": {"$ref": "Person.json#/definitions/possibleRefArray"}},
 	"definitions": {
 		"array": {
 			"type": "array",

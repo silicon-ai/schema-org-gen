@@ -1,6 +1,7 @@
 {
 	"id": "HomeAndConstructionBusiness.json",
 	"title": "Home And Construction Business",
+	"description": "A construction business.\n        \n        A HomeAndConstructionBusiness is a LocalBusiness that provides services around homes and buildings.\n          \n          As a LocalBusiness it can be\n          described as a provider of one or more\n          Service(s).",
 	"format": "http://schema.org/HomeAndConstructionBusiness",
 	"media": {"type": "application/json;profile=http://schema.org/HomeAndConstructionBusiness"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

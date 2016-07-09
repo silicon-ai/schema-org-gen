@@ -1,6 +1,7 @@
 {
 	"id": "OfficeEquipmentStore.json",
 	"title": "Office Equipment Store",
+	"description": "An office equipment store.",
 	"format": "http://schema.org/OfficeEquipmentStore",
 	"media": {"type": "application/json;profile=http://schema.org/OfficeEquipmentStore"},
 	"allOf": [{"$ref": "Store.json"}],

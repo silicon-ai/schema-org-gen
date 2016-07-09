@@ -1,6 +1,7 @@
 {
 	"id": "MensClothingStore.json",
 	"title": "Mens Clothing Store",
+	"description": "A men's clothing store.",
 	"format": "http://schema.org/MensClothingStore",
 	"media": {"type": "application/json;profile=http://schema.org/MensClothingStore"},
 	"allOf": [{"$ref": "Store.json"}],

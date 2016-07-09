@@ -1,6 +1,7 @@
 {
 	"id": "Volcano.json",
 	"title": "Volcano",
+	"description": "A volcano, like Fuji san.",
 	"format": "http://schema.org/Volcano",
 	"media": {"type": "application/json;profile=http://schema.org/Volcano"},
 	"allOf": [{"$ref": "Landform.json"}],

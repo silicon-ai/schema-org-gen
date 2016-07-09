@@ -1,6 +1,7 @@
 {
 	"id": "Campground.json",
 	"title": "Campground",
+	"description": "A campground.",
 	"format": "http://schema.org/Campground",
 	"media": {"type": "application/json;profile=http://schema.org/Campground"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

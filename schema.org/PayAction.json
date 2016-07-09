@@ -1,15 +1,12 @@
 {
 	"id": "PayAction.json",
 	"title": "Pay Action",
+	"description": "An agent pays a price to a participant.",
 	"format": "http://schema.org/PayAction",
 	"media": {"type": "application/json;profile=http://schema.org/PayAction"},
 	"allOf": [{"$ref": "TradeAction.json"}],
 	"type": "object",
 	"properties": {
-		"purpose": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/purpose"}
-		},
 		"recipient": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/recipient"}
@@ -48,11 +45,6 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
-		},
-		"purpose": {
-			"title": "Purpose",
-			"description": "A goal towards an action is taken. Can be concrete or abstract.",
-			"anyOf": [{"$ref": "Thing.json#/definitions/possibleRef"}, {"$ref": "MedicalDevicePurpose.json#/definitions/possibleRef"}]
 		},
 		"recipient": {
 			"title": "Recipient",

@@ -1,6 +1,7 @@
 {
 	"id": "PhotographAction.json",
 	"title": "Photograph Action",
+	"description": "The act of capturing still images of objects using a camera.",
 	"format": "http://schema.org/PhotographAction",
 	"media": {"type": "application/json;profile=http://schema.org/PhotographAction"},
 	"allOf": [{"$ref": "CreateAction.json"}],

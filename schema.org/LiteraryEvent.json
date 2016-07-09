@@ -1,6 +1,7 @@
 {
 	"id": "LiteraryEvent.json",
 	"title": "Literary Event",
+	"description": "Event type: Literary event.",
 	"format": "http://schema.org/LiteraryEvent",
 	"media": {"type": "application/json;profile=http://schema.org/LiteraryEvent"},
 	"allOf": [{"$ref": "Event.json"}],

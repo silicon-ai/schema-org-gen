@@ -1,6 +1,7 @@
 {
 	"id": "Museum.json",
 	"title": "Museum",
+	"description": "A museum.",
 	"format": "http://schema.org/Museum",
 	"media": {"type": "application/json;profile=http://schema.org/Museum"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

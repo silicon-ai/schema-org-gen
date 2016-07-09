@@ -1,6 +1,7 @@
 {
 	"id": "Energy.json",
 	"title": "Energy",
+	"description": "Properties that take Energy as values are of the form '<Number> <Energy unit of measure>'.",
 	"format": "http://schema.org/Energy",
 	"media": {"type": "application/json;profile=http://schema.org/Energy"},
 	"allOf": [{"$ref": "Quantity.json"}],

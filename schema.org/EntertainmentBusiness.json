@@ -1,6 +1,7 @@
 {
 	"id": "EntertainmentBusiness.json",
 	"title": "Entertainment Business",
+	"description": "A business providing entertainment.",
 	"format": "http://schema.org/EntertainmentBusiness",
 	"media": {"type": "application/json;profile=http://schema.org/EntertainmentBusiness"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

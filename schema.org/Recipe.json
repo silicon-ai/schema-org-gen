@@ -1,23 +1,33 @@
 {
 	"id": "Recipe.json",
 	"title": "Recipe",
+	"description": "A recipe. For dietary restrictions covered by the recipe,\n    a few common restrictions are enumerated via suitableForDiet.\n    The keywords property can also be used to add more detail.",
 	"format": "http://schema.org/Recipe",
 	"media": {"type": "application/json;profile=http://schema.org/Recipe"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {
-		"cookingMethod": {"$ref": "#/definitions/cookingMethod"},
 		"cookTime": {"$ref": "Duration.json#/definitions/possibleRef"},
-		"ingredients": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/ingredients"}
-		},
+		"cookingMethod": {"$ref": "#/definitions/cookingMethod"},
 		"nutrition": {"$ref": "NutritionInformation.json#/definitions/possibleRef"},
 		"prepTime": {"$ref": "Duration.json#/definitions/possibleRef"},
 		"recipeCategory": {"$ref": "#/definitions/recipeCategory"},
 		"recipeCuisine": {"$ref": "#/definitions/recipeCuisine"},
+		"recipeIngredient": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/recipeIngredient"}
+		},
 		"recipeInstructions": {"$ref": "#/definitions/recipeInstructions"},
 		"recipeYield": {"$ref": "#/definitions/recipeYield"},
+		"suitableForDiet": {
+			"oneOf": [
+				{"$ref": "RestrictedDiet.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "RestrictedDiet.json#/definitions/possibleRef"}
+				}
+			]
+		},
 		"totalTime": {"$ref": "Duration.json#/definitions/possibleRef"}
 	},
 	"definitions": {
@@ -59,11 +69,6 @@
 			"description": "The method of cooking, such as Frying, Steaming, ...",
 			"type": "string"
 		},
-		"ingredients": {
-			"title": "Ingredients",
-			"description": "An ingredient used in the recipe.",
-			"type": "string"
-		},
 		"recipeCategory": {
 			"title": "Recipe Category",
 			"description": "The category of the recipe—for example, appetizer, entree, etc.",
@@ -71,13 +76,18 @@
 		},
 		"recipeCuisine": {
 			"title": "Recipe Cuisine",
-			"description": "The cuisine of the recipe (for example, French or Ethopian).",
+			"description": "The cuisine of the recipe (for example, French or Ethiopian).",
+			"type": "string"
+		},
+		"recipeIngredient": {
+			"title": "Recipe Ingredient",
+			"description": "A single ingredient used in the recipe, e.g. sugar, flour or garlic. Supersedes ingredients.",
 			"type": "string"
 		},
 		"recipeInstructions": {
 			"title": "Recipe Instructions",
-			"description": "The steps to make the dish.",
-			"type": "string"
+			"description": "A step or instruction involved in making the recipe.",
+			"anyOf": [{"$ref": "ItemList.json#/definitions/possibleRef"}, {"type": "string"}]
 		},
 		"recipeYield": {
 			"title": "Recipe Yield",

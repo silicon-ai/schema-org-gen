@@ -1,6 +1,7 @@
 {
 	"id": "Pond.json",
 	"title": "Pond",
+	"description": "A pond.",
 	"format": "http://schema.org/Pond",
 	"media": {"type": "application/json;profile=http://schema.org/Pond"},
 	"allOf": [{"$ref": "BodyOfWater.json"}],

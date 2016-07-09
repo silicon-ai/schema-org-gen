@@ -1,6 +1,7 @@
 {
 	"id": "Park.json",
 	"title": "Park",
+	"description": "A park.",
 	"format": "http://schema.org/Park",
 	"media": {"type": "application/json;profile=http://schema.org/Park"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

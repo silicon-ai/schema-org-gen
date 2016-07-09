@@ -1,9 +1,12 @@
 {
 	"id": "CommentAction.json",
 	"title": "Comment Action",
+	"description": "The act of generating a comment about a subject.",
 	"format": "http://schema.org/CommentAction",
 	"media": {"type": "application/json;profile=http://schema.org/CommentAction"},
 	"allOf": [{"$ref": "CommunicateAction.json"}],
+	"type": "object",
+	"properties": {"resultComment": {"$ref": "Comment.json#/definitions/possibleRefArray"}},
 	"definitions": {
 		"array": {
 			"type": "array",

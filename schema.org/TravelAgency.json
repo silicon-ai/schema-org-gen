@@ -1,6 +1,7 @@
 {
 	"id": "TravelAgency.json",
 	"title": "Travel Agency",
+	"description": "A travel agency.",
 	"format": "http://schema.org/TravelAgency",
 	"media": {"type": "application/json;profile=http://schema.org/TravelAgency"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

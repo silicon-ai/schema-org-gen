@@ -1,9 +1,15 @@
 {
 	"id": "SportsTeam.json",
 	"title": "Sports Team",
+	"description": "Organization: Sports team.",
 	"format": "http://schema.org/SportsTeam",
 	"media": {"type": "application/json;profile=http://schema.org/SportsTeam"},
-	"allOf": [{"$ref": "Organization.json"}],
+	"allOf": [{"$ref": "SportsOrganization.json"}],
+	"type": "object",
+	"properties": {
+		"athlete": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"coach": {"$ref": "Person.json#/definitions/possibleRefArray"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",

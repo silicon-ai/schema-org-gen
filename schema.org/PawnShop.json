@@ -1,6 +1,7 @@
 {
 	"id": "PawnShop.json",
 	"title": "Pawn Shop",
+	"description": "A shop that will buy, or lend money against the security of, personal possessions.",
 	"format": "http://schema.org/PawnShop",
 	"media": {"type": "application/json;profile=http://schema.org/PawnShop"},
 	"allOf": [{"$ref": "Store.json"}],

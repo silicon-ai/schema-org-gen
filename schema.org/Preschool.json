@@ -1,6 +1,7 @@
 {
 	"id": "Preschool.json",
 	"title": "Preschool",
+	"description": "A preschool.",
 	"format": "http://schema.org/Preschool",
 	"media": {"type": "application/json;profile=http://schema.org/Preschool"},
 	"allOf": [{"$ref": "EducationalOrganization.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "NewsArticle.json",
 	"title": "News Article",
+	"description": "A news article.",
 	"format": "http://schema.org/NewsArticle",
 	"media": {"type": "application/json;profile=http://schema.org/NewsArticle"},
 	"allOf": [{"$ref": "Article.json"}],

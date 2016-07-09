@@ -1,11 +1,15 @@
 {
 	"id": "TradeAction.json",
 	"title": "Trade Action",
+	"description": "The act of participating in an exchange of goods and services for monetary compensation. An agent trades an object, product or service with a participant in exchange for a one time or periodic payment.",
 	"format": "http://schema.org/TradeAction",
 	"media": {"type": "application/json;profile=http://schema.org/TradeAction"},
 	"allOf": [{"$ref": "Action.json"}],
 	"type": "object",
-	"properties": {"price": {"$ref": "#/definitions/price"}},
+	"properties": {
+		"price": {"$ref": "#/definitions/price"},
+		"priceSpecification": {"$ref": "PriceSpecification.json#/definitions/possibleRefArray"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -42,7 +46,7 @@
 		},
 		"price": {
 			"title": "Price",
-			"description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+			"description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\n\n      Usage guidelines:\n\n\nUse the priceCurrency property (with ISO 4217 codes e.g. \"USD\") instead of\n      including ambiguous symbols such as '$' in the value.\n\n\n      Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n\n\n      Note that both RDFa and Microdata syntax allow the use of a \"content=\" attribute for publishing simple machine-readable values\n      alongside more human-friendly formatting.\n\n\n      Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.",
 			"anyOf": [{"type": "string"}, {"type": "number"}]
 		}
 	}

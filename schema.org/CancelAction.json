@@ -1,6 +1,7 @@
 {
 	"id": "CancelAction.json",
 	"title": "Cancel Action",
+	"description": "The act of asserting that a future event/action is no longer going to happen.Related actions:ConfirmAction: The antonym of CancelAction.",
 	"format": "http://schema.org/CancelAction",
 	"media": {"type": "application/json;profile=http://schema.org/CancelAction"},
 	"allOf": [{"$ref": "PlanAction.json"}],

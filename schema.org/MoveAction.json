@@ -1,19 +1,14 @@
 {
 	"id": "MoveAction.json",
 	"title": "Move Action",
+	"description": "The act of an agent relocating to a place.Related actions:TransferAction: Unlike TransferAction, the subject of the move is a living Person or Organization rather than an inanimate object.",
 	"format": "http://schema.org/MoveAction",
 	"media": {"type": "application/json;profile=http://schema.org/MoveAction"},
 	"allOf": [{"$ref": "Action.json"}],
 	"type": "object",
 	"properties": {
-		"fromLocation": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/fromLocation"}
-		},
-		"toLocation": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/toLocation"}
-		}
+		"fromLocation": {"$ref": "Place.json#/definitions/possibleRefArray"},
+		"toLocation": {"$ref": "Place.json#/definitions/possibleRefArray"}
 	},
 	"definitions": {
 		"array": {
@@ -48,16 +43,6 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
-		},
-		"fromLocation": {
-			"title": "From Location",
-			"description": "A sub property of location. The original location of the object or the agent before the action.",
-			"anyOf": [{"$ref": "Place.json#/definitions/possibleRef"}, {"type": "number"}]
-		},
-		"toLocation": {
-			"title": "To Location",
-			"description": "A sub property of location. The final location of the object or the agent after the action.",
-			"anyOf": [{"$ref": "Place.json#/definitions/possibleRef"}, {"type": "number"}]
 		}
 	}
 }

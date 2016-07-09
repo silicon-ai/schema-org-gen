@@ -1,16 +1,12 @@
 {
 	"id": "InsertAction.json",
 	"title": "Insert Action",
+	"description": "The act of adding at a specific location in an ordered collection.",
 	"format": "http://schema.org/InsertAction",
 	"media": {"type": "application/json;profile=http://schema.org/InsertAction"},
 	"allOf": [{"$ref": "AddAction.json"}],
 	"type": "object",
-	"properties": {
-		"toLocation": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/toLocation"}
-		}
-	},
+	"properties": {"toLocation": {"$ref": "Place.json#/definitions/possibleRefArray"}},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -44,11 +40,6 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
-		},
-		"toLocation": {
-			"title": "To Location",
-			"description": "A sub property of location. The final location of the object or the agent after the action.",
-			"anyOf": [{"$ref": "Place.json#/definitions/possibleRef"}, {"type": "number"}]
 		}
 	}
 }

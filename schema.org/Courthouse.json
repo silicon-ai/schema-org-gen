@@ -1,6 +1,7 @@
 {
 	"id": "Courthouse.json",
 	"title": "Courthouse",
+	"description": "A courthouse.",
 	"format": "http://schema.org/Courthouse",
 	"media": {"type": "application/json;profile=http://schema.org/Courthouse"},
 	"allOf": [{"$ref": "GovernmentBuilding.json"}],

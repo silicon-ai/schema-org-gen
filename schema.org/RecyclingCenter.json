@@ -1,6 +1,7 @@
 {
 	"id": "RecyclingCenter.json",
 	"title": "Recycling Center",
+	"description": "A recycling center.",
 	"format": "http://schema.org/RecyclingCenter",
 	"media": {"type": "application/json;profile=http://schema.org/RecyclingCenter"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

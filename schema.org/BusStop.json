@@ -1,6 +1,7 @@
 {
 	"id": "BusStop.json",
 	"title": "Bus Stop",
+	"description": "A bus stop.",
 	"format": "http://schema.org/BusStop",
 	"media": {"type": "application/json;profile=http://schema.org/BusStop"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

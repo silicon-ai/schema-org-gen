@@ -1,6 +1,7 @@
 {
 	"id": "InstallAction.json",
 	"title": "Install Action",
+	"description": "The act of installing an application.",
 	"format": "http://schema.org/InstallAction",
 	"media": {"type": "application/json;profile=http://schema.org/InstallAction"},
 	"allOf": [{"$ref": "ConsumeAction.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "Synagogue.json",
 	"title": "Synagogue",
+	"description": "A synagogue.",
 	"format": "http://schema.org/Synagogue",
 	"media": {"type": "application/json;profile=http://schema.org/Synagogue"},
 	"allOf": [{"$ref": "PlaceOfWorship.json"}],

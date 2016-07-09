@@ -1,6 +1,7 @@
 {
 	"id": "ProfilePage.json",
 	"title": "Profile Page",
+	"description": "Web page type: Profile page.",
 	"format": "http://schema.org/ProfilePage",
 	"media": {"type": "application/json;profile=http://schema.org/ProfilePage"},
 	"allOf": [{"$ref": "WebPage.json"}],

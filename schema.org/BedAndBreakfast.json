@@ -1,6 +1,7 @@
 {
 	"id": "BedAndBreakfast.json",
 	"title": "Bed And Breakfast",
+	"description": "Bed and breakfast.",
 	"format": "http://schema.org/BedAndBreakfast",
 	"media": {"type": "application/json;profile=http://schema.org/BedAndBreakfast"},
 	"allOf": [{"$ref": "LodgingBusiness.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "Country.json",
 	"title": "Country",
+	"description": "A country.",
 	"format": "http://schema.org/Country",
 	"media": {"type": "application/json;profile=http://schema.org/Country"},
 	"allOf": [{"$ref": "AdministrativeArea.json"}],

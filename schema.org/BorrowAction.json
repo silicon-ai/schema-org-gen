@@ -1,6 +1,7 @@
 {
 	"id": "BorrowAction.json",
 	"title": "Borrow Action",
+	"description": "The act of obtaining an object under an agreement to return it at a later date. Reciprocal of LendAction.Related actions:LendAction: Reciprocal of BorrowAction.",
 	"format": "http://schema.org/BorrowAction",
 	"media": {"type": "application/json;profile=http://schema.org/BorrowAction"},
 	"allOf": [{"$ref": "TransferAction.json"}],

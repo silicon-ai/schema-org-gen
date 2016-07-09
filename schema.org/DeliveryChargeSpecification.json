@@ -1,13 +1,16 @@
 {
 	"id": "DeliveryChargeSpecification.json",
 	"title": "Delivery Charge Specification",
+	"description": "The price for the delivery of an offer using a particular delivery method.",
 	"format": "http://schema.org/DeliveryChargeSpecification",
 	"media": {"type": "application/json;profile=http://schema.org/DeliveryChargeSpecification"},
 	"allOf": [{"$ref": "PriceSpecification.json"}],
 	"type": "object",
 	"properties": {
 		"appliesToDeliveryMethod": {"$ref": "DeliveryMethod.json#/definitions/possibleRef"},
-		"eligibleRegion": {"$ref": "#/definitions/eligibleRegion"}
+		"areaServed": {"$ref": "#/definitions/areaServed"},
+		"eligibleRegion": {"$ref": "#/definitions/eligibleRegion"},
+		"ineligibleRegion": {"$ref": "#/definitions/ineligibleRegion"}
 	},
 	"definitions": {
 		"array": {
@@ -43,10 +46,20 @@
 				}
 			]
 		},
+		"areaServed": {
+			"title": "Area Served",
+			"description": "The geographic area where a service or offered item is provided. Supersedes serviceArea.",
+			"anyOf": [{"type": "string"}, {"$ref": "GeoShape.json#/definitions/possibleRef"}, {"$ref": "AdministrativeArea.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
+		},
 		"eligibleRegion": {
 			"title": "Eligible Region",
-			"description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.",
-			"anyOf": [{"type": "string"}, {"$ref": "GeoShape.json#/definitions/possibleRef"}]
+			"description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\n       See also ineligibleRegion.",
+			"anyOf": [{"type": "string"}, {"$ref": "GeoShape.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
+		},
+		"ineligibleRegion": {
+			"title": "Ineligible Region",
+			"description": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\n       See also eligibleRegion.",
+			"anyOf": [{"type": "string"}, {"$ref": "GeoShape.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
 		}
 	}
 }

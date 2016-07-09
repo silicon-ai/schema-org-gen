@@ -1,6 +1,7 @@
 {
 	"id": "NightClub.json",
 	"title": "Night Club",
+	"description": "A nightclub or discotheque.",
 	"format": "http://schema.org/NightClub",
 	"media": {"type": "application/json;profile=http://schema.org/NightClub"},
 	"allOf": [{"$ref": "EntertainmentBusiness.json"}],

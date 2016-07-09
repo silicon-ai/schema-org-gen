@@ -1,12 +1,16 @@
 {
 	"id": "VideoObject.json",
 	"title": "Video Object",
+	"description": "A video file.",
 	"format": "http://schema.org/VideoObject",
 	"media": {"type": "application/json;profile=http://schema.org/VideoObject"},
 	"allOf": [{"$ref": "MediaObject.json"}],
 	"type": "object",
 	"properties": {
+		"actor": {"$ref": "Person.json#/definitions/possibleRefArray"},
 		"caption": {"$ref": "#/definitions/caption"},
+		"director": {"$ref": "Person.json#/definitions/possibleRef"},
+		"musicBy": {"$ref": "#/definitions/musicBy"},
 		"thumbnail": {"$ref": "ImageObject.json#/definitions/possibleRef"},
 		"transcript": {"$ref": "#/definitions/transcript"},
 		"videoFrameSize": {"$ref": "#/definitions/videoFrameSize"},
@@ -50,6 +54,11 @@
 			"title": "Caption",
 			"description": "The caption for this object.",
 			"type": "string"
+		},
+		"musicBy": {
+			"title": "Music by",
+			"description": "The composer of the soundtrack.",
+			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "MusicGroup.json#/definitions/possibleRef"}]
 		},
 		"transcript": {
 			"title": "Transcript",

@@ -1,11 +1,13 @@
 {
 	"id": "QualitativeValue.json",
 	"title": "Qualitative Value",
+	"description": "A predefined value for a product characteristic, e.g. the power cord plug type \"US\" or the garment sizes \"S\", \"M\", \"L\", and \"XL\".",
 	"format": "http://schema.org/QualitativeValue",
 	"media": {"type": "application/json;profile=http://schema.org/QualitativeValue"},
 	"allOf": [{"$ref": "Enumeration.json"}],
 	"type": "object",
 	"properties": {
+		"additionalProperty": {"$ref": "PropertyValue.json#/definitions/possibleRefArray"},
 		"equal": {"$ref": "QualitativeValue.json#/definitions/possibleRefArray"},
 		"greater": {"$ref": "QualitativeValue.json#/definitions/possibleRefArray"},
 		"greaterOrEqual": {"$ref": "QualitativeValue.json#/definitions/possibleRefArray"},
@@ -54,7 +56,7 @@
 		"valueReference": {
 			"title": "Value Reference",
 			"description": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
-			"anyOf": [{"$ref": "Enumeration.json#/definitions/possibleRef"}, {"$ref": "StructuredValue.json#/definitions/possibleRef"}]
+			"anyOf": [{"$ref": "QualitativeValue.json#/definitions/possibleRef"}, {"$ref": "PropertyValue.json#/definitions/possibleRef"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}, {"$ref": "Enumeration.json#/definitions/possibleRef"}, {"$ref": "StructuredValue.json#/definitions/possibleRef"}]
 		}
 	}
 }

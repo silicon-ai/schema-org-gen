@@ -1,6 +1,7 @@
 {
 	"id": "TypeAndQuantityNode.json",
 	"title": "Type And Quantity Node",
+	"description": "A structured value indicating the quantity, unit of measurement, and business function of goods included in a bundle offer.",
 	"format": "http://schema.org/TypeAndQuantityNode",
 	"media": {"type": "application/json;profile=http://schema.org/TypeAndQuantityNode"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
@@ -9,7 +10,11 @@
 		"amountOfThisGood": {"$ref": "#/definitions/amountOfThisGood"},
 		"businessFunction": {"$ref": "BusinessFunction.json#/definitions/possibleRef"},
 		"typeOfGood": {"$ref": "Product.json#/definitions/possibleRef"},
-		"unitCode": {"$ref": "#/definitions/unitCode"}
+		"unitCode": {"$ref": "#/definitions/unitCode"},
+		"unitText": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/unitText"}
+		}
 	},
 	"definitions": {
 		"array": {
@@ -52,7 +57,18 @@
 		},
 		"unitCode": {
 			"title": "Unit Code",
-			"description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters).",
+			"description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "uri"
+				},
+				{"type": "string"}
+			]
+		},
+		"unitText": {
+			"title": "Unit Text",
+			"description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\nunitCode.",
 			"type": "string"
 		}
 	}

@@ -1,17 +1,19 @@
 {
 	"id": "Clip.json",
 	"title": "Clip",
+	"description": "A short TV or radio program or a segment/part of a program.",
 	"format": "http://schema.org/Clip",
 	"media": {"type": "application/json;profile=http://schema.org/Clip"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
 	"type": "object",
 	"properties": {
+		"actor": {"$ref": "Person.json#/definitions/possibleRefArray"},
 		"clipNumber": {"$ref": "#/definitions/clipNumber"},
+		"director": {"$ref": "Person.json#/definitions/possibleRef"},
+		"musicBy": {"$ref": "#/definitions/musicBy"},
 		"partOfEpisode": {"$ref": "Episode.json#/definitions/possibleRef"},
-		"partOfSeason": {"$ref": "Season.json#/definitions/possibleRef"},
-		"partOfSeries": {"$ref": "Series.json#/definitions/possibleRef"},
-		"position": {"$ref": "#/definitions/position"},
-		"publication": {"$ref": "PublicationEvent.json#/definitions/possibleRefArray"}
+		"partOfSeason": {"$ref": "CreativeWorkSeason.json#/definitions/possibleRef"},
+		"partOfSeries": {"$ref": "CreativeWorkSeries.json#/definitions/possibleRef"}
 	},
 	"definitions": {
 		"array": {
@@ -50,12 +52,12 @@
 		"clipNumber": {
 			"title": "Clip Number",
 			"description": "Position of the clip within an ordered group of clips.",
-			"type": "integer"
+			"anyOf": [{"type": "integer"}, {"type": "string"}]
 		},
-		"position": {
-			"title": "Position",
-			"description": "Free text to define other than pure numerical ranking of an episode or a season in an ordered list of items (further formatting restrictions may apply within particular user groups).",
-			"type": "string"
+		"musicBy": {
+			"title": "Music by",
+			"description": "The composer of the soundtrack.",
+			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "MusicGroup.json#/definitions/possibleRef"}]
 		}
 	}
 }

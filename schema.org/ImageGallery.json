@@ -1,6 +1,7 @@
 {
 	"id": "ImageGallery.json",
 	"title": "Image Gallery",
+	"description": "Web page type: Image gallery page.",
 	"format": "http://schema.org/ImageGallery",
 	"media": {"type": "application/json;profile=http://schema.org/ImageGallery"},
 	"allOf": [{"$ref": "CollectionPage.json"}],

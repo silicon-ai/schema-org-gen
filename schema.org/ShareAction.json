@@ -1,6 +1,7 @@
 {
 	"id": "ShareAction.json",
 	"title": "Share Action",
+	"description": "The act of distributing content to people for their amusement or edification.",
 	"format": "http://schema.org/ShareAction",
 	"media": {"type": "application/json;profile=http://schema.org/ShareAction"},
 	"allOf": [{"$ref": "CommunicateAction.json"}],

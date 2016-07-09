@@ -1,6 +1,7 @@
 {
 	"id": "BlogPosting.json",
 	"title": "Blog Posting",
+	"description": "A blog post.",
 	"format": "http://schema.org/BlogPosting",
 	"media": {"type": "application/json;profile=http://schema.org/BlogPosting"},
 	"allOf": [{"$ref": "Article.json"}],

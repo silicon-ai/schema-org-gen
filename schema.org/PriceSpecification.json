@@ -1,6 +1,7 @@
 {
 	"id": "PriceSpecification.json",
 	"title": "Price Specification",
+	"description": "A structured value representing a price or price range. Typically, only the subclasses of this type are used for markup. It is recommended to use MonetaryAmount to describe independent amounts of money such as a salary, credit card limits, etc.",
 	"format": "http://schema.org/PriceSpecification",
 	"media": {"type": "application/json;profile=http://schema.org/PriceSpecification"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
@@ -62,12 +63,12 @@
 		},
 		"price": {
 			"title": "Price",
-			"description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+			"description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\n\n\n      Usage guidelines:\n\n\nUse the priceCurrency property (with ISO 4217 codes e.g. \"USD\") instead of\n      including ambiguous symbols such as '$' in the value.\n\n\n      Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.\n\n\n      Note that both RDFa and Microdata syntax allow the use of a \"content=\" attribute for publishing simple machine-readable values\n      alongside more human-friendly formatting.\n\n\n      Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.",
 			"anyOf": [{"type": "string"}, {"type": "number"}]
 		},
 		"priceCurrency": {
 			"title": "Price Currency",
-			"description": "The currency (in 3-letter ISO 4217 format) of the offer price or a price component, when attached to PriceSpecification and its subtypes.",
+			"description": "The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to PriceSpecification and its subtypes.",
 			"type": "string"
 		},
 		"validFrom": {
@@ -78,7 +79,7 @@
 		},
 		"validThrough": {
 			"title": "Valid Through",
-			"description": "The end of the validity of offer, price specification, or opening hours data.",
+			"description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
 			"type": "string",
 			"format": "date-time"
 		},

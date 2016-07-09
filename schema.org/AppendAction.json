@@ -1,6 +1,7 @@
 {
 	"id": "AppendAction.json",
 	"title": "Append Action",
+	"description": "The act of inserting at the end if an ordered collection.",
 	"format": "http://schema.org/AppendAction",
 	"media": {"type": "application/json;profile=http://schema.org/AppendAction"},
 	"allOf": [{"$ref": "InsertAction.json"}],

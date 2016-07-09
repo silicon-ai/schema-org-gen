@@ -1,6 +1,7 @@
 {
 	"id": "Crematorium.json",
 	"title": "Crematorium",
+	"description": "A crematorium.",
 	"format": "http://schema.org/Crematorium",
 	"media": {"type": "application/json;profile=http://schema.org/Crematorium"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

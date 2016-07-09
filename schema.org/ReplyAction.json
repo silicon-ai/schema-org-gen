@@ -1,9 +1,12 @@
 {
 	"id": "ReplyAction.json",
 	"title": "Reply Action",
+	"description": "The act of responding to a question/message asked/sent by the object. Related to AskAction.Related actions:AskAction: Appears generally as an origin of a ReplyAction.",
 	"format": "http://schema.org/ReplyAction",
 	"media": {"type": "application/json;profile=http://schema.org/ReplyAction"},
 	"allOf": [{"$ref": "CommunicateAction.json"}],
+	"type": "object",
+	"properties": {"resultComment": {"$ref": "Comment.json#/definitions/possibleRefArray"}},
 	"definitions": {
 		"array": {
 			"type": "array",

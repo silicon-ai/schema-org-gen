@@ -1,6 +1,7 @@
 {
 	"id": "AutomatedTeller.json",
 	"title": "Automated Teller",
+	"description": "ATM/cash machine.",
 	"format": "http://schema.org/AutomatedTeller",
 	"media": {"type": "application/json;profile=http://schema.org/AutomatedTeller"},
 	"allOf": [{"$ref": "FinancialService.json"}],

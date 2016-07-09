@@ -1,16 +1,24 @@
 {
 	"id": "Organization.json",
 	"title": "Organization",
+	"description": "An organization such as a school, NGO, corporation, club, etc.",
 	"format": "http://schema.org/Organization",
 	"media": {"type": "application/json;profile=http://schema.org/Organization"},
 	"allOf": [{"$ref": "Thing.json"}],
 	"type": "object",
 	"properties": {
-		"address": {"$ref": "PostalAddress.json#/definitions/possibleRef"},
+		"address": {"$ref": "#/definitions/address"},
 		"aggregateRating": {"$ref": "AggregateRating.json#/definitions/possibleRef"},
+		"alumni": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"areaServed": {"$ref": "#/definitions/areaServed"},
+		"award": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/award"}
+		},
 		"brand": {"$ref": "#/definitions/brand"},
 		"contactPoint": {"$ref": "ContactPoint.json#/definitions/possibleRefArray"},
 		"department": {"$ref": "Organization.json#/definitions/possibleRefArray"},
+		"dissolutionDate": {"$ref": "#/definitions/dissolutionDate"},
 		"duns": {"$ref": "#/definitions/duns"},
 		"email": {
 			"type": "array",
@@ -21,14 +29,24 @@
 		"faxNumber": {"$ref": "#/definitions/faxNumber"},
 		"founder": {"$ref": "Person.json#/definitions/possibleRefArray"},
 		"foundingDate": {"$ref": "#/definitions/foundingDate"},
+		"foundingLocation": {"$ref": "Place.json#/definitions/possibleRef"},
 		"globalLocationNumber": {"$ref": "#/definitions/globalLocationNumber"},
-		"hasPOS": {"$ref": "Place.json#/definitions/possibleRefArray"},
-		"interactionCount": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/interactionCount"}
+		"hasOfferCatalog": {
+			"oneOf": [
+				{"$ref": "OfferCatalog.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "OfferCatalog.json#/definitions/possibleRef"}
+				}
+			]
 		},
+		"hasPOS": {"$ref": "Place.json#/definitions/possibleRefArray"},
 		"isicV4": {"$ref": "#/definitions/isicV4"},
 		"legalName": {"$ref": "#/definitions/legalName"},
+		"leiCode": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/leiCode"}
+		},
 		"location": {"$ref": "#/definitions/location"},
 		"logo": {
 			"type": "array",
@@ -39,27 +57,58 @@
 			"type": "array",
 			"items": {"$ref": "#/definitions/member"}
 		},
+		"memberOf": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/memberOf"}
+		},
 		"naics": {"$ref": "#/definitions/naics"},
+		"numberOfEmployees": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
 		"owns": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/owns"}
 		},
+		"parentOrganization": {"$ref": "Organization.json#/definitions/possibleRef"},
 		"review": {"$ref": "Review.json#/definitions/possibleRefArray"},
 		"seeks": {"$ref": "Demand.json#/definitions/possibleRefArray"},
+		"sponsor": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/sponsor"}
+		},
 		"subOrganization": {"$ref": "Organization.json#/definitions/possibleRefArray"},
 		"taxID": {"$ref": "#/definitions/taxID"},
 		"telephone": {"$ref": "#/definitions/telephone"},
 		"vatID": {"$ref": "#/definitions/vatID"}
 	},
 	"definitions": {
+		"address": {
+			"title": "Address",
+			"description": "Physical address of the item.",
+			"anyOf": [{"type": "string"}, {"$ref": "PostalAddress.json#/definitions/possibleRef"}]
+		},
+		"areaServed": {
+			"title": "Area Served",
+			"description": "The geographic area where a service or offered item is provided. Supersedes serviceArea.",
+			"anyOf": [{"type": "string"}, {"$ref": "GeoShape.json#/definitions/possibleRef"}, {"$ref": "AdministrativeArea.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
+		},
 		"array": {
 			"type": "array",
 			"items": {"$ref": "#"}
+		},
+		"award": {
+			"title": "Award",
+			"description": "An award won by or for this item. Supersedes awards.",
+			"type": "string"
 		},
 		"brand": {
 			"title": "Brand",
 			"description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Brand.json#/definitions/possibleRef"}]
+		},
+		"dissolutionDate": {
+			"title": "Dissolution Date",
+			"description": "The date that this organization was dissolved.",
+			"type": "string",
+			"format": "date"
 		},
 		"duns": {
 			"title": "Duns",
@@ -87,11 +136,6 @@
 			"description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
 			"type": "string"
 		},
-		"interactionCount": {
-			"title": "Interaction Count",
-			"description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
-			"type": "string"
-		},
 		"isicV4": {
 			"title": "Isic V4",
 			"description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
@@ -102,14 +146,19 @@
 			"description": "The official name of the organization, e.g. the registered company name.",
 			"type": "string"
 		},
+		"leiCode": {
+			"title": "Lei Code",
+			"description": "An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.",
+			"type": "string"
+		},
 		"location": {
 			"title": "Location",
-			"description": "The location of the event, organization or action.",
-			"anyOf": [{"$ref": "PostalAddress.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
+			"description": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+			"anyOf": [{"type": "string"}, {"$ref": "PostalAddress.json#/definitions/possibleRef"}, {"$ref": "Place.json#/definitions/possibleRef"}]
 		},
 		"logo": {
 			"title": "Logo",
-			"description": "A logo associated with an organization.",
+			"description": "An associated logo.",
 			"anyOf": [
 				{
 					"type": "string",
@@ -120,8 +169,13 @@
 		},
 		"member": {
 			"title": "Member",
-			"description": "A member of this organization.",
+			"description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. Supersedes members, musicGroupMember. Inverse property: memberOf.",
 			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"memberOf": {
+			"title": "Member of",
+			"description": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "ProgramMembership.json#/definitions/possibleRef"}]
 		},
 		"naics": {
 			"title": "Naics",
@@ -162,6 +216,11 @@
 				}
 			]
 		},
+		"sponsor": {
+			"title": "Sponsor",
+			"description": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
 		"taxID": {
 			"title": "Tax ID",
 			"description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
@@ -174,7 +233,7 @@
 		},
 		"vatID": {
 			"title": "Vat ID",
-			"description": "The Value-added Tax ID of the organisation or person.",
+			"description": "The Value-added Tax ID of the organization or person.",
 			"type": "string"
 		}
 	}

@@ -1,6 +1,7 @@
 {
 	"id": "AssessAction.json",
 	"title": "Assess Action",
+	"description": "The act of forming one's opinion, reaction or sentiment.",
 	"format": "http://schema.org/AssessAction",
 	"media": {"type": "application/json;profile=http://schema.org/AssessAction"},
 	"allOf": [{"$ref": "Action.json"}],

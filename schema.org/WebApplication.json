@@ -1,6 +1,7 @@
 {
 	"id": "WebApplication.json",
 	"title": "Web Application",
+	"description": "Web applications.",
 	"format": "http://schema.org/WebApplication",
 	"media": {"type": "application/json;profile=http://schema.org/WebApplication"},
 	"allOf": [{"$ref": "SoftwareApplication.json"}],

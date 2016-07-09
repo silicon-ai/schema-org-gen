@@ -1,6 +1,7 @@
 {
 	"id": "IceCreamShop.json",
 	"title": "Ice Cream Shop",
+	"description": "An ice cream shop.",
 	"format": "http://schema.org/IceCreamShop",
 	"media": {"type": "application/json;profile=http://schema.org/IceCreamShop"},
 	"allOf": [{"$ref": "FoodEstablishment.json"}],

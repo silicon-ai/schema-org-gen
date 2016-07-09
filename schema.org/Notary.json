@@ -1,9 +1,10 @@
 {
 	"id": "Notary.json",
 	"title": "Notary",
+	"description": "A notary.",
 	"format": "http://schema.org/Notary",
 	"media": {"type": "application/json;profile=http://schema.org/Notary"},
-	"allOf": [{"$ref": "ProfessionalService.json"}],
+	"allOf": [{"$ref": "LegalService.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

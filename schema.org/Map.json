@@ -1,9 +1,22 @@
 {
 	"id": "Map.json",
 	"title": "Map",
+	"description": "A map.",
 	"format": "http://schema.org/Map",
 	"media": {"type": "application/json;profile=http://schema.org/Map"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"mapType": {
+			"oneOf": [
+				{"$ref": "MapCategoryType.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "MapCategoryType.json#/definitions/possibleRef"}
+				}
+			]
+		}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",

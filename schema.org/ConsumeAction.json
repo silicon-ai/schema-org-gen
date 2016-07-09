@@ -1,9 +1,12 @@
 {
 	"id": "ConsumeAction.json",
 	"title": "Consume Action",
+	"description": "The act of ingesting information/resources/food.",
 	"format": "http://schema.org/ConsumeAction",
 	"media": {"type": "application/json;profile=http://schema.org/ConsumeAction"},
 	"allOf": [{"$ref": "Action.json"}],
+	"type": "object",
+	"properties": {"expectsAcceptanceOf": {"$ref": "Offer.json#/definitions/possibleRefArray"}},
 	"definitions": {
 		"array": {
 			"type": "array",

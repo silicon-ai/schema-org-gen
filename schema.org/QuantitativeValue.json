@@ -1,14 +1,20 @@
 {
 	"id": "QuantitativeValue.json",
 	"title": "Quantitative Value",
+	"description": "A point value or interval for product characteristics and other purposes.",
 	"format": "http://schema.org/QuantitativeValue",
 	"media": {"type": "application/json;profile=http://schema.org/QuantitativeValue"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
 	"type": "object",
 	"properties": {
+		"additionalProperty": {"$ref": "PropertyValue.json#/definitions/possibleRefArray"},
 		"maxValue": {"$ref": "#/definitions/maxValue"},
 		"minValue": {"$ref": "#/definitions/minValue"},
 		"unitCode": {"$ref": "#/definitions/unitCode"},
+		"unitText": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/unitText"}
+		},
 		"value": {"$ref": "#/definitions/value"},
 		"valueReference": {
 			"type": "array",
@@ -51,28 +57,39 @@
 		},
 		"maxValue": {
 			"title": "Max Value",
-			"description": "The upper of the product characteristic.",
+			"description": "The upper value of some characteristic or property.",
 			"type": "number"
 		},
 		"minValue": {
 			"title": "Min Value",
-			"description": "The lower value of the product characteristic.",
+			"description": "The lower value of some characteristic or property.",
 			"type": "number"
 		},
 		"unitCode": {
 			"title": "Unit Code",
-			"description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters).",
+			"description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "uri"
+				},
+				{"type": "string"}
+			]
+		},
+		"unitText": {
+			"title": "Unit Text",
+			"description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\nunitCode.",
 			"type": "string"
 		},
 		"value": {
 			"title": "Value",
-			"description": "The value of the product characteristic.",
-			"type": "number"
+			"description": "The value of the quantitative value or property value node.\n    For QuantitativeValue and MonetaryValue, the recommended type for values is 'Number'. \n    For PropertyValue, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.",
+			"anyOf": [{"type": "string"}, {"type": "boolean"}, {"type": "number"}, {"$ref": "StructuredValue.json#/definitions/possibleRef"}]
 		},
 		"valueReference": {
 			"title": "Value Reference",
 			"description": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
-			"anyOf": [{"$ref": "Enumeration.json#/definitions/possibleRef"}, {"$ref": "StructuredValue.json#/definitions/possibleRef"}]
+			"anyOf": [{"$ref": "QualitativeValue.json#/definitions/possibleRef"}, {"$ref": "PropertyValue.json#/definitions/possibleRef"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}, {"$ref": "Enumeration.json#/definitions/possibleRef"}, {"$ref": "StructuredValue.json#/definitions/possibleRef"}]
 		}
 	}
 }

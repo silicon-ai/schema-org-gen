@@ -1,6 +1,7 @@
 {
 	"id": "HinduTemple.json",
 	"title": "Hindu Temple",
+	"description": "A Hindu temple.",
 	"format": "http://schema.org/HinduTemple",
 	"media": {"type": "application/json;profile=http://schema.org/HinduTemple"},
 	"allOf": [{"$ref": "PlaceOfWorship.json"}],

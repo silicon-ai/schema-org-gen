@@ -1,6 +1,7 @@
 {
 	"id": "BookmarkAction.json",
 	"title": "Bookmark Action",
+	"description": "An agent bookmarks/flags/labels/tags/marks an object.",
 	"format": "http://schema.org/BookmarkAction",
 	"media": {"type": "application/json;profile=http://schema.org/BookmarkAction"},
 	"allOf": [{"$ref": "OrganizeAction.json"}],

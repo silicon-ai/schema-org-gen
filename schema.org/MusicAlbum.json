@@ -1,11 +1,25 @@
 {
 	"id": "MusicAlbum.json",
 	"title": "Music Album",
+	"description": "A collection of music tracks.",
 	"format": "http://schema.org/MusicAlbum",
 	"media": {"type": "application/json;profile=http://schema.org/MusicAlbum"},
 	"allOf": [{"$ref": "MusicPlaylist.json"}],
 	"type": "object",
-	"properties": {"byArtist": {"$ref": "MusicGroup.json#/definitions/possibleRef"}},
+	"properties": {
+		"albumProductionType": {
+			"oneOf": [
+				{"$ref": "MusicAlbumProductionType.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "MusicAlbumProductionType.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"albumRelease": {"$ref": "MusicRelease.json#/definitions/possibleRefArray"},
+		"albumReleaseType": {"$ref": "MusicAlbumReleaseType.json#/definitions/possibleRef"},
+		"byArtist": {"$ref": "MusicGroup.json#/definitions/possibleRef"}
+	},
 	"definitions": {
 		"array": {
 			"type": "array",

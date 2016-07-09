@@ -1,6 +1,7 @@
 {
 	"id": "ShoppingCenter.json",
 	"title": "Shopping Center",
+	"description": "A shopping center or mall.",
 	"format": "http://schema.org/ShoppingCenter",
 	"media": {"type": "application/json;profile=http://schema.org/ShoppingCenter"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

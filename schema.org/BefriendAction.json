@@ -1,6 +1,7 @@
 {
 	"id": "BefriendAction.json",
 	"title": "Befriend Action",
+	"description": "The act of forming a personal connection with someone (object) mutually/bidirectionally/symmetrically.Related actions:FollowAction: Unlike FollowAction, BefriendAction implies that the connection is reciprocal.",
 	"format": "http://schema.org/BefriendAction",
 	"media": {"type": "application/json;profile=http://schema.org/BefriendAction"},
 	"allOf": [{"$ref": "InteractAction.json"}],

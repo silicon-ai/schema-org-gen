@@ -1,6 +1,7 @@
 {
 	"id": "RadioStation.json",
 	"title": "Radio Station",
+	"description": "A radio station.",
 	"format": "http://schema.org/RadioStation",
 	"media": {"type": "application/json;profile=http://schema.org/RadioStation"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "ReceiveAction.json",
 	"title": "Receive Action",
+	"description": "The act of physically/electronically taking delivery of an object thathas been transferred from an origin to a destination. Reciprocal of SendAction.Related actions:SendAction: The reciprocal of ReceiveAction.TakeAction: Unlike TakeAction, ReceiveAction does not imply that the ownership has been transfered (e.g. I can receive a package, but it does not mean the package is now mine).",
 	"format": "http://schema.org/ReceiveAction",
 	"media": {"type": "application/json;profile=http://schema.org/ReceiveAction"},
 	"allOf": [{"$ref": "TransferAction.json"}],
@@ -49,7 +50,7 @@
 		"sender": {
 			"title": "Sender",
 			"description": "A sub property of participant. The participant who is at the sending end of the action.",
-			"anyOf": [{"$ref": "Audience.json#/definitions/possibleRef"}, {"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Audience.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		}
 	}
 }

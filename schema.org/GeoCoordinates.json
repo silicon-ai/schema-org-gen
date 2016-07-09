@@ -1,14 +1,18 @@
 {
 	"id": "GeoCoordinates.json",
 	"title": "Geo Coordinates",
+	"description": "The geographic coordinates of a place or event.",
 	"format": "http://schema.org/GeoCoordinates",
 	"media": {"type": "application/json;profile=http://schema.org/GeoCoordinates"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
 	"type": "object",
 	"properties": {
+		"address": {"$ref": "#/definitions/address"},
+		"addressCountry": {"$ref": "#/definitions/addressCountry"},
 		"elevation": {"$ref": "#/definitions/elevation"},
 		"latitude": {"$ref": "#/definitions/latitude"},
-		"longitude": {"$ref": "#/definitions/longitude"}
+		"longitude": {"$ref": "#/definitions/longitude"},
+		"postalCode": {"$ref": "#/definitions/postalCode"}
 	},
 	"definitions": {
 		"array": {
@@ -44,20 +48,35 @@
 				}
 			]
 		},
+		"address": {
+			"title": "Address",
+			"description": "Physical address of the item.",
+			"anyOf": [{"type": "string"}, {"$ref": "PostalAddress.json#/definitions/possibleRef"}]
+		},
+		"addressCountry": {
+			"title": "Address Country",
+			"description": "The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.",
+			"anyOf": [{"$ref": "Country.json#/definitions/possibleRef"}, {"type": "string"}]
+		},
 		"elevation": {
 			"title": "Elevation",
-			"description": "The elevation of a location.",
+			"description": "The elevation of a location (WGS 84).",
 			"anyOf": [{"type": "string"}, {"type": "number"}]
 		},
 		"latitude": {
 			"title": "Latitude",
-			"description": "The latitude of a location. For example 37.42242.",
+			"description": "The latitude of a location. For example 37.42242 (WGS 84).",
 			"anyOf": [{"type": "number"}, {"type": "string"}]
 		},
 		"longitude": {
 			"title": "Longitude",
-			"description": "The longitude of a location. For example -122.08585.",
+			"description": "The longitude of a location. For example -122.08585 (WGS 84).",
 			"anyOf": [{"type": "number"}, {"type": "string"}]
+		},
+		"postalCode": {
+			"title": "Postal Code",
+			"description": "The postal code. For example, 94043.",
+			"type": "string"
 		}
 	}
 }

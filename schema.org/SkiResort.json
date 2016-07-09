@@ -1,6 +1,7 @@
 {
 	"id": "SkiResort.json",
 	"title": "Ski Resort",
+	"description": "A ski resort.",
 	"format": "http://schema.org/SkiResort",
 	"media": {"type": "application/json;profile=http://schema.org/SkiResort"},
 	"allOf": [{"$ref": "SportsActivityLocation.json"}],

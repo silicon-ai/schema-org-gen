@@ -1,6 +1,7 @@
 {
 	"id": "Zoo.json",
 	"title": "Zoo",
+	"description": "A zoo.",
 	"format": "http://schema.org/Zoo",
 	"media": {"type": "application/json;profile=http://schema.org/Zoo"},
 	"allOf": [{"$ref": "CivicStructure.json"}],

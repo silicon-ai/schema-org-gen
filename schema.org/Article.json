@@ -1,6 +1,7 @@
 {
 	"id": "Article.json",
 	"title": "Article",
+	"description": "An article, such as a news article or piece of investigative report. Newspapers and magazines have articles of many different types and this is intended to cover them all.\n  <br/><br/>See also <a href=\"http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html\">blog post</a>.",
 	"format": "http://schema.org/Article",
 	"media": {"type": "application/json;profile=http://schema.org/Article"},
 	"allOf": [{"$ref": "CreativeWork.json"}],
@@ -10,6 +11,17 @@
 		"articleSection": {
 			"type": "array",
 			"items": {"$ref": "#/definitions/articleSection"}
+		},
+		"pageEnd": {"$ref": "#/definitions/pageEnd"},
+		"pageStart": {"$ref": "#/definitions/pageStart"},
+		"pagination": {
+			"oneOf": [
+				{"$ref": "#/definitions/pagination"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/pagination"}
+				}
+			]
 		},
 		"wordCount": {"$ref": "#/definitions/wordCount"}
 	},
@@ -55,6 +67,21 @@
 		"articleSection": {
 			"title": "Article Section",
 			"description": "Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.",
+			"type": "string"
+		},
+		"pageEnd": {
+			"title": "Page End",
+			"description": "The page on which the work ends; for example \"138\" or \"xvi\".",
+			"anyOf": [{"type": "integer"}, {"type": "string"}]
+		},
+		"pageStart": {
+			"title": "Page Start",
+			"description": "The page on which the work starts; for example \"135\" or \"xiii\".",
+			"anyOf": [{"type": "integer"}, {"type": "string"}]
+		},
+		"pagination": {
+			"title": "Pagination",
+			"description": "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
 			"type": "string"
 		},
 		"wordCount": {

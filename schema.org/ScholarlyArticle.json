@@ -1,6 +1,7 @@
 {
 	"id": "ScholarlyArticle.json",
 	"title": "Scholarly Article",
+	"description": "A scholarly article.",
 	"format": "http://schema.org/ScholarlyArticle",
 	"media": {"type": "application/json;profile=http://schema.org/ScholarlyArticle"},
 	"allOf": [{"$ref": "Article.json"}],

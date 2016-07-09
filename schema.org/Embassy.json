@@ -1,6 +1,7 @@
 {
 	"id": "Embassy.json",
 	"title": "Embassy",
+	"description": "An embassy.",
 	"format": "http://schema.org/Embassy",
 	"media": {"type": "application/json;profile=http://schema.org/Embassy"},
 	"allOf": [{"$ref": "GovernmentBuilding.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "UnRegisterAction.json",
 	"title": "Un Register Action",
+	"description": "The act of un-registering from a service.Related actions:RegisterAction: antonym of UnRegisterAction.Leave: Unlike LeaveAction, UnRegisterAction implies that you are unregistering from a service you werer previously registered, rather than leaving a team/group of people.",
 	"format": "http://schema.org/UnRegisterAction",
 	"media": {"type": "application/json;profile=http://schema.org/UnRegisterAction"},
 	"allOf": [{"$ref": "InteractAction.json"}],

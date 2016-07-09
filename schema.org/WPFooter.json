@@ -1,6 +1,7 @@
 {
 	"id": "WPFooter.json",
 	"title": "WP Footer",
+	"description": "The footer section of the page.",
 	"format": "http://schema.org/WPFooter",
 	"media": {"type": "application/json;profile=http://schema.org/WPFooter"},
 	"allOf": [{"$ref": "WebPageElement.json"}],

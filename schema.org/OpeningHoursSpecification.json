@@ -1,6 +1,7 @@
 {
 	"id": "OpeningHoursSpecification.json",
 	"title": "Opening Hours Specification",
+	"description": "A structured value providing information about the opening hours of a place or a certain service inside a place.\n\nThe place is open if the opens property is specified, and closed otherwise.\n\nIf the value for the closes property is less than the value for the opens property then the hour range is assumed to span over the next day.",
 	"format": "http://schema.org/OpeningHoursSpecification",
 	"media": {"type": "application/json;profile=http://schema.org/OpeningHoursSpecification"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
@@ -66,7 +67,7 @@
 		},
 		"validThrough": {
 			"title": "Valid Through",
-			"description": "The end of the validity of offer, price specification, or opening hours data.",
+			"description": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
 			"type": "string",
 			"format": "date-time"
 		}

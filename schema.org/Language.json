@@ -1,6 +1,7 @@
 {
 	"id": "Language.json",
 	"title": "Language",
+	"description": "Natural languages such as Spanish, Tamil, Hindi, English, etc. Formal language code tags expressed in BCP 47 can be used via the alternateName property. The Language type previously also covered programming languages such as Scheme and Lisp, which are now best represented using ComputerLanguage.",
 	"format": "http://schema.org/Language",
 	"media": {"type": "application/json;profile=http://schema.org/Language"},
 	"allOf": [{"$ref": "Intangible.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "IgnoreAction.json",
 	"title": "Ignore Action",
+	"description": "The act of intentionally disregarding the object. An agent ignores an object.",
 	"format": "http://schema.org/IgnoreAction",
 	"media": {"type": "application/json;profile=http://schema.org/IgnoreAction"},
 	"allOf": [{"$ref": "AssessAction.json"}],

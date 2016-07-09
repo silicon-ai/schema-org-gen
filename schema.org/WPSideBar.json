@@ -1,6 +1,7 @@
 {
 	"id": "WPSideBar.json",
 	"title": "WP Side Bar",
+	"description": "A sidebar section of the page.",
 	"format": "http://schema.org/WPSideBar",
 	"media": {"type": "application/json;profile=http://schema.org/WPSideBar"},
 	"allOf": [{"$ref": "WebPageElement.json"}],

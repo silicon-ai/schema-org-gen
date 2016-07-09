@@ -1,6 +1,7 @@
 {
 	"id": "HealthClub.json",
 	"title": "Health Club",
+	"description": "A health club.",
 	"format": "http://schema.org/HealthClub",
 	"media": {"type": "application/json;profile=http://schema.org/HealthClub"},
 	"allOf": [{"$ref": "HealthAndBeautyBusiness.json"}, {"$ref": "SportsActivityLocation.json"}],

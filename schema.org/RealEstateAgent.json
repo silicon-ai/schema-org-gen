@@ -1,6 +1,7 @@
 {
 	"id": "RealEstateAgent.json",
 	"title": "Real Estate Agent",
+	"description": "A real-estate agent.",
 	"format": "http://schema.org/RealEstateAgent",
 	"media": {"type": "application/json;profile=http://schema.org/RealEstateAgent"},
 	"allOf": [{"$ref": "LocalBusiness.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "WPAdBlock.json",
 	"title": "WP Ad Block",
+	"description": "An advertising section of the page.",
 	"format": "http://schema.org/WPAdBlock",
 	"media": {"type": "application/json;profile=http://schema.org/WPAdBlock"},
 	"allOf": [{"$ref": "WebPageElement.json"}],

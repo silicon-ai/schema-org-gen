@@ -1,6 +1,7 @@
 {
 	"id": "AggregateRating.json",
 	"title": "Aggregate Rating",
+	"description": "The average rating based on multiple ratings or reviews.",
 	"format": "http://schema.org/AggregateRating",
 	"media": {"type": "application/json;profile=http://schema.org/AggregateRating"},
 	"allOf": [{"$ref": "Rating.json"}],
@@ -47,12 +48,12 @@
 		"ratingCount": {
 			"title": "Rating Count",
 			"description": "The count of total number of ratings.",
-			"type": "number"
+			"type": "integer"
 		},
 		"reviewCount": {
 			"title": "Review Count",
 			"description": "The count of total number of reviews.",
-			"type": "number"
+			"type": "integer"
 		}
 	}
 }

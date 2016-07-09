@@ -1,6 +1,7 @@
 {
 	"id": "Book.json",
 	"title": "Book",
+	"description": "A book.",
 	"format": "http://schema.org/Book",
 	"media": {"type": "application/json;profile=http://schema.org/Book"},
 	"allOf": [{"$ref": "CreativeWork.json"}],

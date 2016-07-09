@@ -1,6 +1,7 @@
 {
 	"id": "LikeAction.json",
 	"title": "Like Action",
+	"description": "The act of expressing a positive sentiment about the object. An agent likes an object (a proposition, topic or theme) with participants.",
 	"format": "http://schema.org/LikeAction",
 	"media": {"type": "application/json;profile=http://schema.org/LikeAction"},
 	"allOf": [{"$ref": "ReactAction.json"}],

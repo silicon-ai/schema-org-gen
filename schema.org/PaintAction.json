@@ -1,6 +1,7 @@
 {
 	"id": "PaintAction.json",
 	"title": "Paint Action",
+	"description": "The act of producing a painting, typically with paint and canvas as instruments.",
 	"format": "http://schema.org/PaintAction",
 	"media": {"type": "application/json;profile=http://schema.org/PaintAction"},
 	"allOf": [{"$ref": "CreateAction.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "ExerciseGym.json",
 	"title": "Exercise Gym",
+	"description": "A gym.",
 	"format": "http://schema.org/ExerciseGym",
 	"media": {"type": "application/json;profile=http://schema.org/ExerciseGym"},
 	"allOf": [{"$ref": "SportsActivityLocation.json"}],

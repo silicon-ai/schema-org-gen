@@ -1,6 +1,7 @@
 {
 	"id": "MusicVideoObject.json",
 	"title": "Music Video Object",
+	"description": "A music video file.",
 	"format": "http://schema.org/MusicVideoObject",
 	"media": {"type": "application/json;profile=http://schema.org/MusicVideoObject"},
 	"allOf": [{"$ref": "MediaObject.json"}],

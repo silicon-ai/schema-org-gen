@@ -1,6 +1,7 @@
 {
 	"id": "IndividualProduct.json",
 	"title": "Individual Product",
+	"description": "A single, identifiable product instance (e.g. a laptop with a particular serial number).",
 	"format": "http://schema.org/IndividualProduct",
 	"media": {"type": "application/json;profile=http://schema.org/IndividualProduct"},
 	"allOf": [{"$ref": "Product.json"}],

@@ -1,6 +1,7 @@
 {
 	"id": "QuoteAction.json",
 	"title": "Quote Action",
+	"description": "An agent quotes/estimates/appraises an object/product/service with a price at a location/store.",
 	"format": "http://schema.org/QuoteAction",
 	"media": {"type": "application/json;profile=http://schema.org/QuoteAction"},
 	"allOf": [{"$ref": "TradeAction.json"}],

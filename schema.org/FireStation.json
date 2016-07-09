@@ -1,6 +1,7 @@
 {
 	"id": "FireStation.json",
 	"title": "Fire Station",
+	"description": "A fire station. With firemen.",
 	"format": "http://schema.org/FireStation",
 	"media": {"type": "application/json;profile=http://schema.org/FireStation"},
 	"allOf": [{"$ref": "CivicStructure.json"}, {"$ref": "EmergencyService.json"}],

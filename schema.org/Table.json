@@ -1,6 +1,7 @@
 {
 	"id": "Table.json",
 	"title": "Table",
+	"description": "A table on a Web page.",
 	"format": "http://schema.org/Table",
 	"media": {"type": "application/json;profile=http://schema.org/Table"},
 	"allOf": [{"$ref": "WebPageElement.json"}],

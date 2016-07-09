@@ -1,9 +1,10 @@
 {
 	"id": "Attorney.json",
 	"title": "Attorney",
+	"description": "Professional service: Attorney. \n        This type is deprecated - LegalService is more inclusive and less ambiguous.",
 	"format": "http://schema.org/Attorney",
 	"media": {"type": "application/json;profile=http://schema.org/Attorney"},
-	"allOf": [{"$ref": "ProfessionalService.json"}],
+	"allOf": [{"$ref": "LegalService.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

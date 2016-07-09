@@ -1,9 +1,10 @@
 {
 	"id": "MedicalOrganization.json",
 	"title": "Medical Organization",
+	"description": "A medical organization (physical or not), such as hospital, institution or clinic.",
 	"format": "http://schema.org/MedicalOrganization",
 	"media": {"type": "application/json;profile=http://schema.org/MedicalOrganization"},
-	"allOf": [{"$ref": "LocalBusiness.json"}],
+	"allOf": [{"$ref": "Organization.json"}],
 	"definitions": {
 		"array": {
 			"type": "array",

@@ -1,7 +1,43 @@
 {
 	"id": "EventStatusType.json",
 	"title": "Event Status Type",
+	"description": "EventStatusType is an enumeration type whose instances represent several states that an Event may be in.",
 	"format": "http://schema.org/EventStatusType",
 	"media": {"type": "application/json;profile=http://schema.org/EventStatusType"},
-	"enum": ["EventCancelled", "EventPostponed", "EventRescheduled", "EventScheduled"]
+	"allOf": [{"$ref": "Enumeration.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
 }

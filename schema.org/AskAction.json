@@ -1,16 +1,12 @@
 {
 	"id": "AskAction.json",
 	"title": "Ask Action",
+	"description": "The act of posing a question / favor to someone.Related actions:ReplyAction: Appears generally as a response to AskAction.",
 	"format": "http://schema.org/AskAction",
 	"media": {"type": "application/json;profile=http://schema.org/AskAction"},
 	"allOf": [{"$ref": "CommunicateAction.json"}],
 	"type": "object",
-	"properties": {
-		"question": {
-			"type": "array",
-			"items": {"$ref": "#/definitions/question"}
-		}
-	},
+	"properties": {"question": {"$ref": "Question.json#/definitions/possibleRefArray"}},
 	"definitions": {
 		"array": {
 			"type": "array",
@@ -44,11 +40,6 @@
 					"items": {"$ref": "#/definitions/possibleRef"}
 				}
 			]
-		},
-		"question": {
-			"title": "Question",
-			"description": "A sub property of object. A question.",
-			"type": "string"
 		}
 	}
 }

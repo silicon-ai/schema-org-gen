@@ -1,6 +1,7 @@
 {
 	"id": "VisualArtsEvent.json",
 	"title": "Visual Arts Event",
+	"description": "Event type: Visual arts event.",
 	"format": "http://schema.org/VisualArtsEvent",
 	"media": {"type": "application/json;profile=http://schema.org/VisualArtsEvent"},
 	"allOf": [{"$ref": "Event.json"}],

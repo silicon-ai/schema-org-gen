@@ -1,6 +1,7 @@
 {
 	"id": "ParcelDelivery.json",
 	"title": "Parcel Delivery",
+	"description": "The delivery of a parcel either via the postal service or a commercial service.",
 	"format": "http://schema.org/ParcelDelivery",
 	"media": {"type": "application/json;profile=http://schema.org/ParcelDelivery"},
 	"allOf": [{"$ref": "Intangible.json"}],
@@ -13,6 +14,7 @@
 		"hasDeliveryMethod": {"$ref": "DeliveryMethod.json#/definitions/possibleRef"},
 		"itemShipped": {"$ref": "Product.json#/definitions/possibleRefArray"},
 		"originAddress": {"$ref": "PostalAddress.json#/definitions/possibleRef"},
+		"provider": {"$ref": "#/definitions/provider"},
 		"trackingNumber": {"$ref": "#/definitions/trackingNumber"},
 		"trackingUrl": {
 			"type": "string",
@@ -68,6 +70,11 @@
 			"description": "The latest date the package may arrive.",
 			"type": "string",
 			"format": "date-time"
+		},
+		"provider": {
+			"title": "Provider",
+			"description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. Supersedes carrier.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
 		},
 		"trackingNumber": {
 			"title": "Tracking Number",

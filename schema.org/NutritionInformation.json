@@ -1,6 +1,7 @@
 {
 	"id": "NutritionInformation.json",
 	"title": "Nutrition Information",
+	"description": "Nutritional information about the recipe.",
 	"format": "http://schema.org/NutritionInformation",
 	"media": {"type": "application/json;profile=http://schema.org/NutritionInformation"},
 	"allOf": [{"$ref": "StructuredValue.json"}],
@@ -55,7 +56,7 @@
 		},
 		"servingSize": {
 			"title": "Serving Size",
-			"description": "The serving size, in terms of the number of volume or mass",
+			"description": "The serving size, in terms of the number of volume or mass.",
 			"type": "string"
 		}
 	}
