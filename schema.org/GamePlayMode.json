@@ -1,0 +1,43 @@
+{
+	"id": "GamePlayMode.json",
+	"title": "Game Play Mode",
+	"description": "Indicates whether this game is multi-player, co-op or single-player.",
+	"format": "http://schema.org/GamePlayMode",
+	"media": {"type": "application/json;profile=http://schema.org/GamePlayMode"},
+	"allOf": [{"$ref": "Enumeration.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

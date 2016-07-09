@@ -1,0 +1,71 @@
+{
+	"id": "ProgramMembership.json",
+	"title": "Program Membership",
+	"description": "Used to describe membership in a loyalty programs (e.g. \"StarAliance\"), traveler clubs (e.g. \"AAA\"), purchase clubs (\"Safeway Club\"), etc.",
+	"format": "http://schema.org/ProgramMembership",
+	"media": {"type": "application/json;profile=http://schema.org/ProgramMembership"},
+	"allOf": [{"$ref": "Intangible.json"}],
+	"type": "object",
+	"properties": {
+		"hostingOrganization": {"$ref": "Organization.json#/definitions/possibleRef"},
+		"member": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/member"}
+		},
+		"membershipNumber": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/membershipNumber"}
+		},
+		"programName": {"$ref": "#/definitions/programName"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"member": {
+			"title": "Member",
+			"description": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. Supersedes members, musicGroupMember. Inverse property: memberOf.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"membershipNumber": {
+			"title": "Membership Number",
+			"description": "A unique identifier for the membership.",
+			"type": "string"
+		},
+		"programName": {
+			"title": "Program Name",
+			"description": "The program providing the membership.",
+			"type": "string"
+		}
+	}
+}

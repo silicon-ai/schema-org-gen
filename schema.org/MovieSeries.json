@@ -1,0 +1,56 @@
+{
+	"id": "MovieSeries.json",
+	"title": "Movie Series",
+	"description": "A series of movies. Included movies can be indicated with the hasPart property.",
+	"format": "http://schema.org/MovieSeries",
+	"media": {"type": "application/json;profile=http://schema.org/MovieSeries"},
+	"allOf": [{"$ref": "CreativeWorkSeries.json"}],
+	"type": "object",
+	"properties": {
+		"actor": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"director": {"$ref": "Person.json#/definitions/possibleRef"},
+		"musicBy": {"$ref": "#/definitions/musicBy"},
+		"productionCompany": {"$ref": "Organization.json#/definitions/possibleRef"},
+		"trailer": {"$ref": "VideoObject.json#/definitions/possibleRef"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"musicBy": {
+			"title": "Music by",
+			"description": "The composer of the soundtrack.",
+			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "MusicGroup.json#/definitions/possibleRef"}]
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"id": "PaymentStatusType.json",
+	"title": "Payment Status Type",
+	"description": "A specific payment status. For example, PaymentDue, PaymentComplete, etc.",
+	"format": "http://schema.org/PaymentStatusType",
+	"media": {"type": "application/json;profile=http://schema.org/PaymentStatusType"},
+	"allOf": [{"$ref": "Enumeration.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

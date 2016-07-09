@@ -1,0 +1,43 @@
+{
+	"id": "ActivateAction.json",
+	"title": "Activate Action",
+	"description": "The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).",
+	"format": "http://schema.org/ActivateAction",
+	"media": {"type": "application/json;profile=http://schema.org/ActivateAction"},
+	"allOf": [{"$ref": "ControlAction.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

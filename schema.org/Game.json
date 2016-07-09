@@ -1,0 +1,79 @@
+{
+	"id": "Game.json",
+	"title": "Game",
+	"description": "The Game type represents things which are games. These are typically rule-governed recreational activities, e.g. role-playing games in which players assume the role of characters in a fictional setting.",
+	"format": "http://schema.org/Game",
+	"media": {"type": "application/json;profile=http://schema.org/Game"},
+	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"characterAttribute": {"$ref": "Thing.json#/definitions/possibleRefArray"},
+		"gameItem": {"$ref": "Thing.json#/definitions/possibleRefArray"},
+		"gameLocation": {
+			"oneOf": [
+				{"$ref": "#/definitions/gameLocation"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/gameLocation"}
+				}
+			]
+		},
+		"numberOfPlayers": {
+			"oneOf": [
+				{"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"quest": {"$ref": "Thing.json#/definitions/possibleRef"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"gameLocation": {
+			"title": "Game Location",
+			"description": "Real or fictional location of the game (or part of game).",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "uri"
+				},
+				{"$ref": "PostalAddress.json#/definitions/possibleRef"},
+				{"$ref": "Place.json#/definitions/possibleRef"}
+			]
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"id": "SteeringPositionValue.json",
+	"title": "Steering Position Value",
+	"description": "A value indicating a steering position.",
+	"format": "http://schema.org/SteeringPositionValue",
+	"media": {"type": "application/json;profile=http://schema.org/SteeringPositionValue"},
+	"allOf": [{"$ref": "QualitativeValue.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

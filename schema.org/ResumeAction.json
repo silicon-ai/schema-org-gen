@@ -1,0 +1,43 @@
+{
+	"id": "ResumeAction.json",
+	"title": "Resume Action",
+	"description": "The act of resuming a device or application which was formerly paused (e.g. resume music playback or resume a timer).",
+	"format": "http://schema.org/ResumeAction",
+	"media": {"type": "application/json;profile=http://schema.org/ResumeAction"},
+	"allOf": [{"$ref": "ControlAction.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,70 @@
+{
+	"id": "Seat.json",
+	"title": "Seat",
+	"description": "Used to describe a seat, such as a reserved seat in an event reservation.",
+	"format": "http://schema.org/Seat",
+	"media": {"type": "application/json;profile=http://schema.org/Seat"},
+	"allOf": [{"$ref": "Intangible.json"}],
+	"type": "object",
+	"properties": {
+		"seatNumber": {"$ref": "#/definitions/seatNumber"},
+		"seatRow": {"$ref": "#/definitions/seatRow"},
+		"seatSection": {"$ref": "#/definitions/seatSection"},
+		"seatingType": {"$ref": "#/definitions/seatingType"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"seatNumber": {
+			"title": "Seat Number",
+			"description": "The location of the reserved seat (e.g., 27).",
+			"type": "string"
+		},
+		"seatRow": {
+			"title": "Seat Row",
+			"description": "The row location of the reserved seat (e.g., B).",
+			"type": "string"
+		},
+		"seatSection": {
+			"title": "Seat Section",
+			"description": "The section location of the reserved seat (e.g. Orchestra).",
+			"type": "string"
+		},
+		"seatingType": {
+			"title": "Seating Type",
+			"description": "The type/class of the seat.",
+			"anyOf": [{"$ref": "QualitativeValue.json#/definitions/possibleRef"}, {"type": "string"}]
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"id": "ControlAction.json",
+	"title": "Control Action",
+	"description": "An agent controls a device or application.",
+	"format": "http://schema.org/ControlAction",
+	"media": {"type": "application/json;profile=http://schema.org/ControlAction"},
+	"allOf": [{"$ref": "Action.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

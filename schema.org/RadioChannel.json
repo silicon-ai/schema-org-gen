@@ -1,0 +1,43 @@
+{
+	"id": "RadioChannel.json",
+	"title": "Radio Channel",
+	"description": "A unique instance of a radio BroadcastService on a CableOrSatelliteService lineup.",
+	"format": "http://schema.org/RadioChannel",
+	"media": {"type": "application/json;profile=http://schema.org/RadioChannel"},
+	"allOf": [{"$ref": "BroadcastChannel.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

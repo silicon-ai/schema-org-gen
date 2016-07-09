@@ -1,0 +1,50 @@
+{
+	"id": "InvestmentOrDeposit.json",
+	"title": "Investment or Deposit",
+	"description": "A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.",
+	"format": "http://schema.org/InvestmentOrDeposit",
+	"media": {"type": "application/json;profile=http://schema.org/InvestmentOrDeposit"},
+	"allOf": [{"$ref": "FinancialProduct.json"}],
+	"type": "object",
+	"properties": {"amount": {"$ref": "#/definitions/amount"}},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"amount": {
+			"title": "Amount",
+			"description": "The amount of money.",
+			"anyOf": [{"type": "number"}, {"$ref": "MonetaryAmount.json#/definitions/possibleRef"}]
+		}
+	}
+}

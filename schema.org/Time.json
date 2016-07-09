@@ -1,0 +1,14 @@
+{
+	"id": "Time.json",
+	"title": "Time",
+	"description": "A point in time recurring on multiple days in the form hh:mm:ss[Z|(+|-)hh:mm] (see XML schema for details).",
+	"format": "time",
+	"media": {"type": "application/json;profile=http://schema.org/Time"},
+	"type": "string",
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		}
+	}
+}

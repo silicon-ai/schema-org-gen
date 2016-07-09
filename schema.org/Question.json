@@ -1,0 +1,66 @@
+{
+	"id": "Question.json",
+	"title": "Question",
+	"description": "A specific question - e.g. from a user seeking answers online, or collected in a Frequently Asked Questions (FAQ) document.",
+	"format": "http://schema.org/Question",
+	"media": {"type": "application/json;profile=http://schema.org/Question"},
+	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"acceptedAnswer": {"$ref": "Answer.json#/definitions/possibleRef"},
+		"answerCount": {"$ref": "#/definitions/answerCount"},
+		"downvoteCount": {"$ref": "#/definitions/downvoteCount"},
+		"suggestedAnswer": {"$ref": "Answer.json#/definitions/possibleRefArray"},
+		"upvoteCount": {"$ref": "#/definitions/upvoteCount"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"answerCount": {
+			"title": "Answer Count",
+			"description": "The number of answers this question has received.",
+			"type": "integer"
+		},
+		"downvoteCount": {
+			"title": "Downvote Count",
+			"description": "The number of downvotes this question, answer or comment has received from the community.",
+			"type": "integer"
+		},
+		"upvoteCount": {
+			"title": "Upvote Count",
+			"description": "The number of upvotes this question, answer or comment has received from the community.",
+			"type": "integer"
+		}
+	}
+}

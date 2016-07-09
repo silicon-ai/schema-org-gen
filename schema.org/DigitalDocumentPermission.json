@@ -1,0 +1,53 @@
+{
+	"id": "DigitalDocumentPermission.json",
+	"title": "Digital Document Permission",
+	"description": "A permission for a particular person or group to access a particular file.",
+	"format": "http://schema.org/DigitalDocumentPermission",
+	"media": {"type": "application/json;profile=http://schema.org/DigitalDocumentPermission"},
+	"allOf": [{"$ref": "Intangible.json"}],
+	"type": "object",
+	"properties": {
+		"grantee": {"$ref": "#/definitions/grantee"},
+		"permissionType": {"$ref": "DigitalDocumentPermissionType.json#/definitions/possibleRef"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"grantee": {
+			"title": "Grantee",
+			"description": "The person, organization, contact point, or audience that has been granted this permission.",
+			"anyOf": [{"$ref": "Audience.json#/definitions/possibleRef"}, {"$ref": "ContactPoint.json#/definitions/possibleRef"}, {"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		}
+	}
+}

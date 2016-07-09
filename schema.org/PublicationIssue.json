@@ -1,0 +1,86 @@
+{
+	"id": "PublicationIssue.json",
+	"title": "Publication Issue",
+	"description": "A part of a successively published publication such as a periodical or publication volume, often numbered, usually containing a grouping of works such as articles.\n  <br/><br/>See also <a href=\"http://blog.schema.org/2014/09/schemaorg-support-for-bibliographic_2.html\">blog post</a>.",
+	"format": "http://schema.org/PublicationIssue",
+	"media": {"type": "application/json;profile=http://schema.org/PublicationIssue"},
+	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"issueNumber": {
+			"oneOf": [
+				{"$ref": "#/definitions/issueNumber"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/issueNumber"}
+				}
+			]
+		},
+		"pageEnd": {"$ref": "#/definitions/pageEnd"},
+		"pageStart": {"$ref": "#/definitions/pageStart"},
+		"pagination": {
+			"oneOf": [
+				{"$ref": "#/definitions/pagination"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/pagination"}
+				}
+			]
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"issueNumber": {
+			"title": "Issue Number",
+			"description": "Identifies the issue of publication; for example, \"iii\" or \"2\".",
+			"anyOf": [{"type": "integer"}, {"type": "string"}]
+		},
+		"pageEnd": {
+			"title": "Page End",
+			"description": "The page on which the work ends; for example \"138\" or \"xvi\".",
+			"anyOf": [{"type": "integer"}, {"type": "string"}]
+		},
+		"pageStart": {
+			"title": "Page Start",
+			"description": "The page on which the work starts; for example \"135\" or \"xiii\".",
+			"anyOf": [{"type": "integer"}, {"type": "string"}]
+		},
+		"pagination": {
+			"title": "Pagination",
+			"description": "Any description of pages that is not separated into pageStart and pageEnd; for example, \"1-6, 9, 55\" or \"10-12, 46-49\".",
+			"type": "string"
+		}
+	}
+}

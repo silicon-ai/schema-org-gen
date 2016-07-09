@@ -1,0 +1,43 @@
+{
+	"id": "BookSeries.json",
+	"title": "Book Series",
+	"description": "A series of books. Included books can be indicated with the hasPart property.",
+	"format": "http://schema.org/BookSeries",
+	"media": {"type": "application/json;profile=http://schema.org/BookSeries"},
+	"allOf": [{"$ref": "CreativeWorkSeries.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

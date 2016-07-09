@@ -1,0 +1,109 @@
+{
+	"id": "PropertyValue.json",
+	"title": "Property Value",
+	"description": "A property-value pair, e.g. representing a feature of a product or place. Use the 'name' property for the name of the property. If there is an additional human-readable version of the value, put that into the 'description' property.\n        \n        Always use specific schema.org properties when a) they exist and b) you can populate them. Using PropertyValue as a substitute will typically not trigger the same effect as using the original, specific property.",
+	"format": "http://schema.org/PropertyValue",
+	"media": {"type": "application/json;profile=http://schema.org/PropertyValue"},
+	"allOf": [{"$ref": "StructuredValue.json"}],
+	"type": "object",
+	"properties": {
+		"maxValue": {"$ref": "#/definitions/maxValue"},
+		"minValue": {"$ref": "#/definitions/minValue"},
+		"propertyID": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/propertyID"}
+		},
+		"unitCode": {"$ref": "#/definitions/unitCode"},
+		"unitText": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/unitText"}
+		},
+		"value": {"$ref": "#/definitions/value"},
+		"valueReference": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/valueReference"}
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"maxValue": {
+			"title": "Max Value",
+			"description": "The upper value of some characteristic or property.",
+			"type": "number"
+		},
+		"minValue": {
+			"title": "Min Value",
+			"description": "The lower value of some characteristic or property.",
+			"type": "number"
+		},
+		"propertyID": {
+			"title": "Property ID",
+			"description": "A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be\n(1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)\na URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).\nStandards bodies should promote a standard prefix for the identifiers of properties from their standards.",
+			"anyOf": [
+				{"type": "string"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		},
+		"unitCode": {
+			"title": "Unit Code",
+			"description": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "uri"
+				},
+				{"type": "string"}
+			]
+		},
+		"unitText": {
+			"title": "Unit Text",
+			"description": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\nunitCode.",
+			"type": "string"
+		},
+		"value": {
+			"title": "Value",
+			"description": "The value of the quantitative value or property value node.\n    For QuantitativeValue and MonetaryValue, the recommended type for values is 'Number'. \n    For PropertyValue, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.",
+			"anyOf": [{"type": "string"}, {"type": "boolean"}, {"type": "number"}, {"$ref": "StructuredValue.json#/definitions/possibleRef"}]
+		},
+		"valueReference": {
+			"title": "Value Reference",
+			"description": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
+			"anyOf": [{"$ref": "QualitativeValue.json#/definitions/possibleRef"}, {"$ref": "PropertyValue.json#/definitions/possibleRef"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}, {"$ref": "Enumeration.json#/definitions/possibleRef"}, {"$ref": "StructuredValue.json#/definitions/possibleRef"}]
+		}
+	}
+}

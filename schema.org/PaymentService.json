@@ -1,0 +1,43 @@
+{
+	"id": "PaymentService.json",
+	"title": "Payment Service",
+	"description": "A Service to transfer funds from a person or organization to a beneficiary person or organization.",
+	"format": "http://schema.org/PaymentService",
+	"media": {"type": "application/json;profile=http://schema.org/PaymentService"},
+	"allOf": [{"$ref": "FinancialProduct.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

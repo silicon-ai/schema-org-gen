@@ -1,0 +1,43 @@
+{
+	"id": "SpreadsheetDigitalDocument.json",
+	"title": "Spreadsheet Digital Document",
+	"description": "A spreadsheet file.",
+	"format": "http://schema.org/SpreadsheetDigitalDocument",
+	"media": {"type": "application/json;profile=http://schema.org/SpreadsheetDigitalDocument"},
+	"allOf": [{"$ref": "DigitalDocument.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

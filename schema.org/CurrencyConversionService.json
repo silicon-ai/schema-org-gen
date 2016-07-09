@@ -1,0 +1,43 @@
+{
+	"id": "CurrencyConversionService.json",
+	"title": "Currency Conversion Service",
+	"description": "A service to convert funds from one currency to another currency.",
+	"format": "http://schema.org/CurrencyConversionService",
+	"media": {"type": "application/json;profile=http://schema.org/CurrencyConversionService"},
+	"allOf": [{"$ref": "FinancialProduct.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,57 @@
+{
+	"id": "EngineSpecification.json",
+	"title": "Engine Specification",
+	"description": "Information about the engine of the vehicle. A vehicle can have multiple engines represented by multiple engine specification entities.",
+	"format": "http://schema.org/EngineSpecification",
+	"media": {"type": "application/json;profile=http://schema.org/EngineSpecification"},
+	"allOf": [{"$ref": "StructuredValue.json"}],
+	"type": "object",
+	"properties": {"fuelType": {"$ref": "#/definitions/fuelType"}},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"fuelType": {
+			"title": "Fuel Type",
+			"description": "The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.",
+			"anyOf": [
+				{"$ref": "QualitativeValue.json#/definitions/possibleRef"},
+				{"type": "string"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		}
+	}
+}

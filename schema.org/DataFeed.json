@@ -1,0 +1,55 @@
+{
+	"id": "DataFeed.json",
+	"title": "Data Feed",
+	"description": "A single feed providing structured information about one or more entities or topics.",
+	"format": "http://schema.org/DataFeed",
+	"media": {"type": "application/json;profile=http://schema.org/DataFeed"},
+	"allOf": [{"$ref": "Dataset.json"}],
+	"type": "object",
+	"properties": {
+		"dataFeedElement": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/dataFeedElement"}
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"dataFeedElement": {
+			"title": "Data Feed Element",
+			"description": "An item within in a data feed. Data feeds may have many elements.",
+			"anyOf": [{"$ref": "DataFeedItem.json#/definitions/possibleRef"}, {"type": "string"}, {"$ref": "Thing.json#/definitions/possibleRef"}]
+		}
+	}
+}

@@ -1,0 +1,86 @@
+{
+	"id": "Message.json",
+	"title": "Message",
+	"description": "A single message from a sender to one or more organizations or people.",
+	"format": "http://schema.org/Message",
+	"media": {"type": "application/json;profile=http://schema.org/Message"},
+	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"dateRead": {"$ref": "#/definitions/dateRead"},
+		"dateReceived": {"$ref": "#/definitions/dateReceived"},
+		"dateSent": {"$ref": "#/definitions/dateSent"},
+		"messageAttachment": {"$ref": "CreativeWork.json#/definitions/possibleRefArray"},
+		"recipient": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/recipient"}
+		},
+		"sender": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/sender"}
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"dateRead": {
+			"title": "Date Read",
+			"description": "The date/time at which the message has been read by the recipient if a single recipient exists.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"dateReceived": {
+			"title": "Date Received",
+			"description": "The date/time the message was received if a single recipient exists.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"dateSent": {
+			"title": "Date Sent",
+			"description": "The date/time at which the message was sent.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"recipient": {
+			"title": "Recipient",
+			"description": "A sub property of participant. The participant who is at the receiving end of the action.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Audience.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"sender": {
+			"title": "Sender",
+			"description": "A sub property of participant. The participant who is at the sending end of the action.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Audience.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		}
+	}
+}

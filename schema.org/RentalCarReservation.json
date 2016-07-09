@@ -1,0 +1,94 @@
+{
+	"id": "RentalCarReservation.json",
+	"title": "Rental Car Reservation",
+	"description": "A reservation for a rental car.Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+	"format": "http://schema.org/RentalCarReservation",
+	"media": {"type": "application/json;profile=http://schema.org/RentalCarReservation"},
+	"allOf": [{"$ref": "Reservation.json"}],
+	"type": "object",
+	"properties": {
+		"dropoffLocation": {
+			"oneOf": [
+				{"$ref": "Place.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "Place.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"dropoffTime": {
+			"oneOf": [
+				{"$ref": "#/definitions/dropoffTime"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/dropoffTime"}
+				}
+			]
+		},
+		"pickupLocation": {
+			"oneOf": [
+				{"$ref": "Place.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "Place.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"pickupTime": {
+			"oneOf": [
+				{"$ref": "#/definitions/pickupTime"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/pickupTime"}
+				}
+			]
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"dropoffTime": {
+			"title": "Dropoff Time",
+			"description": "When a rental car can be dropped off.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"pickupTime": {
+			"title": "Pickup Time",
+			"description": "When a taxi will pickup a passenger or a rental car can be picked up.",
+			"type": "string",
+			"format": "date-time"
+		}
+	}
+}

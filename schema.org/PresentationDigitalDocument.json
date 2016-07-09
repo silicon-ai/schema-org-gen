@@ -1,0 +1,43 @@
+{
+	"id": "PresentationDigitalDocument.json",
+	"title": "Presentation Digital Document",
+	"description": "A file containing slides or used for a presentation.",
+	"format": "http://schema.org/PresentationDigitalDocument",
+	"media": {"type": "application/json;profile=http://schema.org/PresentationDigitalDocument"},
+	"allOf": [{"$ref": "DigitalDocument.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

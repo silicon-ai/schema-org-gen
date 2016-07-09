@@ -1,0 +1,14 @@
+{
+	"id": "Number.json",
+	"title": "Number",
+	"description": "Data type: Number.",
+	"format": "http://schema.org/Number",
+	"media": {"type": "application/json;profile=http://schema.org/Number"},
+	"type": "number",
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		}
+	}
+}

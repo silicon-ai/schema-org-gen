@@ -1,0 +1,43 @@
+{
+	"id": "SuspendAction.json",
+	"title": "Suspend Action",
+	"description": "The act of momentarily pausing a device or application (e.g. pause music playback or pause a timer).",
+	"format": "http://schema.org/SuspendAction",
+	"media": {"type": "application/json;profile=http://schema.org/SuspendAction"},
+	"allOf": [{"$ref": "ControlAction.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,70 @@
+{
+	"id": "MusicRelease.json",
+	"title": "Music Release",
+	"description": "A MusicRelease is a specific release of a music album.",
+	"format": "http://schema.org/MusicRelease",
+	"media": {"type": "application/json;profile=http://schema.org/MusicRelease"},
+	"allOf": [{"$ref": "MusicPlaylist.json"}],
+	"type": "object",
+	"properties": {
+		"catalogNumber": {"$ref": "#/definitions/catalogNumber"},
+		"creditedTo": {"$ref": "#/definitions/creditedTo"},
+		"duration": {"$ref": "Duration.json#/definitions/possibleRef"},
+		"musicReleaseFormat": {
+			"oneOf": [
+				{"$ref": "MusicReleaseFormatType.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "MusicReleaseFormatType.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"recordLabel": {"$ref": "Organization.json#/definitions/possibleRef"},
+		"releaseOf": {"$ref": "MusicAlbum.json#/definitions/possibleRef"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"catalogNumber": {
+			"title": "Catalog Number",
+			"description": "The catalog number for the release.",
+			"type": "string"
+		},
+		"creditedTo": {
+			"title": "Credited to",
+			"description": "The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to \"Stefani Germanotta Band\", but by Lady Gaga.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		}
+	}
+}

@@ -1,0 +1,78 @@
+{
+	"id": "FinancialProduct.json",
+	"title": "Financial Product",
+	"description": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
+	"format": "http://schema.org/FinancialProduct",
+	"media": {"type": "application/json;profile=http://schema.org/FinancialProduct"},
+	"allOf": [{"$ref": "Service.json"}],
+	"type": "object",
+	"properties": {
+		"annualPercentageRate": {"$ref": "#/definitions/annualPercentageRate"},
+		"feesAndCommissionsSpecification": {
+			"oneOf": [
+				{"$ref": "#/definitions/feesAndCommissionsSpecification"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/feesAndCommissionsSpecification"}
+				}
+			]
+		},
+		"interestRate": {"$ref": "#/definitions/interestRate"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"annualPercentageRate": {
+			"title": "Annual Percentage Rate",
+			"description": "The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.",
+			"anyOf": [{"type": "number"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		},
+		"feesAndCommissionsSpecification": {
+			"title": "Fees And Commissions Specification",
+			"description": "Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "uri"
+				},
+				{"type": "string"}
+			]
+		},
+		"interestRate": {
+			"title": "Interest Rate",
+			"description": "The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.",
+			"anyOf": [{"type": "number"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		}
+	}
+}

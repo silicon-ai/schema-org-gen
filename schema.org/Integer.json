@@ -1,0 +1,14 @@
+{
+	"id": "Integer.json",
+	"title": "Integer",
+	"description": "Data type: Integer.",
+	"format": "http://schema.org/Integer",
+	"media": {"type": "application/json;profile=http://schema.org/Integer"},
+	"type": "integer",
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		}
+	}
+}

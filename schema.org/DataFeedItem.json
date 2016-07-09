@@ -1,0 +1,84 @@
+{
+	"id": "DataFeedItem.json",
+	"title": "Data Feed Item",
+	"description": "A single item within a larger data feed.",
+	"format": "http://schema.org/DataFeedItem",
+	"media": {"type": "application/json;profile=http://schema.org/DataFeedItem"},
+	"allOf": [{"$ref": "Intangible.json"}],
+	"type": "object",
+	"properties": {
+		"dateCreated": {"$ref": "#/definitions/dateCreated"},
+		"dateDeleted": {"$ref": "#/definitions/dateDeleted"},
+		"dateModified": {"$ref": "#/definitions/dateModified"},
+		"item": {"$ref": "Thing.json#/definitions/possibleRefArray"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"dateCreated": {
+			"title": "Date Created",
+			"description": "The date on which the CreativeWork was created or the item was added to a DataFeed.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "date"
+				},
+				{
+					"type": "string",
+					"format": "date-time"
+				}
+			]
+		},
+		"dateDeleted": {
+			"title": "Date Deleted",
+			"description": "The datetime the item was removed from the DataFeed.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"dateModified": {
+			"title": "Date Modified",
+			"description": "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "date"
+				},
+				{
+					"type": "string",
+					"format": "date-time"
+				}
+			]
+		}
+	}
+}

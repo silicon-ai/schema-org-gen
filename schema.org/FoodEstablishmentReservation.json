@@ -1,0 +1,74 @@
+{
+	"id": "FoodEstablishmentReservation.json",
+	"title": "Food Establishment Reservation",
+	"description": "A reservation to dine at a food-related business.Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+	"format": "http://schema.org/FoodEstablishmentReservation",
+	"media": {"type": "application/json;profile=http://schema.org/FoodEstablishmentReservation"},
+	"allOf": [{"$ref": "Reservation.json"}],
+	"type": "object",
+	"properties": {
+		"endTime": {"$ref": "#/definitions/endTime"},
+		"partySize": {
+			"oneOf": [
+				{"$ref": "#/definitions/partySize"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/partySize"}
+				}
+			]
+		},
+		"startTime": {"$ref": "#/definitions/startTime"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"endTime": {
+			"title": "End Time",
+			"description": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December.\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"partySize": {
+			"title": "Party Size",
+			"description": "Number of people the reservation should accommodate.",
+			"anyOf": [{"type": "integer"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		},
+		"startTime": {
+			"title": "Start Time",
+			"description": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to December.\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+			"type": "string",
+			"format": "date-time"
+		}
+	}
+}

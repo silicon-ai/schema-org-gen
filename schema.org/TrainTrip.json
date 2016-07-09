@@ -1,0 +1,92 @@
+{
+	"id": "TrainTrip.json",
+	"title": "Train Trip",
+	"description": "A trip on a commercial train line.",
+	"format": "http://schema.org/TrainTrip",
+	"media": {"type": "application/json;profile=http://schema.org/TrainTrip"},
+	"allOf": [{"$ref": "Intangible.json"}],
+	"type": "object",
+	"properties": {
+		"arrivalPlatform": {"$ref": "#/definitions/arrivalPlatform"},
+		"arrivalStation": {"$ref": "TrainStation.json#/definitions/possibleRef"},
+		"arrivalTime": {"$ref": "#/definitions/arrivalTime"},
+		"departurePlatform": {"$ref": "#/definitions/departurePlatform"},
+		"departureStation": {"$ref": "TrainStation.json#/definitions/possibleRef"},
+		"departureTime": {"$ref": "#/definitions/departureTime"},
+		"provider": {"$ref": "#/definitions/provider"},
+		"trainName": {"$ref": "#/definitions/trainName"},
+		"trainNumber": {"$ref": "#/definitions/trainNumber"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"arrivalPlatform": {
+			"title": "Arrival Platform",
+			"description": "The platform where the train arrives.",
+			"type": "string"
+		},
+		"arrivalTime": {
+			"title": "Arrival Time",
+			"description": "The expected arrival time.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"departurePlatform": {
+			"title": "Departure Platform",
+			"description": "The platform from which the train departs.",
+			"type": "string"
+		},
+		"departureTime": {
+			"title": "Departure Time",
+			"description": "The expected departure time.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"provider": {
+			"title": "Provider",
+			"description": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. Supersedes carrier.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"trainName": {
+			"title": "Train Name",
+			"description": "The name of the train (e.g. The Orient Express).",
+			"type": "string"
+		},
+		"trainNumber": {
+			"title": "Train Number",
+			"description": "The unique identifier for the train.",
+			"type": "string"
+		}
+	}
+}

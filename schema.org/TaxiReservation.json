@@ -1,0 +1,84 @@
+{
+	"id": "TaxiReservation.json",
+	"title": "Taxi Reservation",
+	"description": "A reservation for a taxi.Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use http://schema.org/Offer.",
+	"format": "http://schema.org/TaxiReservation",
+	"media": {"type": "application/json;profile=http://schema.org/TaxiReservation"},
+	"allOf": [{"$ref": "Reservation.json"}],
+	"type": "object",
+	"properties": {
+		"partySize": {
+			"oneOf": [
+				{"$ref": "#/definitions/partySize"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/partySize"}
+				}
+			]
+		},
+		"pickupLocation": {
+			"oneOf": [
+				{"$ref": "Place.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "Place.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"pickupTime": {
+			"oneOf": [
+				{"$ref": "#/definitions/pickupTime"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/pickupTime"}
+				}
+			]
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"partySize": {
+			"title": "Party Size",
+			"description": "Number of people the reservation should accommodate.",
+			"anyOf": [{"type": "integer"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		},
+		"pickupTime": {
+			"title": "Pickup Time",
+			"description": "When a taxi will pickup a passenger or a rental car can be picked up.",
+			"type": "string",
+			"format": "date-time"
+		}
+	}
+}

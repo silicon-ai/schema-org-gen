@@ -1,0 +1,96 @@
+{
+	"id": "VideoGame.json",
+	"title": "Video Game",
+	"description": "A video game is an electronic game that involves human interaction with a user interface to generate visual feedback on a video device.",
+	"format": "http://schema.org/VideoGame",
+	"media": {"type": "application/json;profile=http://schema.org/VideoGame"},
+	"allOf": [{"$ref": "Game.json"}, {"$ref": "SoftwareApplication.json"}],
+	"type": "object",
+	"properties": {
+		"actor": {"$ref": "Person.json#/definitions/possibleRefArray"},
+		"cheatCode": {
+			"oneOf": [
+				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"director": {"$ref": "Person.json#/definitions/possibleRef"},
+		"gamePlatform": {"$ref": "#/definitions/gamePlatform"},
+		"gameServer": {"$ref": "GameServer.json#/definitions/possibleRef"},
+		"gameTip": {
+			"oneOf": [
+				{"$ref": "CreativeWork.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "CreativeWork.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"musicBy": {"$ref": "#/definitions/musicBy"},
+		"playMode": {
+			"oneOf": [
+				{"$ref": "GamePlayMode.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "GamePlayMode.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"trailer": {"$ref": "VideoObject.json#/definitions/possibleRef"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"gamePlatform": {
+			"title": "Game Platform",
+			"description": "The electronic systems used to play video games.",
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "uri"
+				},
+				{"type": "string"},
+				{"$ref": "Thing.json#/definitions/possibleRef"}
+			]
+		},
+		"musicBy": {
+			"title": "Music by",
+			"description": "The composer of the soundtrack.",
+			"anyOf": [{"$ref": "Person.json#/definitions/possibleRef"}, {"$ref": "MusicGroup.json#/definitions/possibleRef"}]
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"id": "Boolean.json",
+	"title": "Boolean",
+	"description": "Boolean: True or False.",
+	"format": "http://schema.org/Boolean",
+	"media": {"type": "application/json;profile=http://schema.org/Boolean"},
+	"type": "boolean",
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		}
+	}
+}

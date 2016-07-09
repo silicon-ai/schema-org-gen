@@ -1,0 +1,60 @@
+{
+	"id": "CreativeWorkSeries.json",
+	"title": "Creative Work Series",
+	"description": "A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind.\n          CreativeWorkSeries are usually organized into some order, often chronological. Unlike ItemList which\n          is a general purpose data structure for lists of things, the emphasis with\n          CreativeWorkSeries is on published materials (written e.g. books and periodicals,\n          or media such as tv, radio and games).\n      <br/><br/>\n\n      Specific subtypes are available for describing <a href=\"/TVSeries\">TVSeries</a>, <a href=\"/RadioSeries\">RadioSeries</a>,\n      <a href=\"/MovieSeries\">MovieSeries</a>,\n      <a href=\"/BookSeries\">BookSeries</a>,\n      <a href=\"/Periodical\">Periodical</a>\n      and <a href=\"/VideoGameSeries\">VideoGameSeries</a>. In each case,\n      the <a href=\"/hasPart\">hasPart</a> / <a href=\"/isPartOf\">isPartOf</a> properties\n      can be used to relate the CreativeWorkSeries to its parts. The general CreativeWorkSeries type serves largely\n      just to organize these more specific and practical subtypes.\n\n      <br/><br/>\n\n      It is common for properties applicable to an item from the series to be usefully applied to the containing group.\n      Schema.org attempts to anticipate some of these cases, but publishers should be free to apply\n      properties of the series parts to the series as a whole wherever they seem appropriate.",
+	"format": "http://schema.org/CreativeWorkSeries",
+	"media": {"type": "application/json;profile=http://schema.org/CreativeWorkSeries"},
+	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"endDate": {"$ref": "#/definitions/endDate"},
+		"startDate": {"$ref": "#/definitions/startDate"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"endDate": {
+			"title": "End Date",
+			"description": "The end date and time of the item (in ISO 8601 date format).",
+			"type": "string",
+			"format": "date-time"
+		},
+		"startDate": {
+			"title": "Start Date",
+			"description": "The start date and time of the item (in ISO 8601 date format).",
+			"type": "string",
+			"format": "date-time"
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"id": "MusicAlbumProductionType.json",
+	"title": "Music Album Production Type",
+	"description": "Classification of the album by it's type of content: soundtrack, live album, studio album, etc.",
+	"format": "http://schema.org/MusicAlbumProductionType",
+	"media": {"type": "application/json;profile=http://schema.org/MusicAlbumProductionType"},
+	"allOf": [{"$ref": "Enumeration.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

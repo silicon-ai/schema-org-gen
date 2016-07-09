@@ -1,0 +1,14 @@
+{
+	"id": "Date.json",
+	"title": "Date",
+	"description": "A date value in ISO 8601 date format.",
+	"format": "date",
+	"media": {"type": "application/json;profile=http://schema.org/Date"},
+	"type": "string",
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		}
+	}
+}

@@ -1,0 +1,99 @@
+{
+	"id": "Ticket.json",
+	"title": "Ticket",
+	"description": "Used to describe a ticket to an event, a flight, a bus ride, etc.",
+	"format": "http://schema.org/Ticket",
+	"media": {"type": "application/json;profile=http://schema.org/Ticket"},
+	"allOf": [{"$ref": "Intangible.json"}],
+	"type": "object",
+	"properties": {
+		"dateIssued": {"$ref": "#/definitions/dateIssued"},
+		"issuedBy": {"$ref": "Organization.json#/definitions/possibleRef"},
+		"priceCurrency": {"$ref": "#/definitions/priceCurrency"},
+		"ticketNumber": {"$ref": "#/definitions/ticketNumber"},
+		"ticketToken": {
+			"oneOf": [
+				{"$ref": "#/definitions/ticketToken"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/ticketToken"}
+				}
+			]
+		},
+		"ticketedSeat": {"$ref": "Seat.json#/definitions/possibleRef"},
+		"totalPrice": {"$ref": "#/definitions/totalPrice"},
+		"underName": {"$ref": "#/definitions/underName"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"dateIssued": {
+			"title": "Date Issued",
+			"description": "The date the ticket was issued.",
+			"type": "string",
+			"format": "date-time"
+		},
+		"priceCurrency": {
+			"title": "Price Currency",
+			"description": "The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to PriceSpecification and its subtypes.",
+			"type": "string"
+		},
+		"ticketNumber": {
+			"title": "Ticket Number",
+			"description": "The unique identifier for the ticket.",
+			"type": "string"
+		},
+		"ticketToken": {
+			"title": "Ticket Token",
+			"description": "Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.",
+			"anyOf": [
+				{"type": "string"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		},
+		"totalPrice": {
+			"title": "Total Price",
+			"description": "The total price for the reservation or ticket, including applicable taxes, shipping, etc.",
+			"anyOf": [{"type": "string"}, {"$ref": "PriceSpecification.json#/definitions/possibleRef"}, {"type": "number"}]
+		},
+		"underName": {
+			"title": "Under Name",
+			"description": "The person or organization the reservation or ticket is for.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		}
+	}
+}

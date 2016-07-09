@@ -1,0 +1,14 @@
+{
+	"id": "URL.json",
+	"title": "URL",
+	"description": "Data type: URL.",
+	"format": "uri",
+	"media": {"type": "application/json;profile=http://schema.org/URL"},
+	"type": "string",
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		}
+	}
+}

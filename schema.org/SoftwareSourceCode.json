@@ -1,0 +1,96 @@
+{
+	"id": "SoftwareSourceCode.json",
+	"title": "Software Source Code",
+	"description": "Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.",
+	"format": "http://schema.org/SoftwareSourceCode",
+	"media": {"type": "application/json;profile=http://schema.org/SoftwareSourceCode"},
+	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"codeRepository": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"format": "uri",
+				"links": [{
+					"rel": "http://schema.org/codeRepository",
+					"href": "{+$}",
+					"linkSource": 2
+				}]
+			}
+		},
+		"codeSampleType": {
+			"oneOf": [
+				{"$ref": "#/definitions/codeSampleType"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/codeSampleType"}
+				}
+			]
+		},
+		"programmingLanguage": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/programmingLanguage"}
+		},
+		"runtimePlatform": {
+			"oneOf": [
+				{"$ref": "#/definitions/runtimePlatform"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/runtimePlatform"}
+				}
+			]
+		},
+		"targetProduct": {"$ref": "SoftwareApplication.json#/definitions/possibleRefArray"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"codeSampleType": {
+			"title": "Code Sample Type",
+			"description": "Full (compile ready) solution, code snippet, inline code, scripts, template. Supersedes sampleType.",
+			"type": "string"
+		},
+		"programmingLanguage": {
+			"title": "Programming Language",
+			"description": "The computer programming language.",
+			"anyOf": [{"$ref": "ComputerLanguage.json#/definitions/possibleRef"}, {"type": "string"}]
+		},
+		"runtimePlatform": {
+			"title": "Runtime Platform",
+			"description": "Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0). Supersedes runtime.",
+			"type": "string"
+		}
+	}
+}

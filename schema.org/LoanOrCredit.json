@@ -1,0 +1,67 @@
+{
+	"id": "LoanOrCredit.json",
+	"title": "Loan or Credit",
+	"description": "A financial product for the loaning of an amount of money under agreed terms and charges.",
+	"format": "http://schema.org/LoanOrCredit",
+	"media": {"type": "application/json;profile=http://schema.org/LoanOrCredit"},
+	"allOf": [{"$ref": "FinancialProduct.json"}],
+	"type": "object",
+	"properties": {
+		"amount": {"$ref": "#/definitions/amount"},
+		"loanTerm": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
+		"requiredCollateral": {
+			"oneOf": [
+				{"$ref": "#/definitions/requiredCollateral"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/requiredCollateral"}
+				}
+			]
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"amount": {
+			"title": "Amount",
+			"description": "The amount of money.",
+			"anyOf": [{"type": "number"}, {"$ref": "MonetaryAmount.json#/definitions/possibleRef"}]
+		},
+		"requiredCollateral": {
+			"title": "Required Collateral",
+			"description": "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
+			"anyOf": [{"type": "string"}, {"$ref": "Thing.json#/definitions/possibleRef"}]
+		}
+	}
+}

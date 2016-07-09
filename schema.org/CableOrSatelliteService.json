@@ -1,0 +1,43 @@
+{
+	"id": "CableOrSatelliteService.json",
+	"title": "Cable or Satellite Service",
+	"description": "A service which provides access to media programming like TV or radio. Access may be via cable or satellite.",
+	"format": "http://schema.org/CableOrSatelliteService",
+	"media": {"type": "application/json;profile=http://schema.org/CableOrSatelliteService"},
+	"allOf": [{"$ref": "Service.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

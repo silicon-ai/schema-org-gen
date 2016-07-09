@@ -1,0 +1,43 @@
+{
+	"id": "DiscussionForumPosting.json",
+	"title": "Discussion Forum Posting",
+	"description": "A posting to a discussion forum.",
+	"format": "http://schema.org/DiscussionForumPosting",
+	"media": {"type": "application/json;profile=http://schema.org/DiscussionForumPosting"},
+	"allOf": [{"$ref": "SocialMediaPosting.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

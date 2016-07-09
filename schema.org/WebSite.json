@@ -1,0 +1,43 @@
+{
+	"id": "WebSite.json",
+	"title": "Web Site",
+	"description": "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.",
+	"format": "http://schema.org/WebSite",
+	"media": {"type": "application/json;profile=http://schema.org/WebSite"},
+	"allOf": [{"$ref": "CreativeWork.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

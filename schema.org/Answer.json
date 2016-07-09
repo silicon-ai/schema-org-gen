@@ -1,0 +1,43 @@
+{
+	"id": "Answer.json",
+	"title": "Answer",
+	"description": "An answer offered to a question; perhaps correct, perhaps opinionated or wrong.",
+	"format": "http://schema.org/Answer",
+	"media": {"type": "application/json;profile=http://schema.org/Answer"},
+	"allOf": [{"$ref": "Comment.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

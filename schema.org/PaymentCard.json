@@ -1,0 +1,43 @@
+{
+	"id": "PaymentCard.json",
+	"title": "Payment Card",
+	"description": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
+	"format": "http://schema.org/PaymentCard",
+	"media": {"type": "application/json;profile=http://schema.org/PaymentCard"},
+	"allOf": [{"$ref": "FinancialProduct.json"}, {"$ref": "PaymentMethod.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

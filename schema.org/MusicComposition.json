@@ -1,0 +1,84 @@
+{
+	"id": "MusicComposition.json",
+	"title": "Music Composition",
+	"description": "A musical composition.",
+	"format": "http://schema.org/MusicComposition",
+	"media": {"type": "application/json;profile=http://schema.org/MusicComposition"},
+	"allOf": [{"$ref": "CreativeWork.json"}],
+	"type": "object",
+	"properties": {
+		"composer": {"$ref": "#/definitions/composer"},
+		"firstPerformance": {"$ref": "Event.json#/definitions/possibleRef"},
+		"includedComposition": {
+			"oneOf": [
+				{"$ref": "MusicComposition.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "MusicComposition.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"iswcCode": {"$ref": "#/definitions/iswcCode"},
+		"lyricist": {"$ref": "Person.json#/definitions/possibleRef"},
+		"lyrics": {"$ref": "CreativeWork.json#/definitions/possibleRef"},
+		"musicArrangement": {"$ref": "MusicComposition.json#/definitions/possibleRefArray"},
+		"musicCompositionForm": {"$ref": "#/definitions/musicCompositionForm"},
+		"musicalKey": {"$ref": "#/definitions/musicalKey"},
+		"recordedAs": {"$ref": "MusicRecording.json#/definitions/possibleRefArray"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"composer": {
+			"title": "Composer",
+			"description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+			"anyOf": [{"$ref": "Organization.json#/definitions/possibleRef"}, {"$ref": "Person.json#/definitions/possibleRef"}]
+		},
+		"iswcCode": {
+			"title": "Iswc Code",
+			"description": "The International Standard Musical Work Code for the composition.",
+			"type": "string"
+		},
+		"musicCompositionForm": {
+			"title": "Music Composition Form",
+			"description": "The type of composition (e.g. overture, sonata, symphony, etc.).",
+			"type": "string"
+		},
+		"musicalKey": {
+			"title": "Musical Key",
+			"description": "The key, mode, or scale this composition uses.",
+			"type": "string"
+		}
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"id": "TelevisionChannel.json",
+	"title": "Television Channel",
+	"description": "A unique instance of a television BroadcastService on a CableOrSatelliteService lineup.",
+	"format": "http://schema.org/TelevisionChannel",
+	"media": {"type": "application/json;profile=http://schema.org/TelevisionChannel"},
+	"allOf": [{"$ref": "BroadcastChannel.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

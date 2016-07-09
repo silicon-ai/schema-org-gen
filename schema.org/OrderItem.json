@@ -1,0 +1,69 @@
+{
+	"id": "OrderItem.json",
+	"title": "Order Item",
+	"description": "An order item is a line of an order. It includes the quantity and shipping details of a bought offer.",
+	"format": "http://schema.org/OrderItem",
+	"media": {"type": "application/json;profile=http://schema.org/OrderItem"},
+	"allOf": [{"$ref": "Intangible.json"}],
+	"type": "object",
+	"properties": {
+		"orderDelivery": {"$ref": "ParcelDelivery.json#/definitions/possibleRef"},
+		"orderItemNumber": {"$ref": "#/definitions/orderItemNumber"},
+		"orderItemStatus": {"$ref": "OrderStatus.json#/definitions/possibleRef"},
+		"orderQuantity": {"$ref": "#/definitions/orderQuantity"},
+		"orderedItem": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/orderedItem"}
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"orderItemNumber": {
+			"title": "Order Item Number",
+			"description": "The identifier of the order item.",
+			"type": "string"
+		},
+		"orderQuantity": {
+			"title": "Order Quantity",
+			"description": "The number of the item ordered. If the property is not set, assume the quantity is one.",
+			"type": "number"
+		},
+		"orderedItem": {
+			"title": "Ordered Item",
+			"description": "The item ordered.",
+			"anyOf": [{"$ref": "Product.json#/definitions/possibleRef"}, {"$ref": "OrderItem.json#/definitions/possibleRef"}]
+		}
+	}
+}

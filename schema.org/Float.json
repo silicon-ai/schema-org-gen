@@ -1,0 +1,14 @@
+{
+	"id": "Float.json",
+	"title": "Float",
+	"description": "Data type: Floating number.",
+	"format": "http://schema.org/Float",
+	"media": {"type": "application/json;profile=http://schema.org/Float"},
+	"type": "number",
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		}
+	}
+}

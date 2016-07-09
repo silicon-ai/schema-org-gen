@@ -1,0 +1,43 @@
+{
+	"id": "ExhibitionEvent.json",
+	"title": "Exhibition Event",
+	"description": "Event type: Exhibition event, e.g. at a museum, library, archive, tradeshow, ...",
+	"format": "http://schema.org/ExhibitionEvent",
+	"media": {"type": "application/json;profile=http://schema.org/ExhibitionEvent"},
+	"allOf": [{"$ref": "Event.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

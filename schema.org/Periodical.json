@@ -1,0 +1,50 @@
+{
+	"id": "Periodical.json",
+	"title": "Periodical",
+	"description": "A publication in any medium issued in successive parts bearing numerical or chronological designations and intended, such as a magazine, scholarly journal, or newspaper to continue indefinitely.\nSee also blog post.",
+	"format": "http://schema.org/Periodical",
+	"media": {"type": "application/json;profile=http://schema.org/Periodical"},
+	"allOf": [{"$ref": "CreativeWorkSeries.json"}],
+	"type": "object",
+	"properties": {"issn": {"$ref": "#/definitions/issn"}},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"issn": {
+			"title": "Issn",
+			"description": "The International Standard Serial Number (ISSN) that identifies this periodical. You can repeat this property to (for example) identify different formats of this periodical.",
+			"type": "string"
+		}
+	}
+}

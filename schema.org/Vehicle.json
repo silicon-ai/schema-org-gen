@@ -1,0 +1,206 @@
+{
+	"id": "Vehicle.json",
+	"title": "Vehicle",
+	"description": "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.",
+	"format": "http://schema.org/Vehicle",
+	"media": {"type": "application/json;profile=http://schema.org/Vehicle"},
+	"allOf": [{"$ref": "Product.json"}],
+	"type": "object",
+	"properties": {
+		"cargoVolume": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
+		"dateVehicleFirstRegistered": {"$ref": "#/definitions/dateVehicleFirstRegistered"},
+		"driveWheelConfiguration": {"$ref": "#/definitions/driveWheelConfiguration"},
+		"fuelConsumption": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
+		"fuelEfficiency": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
+		"fuelType": {"$ref": "#/definitions/fuelType"},
+		"knownVehicleDamages": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/knownVehicleDamages"}
+		},
+		"mileageFromOdometer": {"$ref": "QuantitativeValue.json#/definitions/possibleRef"},
+		"numberOfAirbags": {"$ref": "#/definitions/numberOfAirbags"},
+		"numberOfAxles": {"$ref": "#/definitions/numberOfAxles"},
+		"numberOfDoors": {"$ref": "#/definitions/numberOfDoors"},
+		"numberOfForwardGears": {"$ref": "#/definitions/numberOfForwardGears"},
+		"numberOfPreviousOwners": {"$ref": "#/definitions/numberOfPreviousOwners"},
+		"productionDate": {"$ref": "#/definitions/productionDate"},
+		"purchaseDate": {"$ref": "#/definitions/purchaseDate"},
+		"steeringPosition": {"$ref": "SteeringPositionValue.json#/definitions/possibleRef"},
+		"vehicleConfiguration": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/vehicleConfiguration"}
+		},
+		"vehicleEngine": {
+			"oneOf": [
+				{"$ref": "EngineSpecification.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "EngineSpecification.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"vehicleIdentificationNumber": {"$ref": "#/definitions/vehicleIdentificationNumber"},
+		"vehicleInteriorColor": {"$ref": "#/definitions/vehicleInteriorColor"},
+		"vehicleInteriorType": {"$ref": "#/definitions/vehicleInteriorType"},
+		"vehicleModelDate": {"$ref": "#/definitions/vehicleModelDate"},
+		"vehicleSeatingCapacity": {"$ref": "#/definitions/vehicleSeatingCapacity"},
+		"vehicleSpecialUsage": {
+			"oneOf": [
+				{"$ref": "#/definitions/vehicleSpecialUsage"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/vehicleSpecialUsage"}
+				}
+			]
+		},
+		"vehicleTransmission": {"$ref": "#/definitions/vehicleTransmission"}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"dateVehicleFirstRegistered": {
+			"title": "Date Vehicle First Registered",
+			"description": "The date of the first registration of the vehicle with the respective public authorities.",
+			"type": "string",
+			"format": "date"
+		},
+		"driveWheelConfiguration": {
+			"title": "Drive Wheel Configuration",
+			"description": "The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.",
+			"anyOf": [{"$ref": "DriveWheelConfigurationValue.json#/definitions/possibleRef"}, {"type": "string"}]
+		},
+		"fuelType": {
+			"title": "Fuel Type",
+			"description": "The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.",
+			"anyOf": [
+				{"$ref": "QualitativeValue.json#/definitions/possibleRef"},
+				{"type": "string"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		},
+		"knownVehicleDamages": {
+			"title": "Known Vehicle Damages",
+			"description": "A textual description of known damages, both repaired and unrepaired.",
+			"type": "string"
+		},
+		"numberOfAirbags": {
+			"title": "Number of Airbags",
+			"description": "The number or type of airbags in the vehicle.",
+			"anyOf": [{"type": "number"}, {"type": "string"}]
+		},
+		"numberOfAxles": {
+			"title": "Number of Axles",
+			"description": "The number of axles.\nTypical unit code(s): C62",
+			"anyOf": [{"type": "number"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		},
+		"numberOfDoors": {
+			"title": "Number of Doors",
+			"description": "The number of doors.\nTypical unit code(s): C62",
+			"anyOf": [{"type": "number"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		},
+		"numberOfForwardGears": {
+			"title": "Number of Forward Gears",
+			"description": "The total number of forward gears available for the transmission system of the vehicle.\nTypical unit code(s): C62",
+			"anyOf": [{"type": "number"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		},
+		"numberOfPreviousOwners": {
+			"title": "Number of Previous Owners",
+			"description": "The number of owners of the vehicle, including the current one.\nTypical unit code(s): C62",
+			"anyOf": [{"type": "number"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"productionDate": {
+			"title": "Production Date",
+			"description": "The date of production of the item, e.g. vehicle.",
+			"type": "string",
+			"format": "date"
+		},
+		"purchaseDate": {
+			"title": "Purchase Date",
+			"description": "The date the item e.g. vehicle was purchased by the current owner.",
+			"type": "string",
+			"format": "date"
+		},
+		"vehicleConfiguration": {
+			"title": "Vehicle Configuration",
+			"description": "A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.",
+			"type": "string"
+		},
+		"vehicleIdentificationNumber": {
+			"title": "Vehicle Identification Number",
+			"description": "The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.",
+			"type": "string"
+		},
+		"vehicleInteriorColor": {
+			"title": "Vehicle Interior Color",
+			"description": "The color or color combination of the interior of the vehicle.",
+			"type": "string"
+		},
+		"vehicleInteriorType": {
+			"title": "Vehicle Interior Type",
+			"description": "The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.",
+			"type": "string"
+		},
+		"vehicleModelDate": {
+			"title": "Vehicle Model Date",
+			"description": "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+			"type": "string",
+			"format": "date"
+		},
+		"vehicleSeatingCapacity": {
+			"title": "Vehicle Seating Capacity",
+			"description": "The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.\nTypical unit code(s): C62 for persons.",
+			"anyOf": [{"type": "number"}, {"$ref": "QuantitativeValue.json#/definitions/possibleRef"}]
+		},
+		"vehicleSpecialUsage": {
+			"title": "Vehicle Special Usage",
+			"description": "Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.",
+			"type": "string"
+		},
+		"vehicleTransmission": {
+			"title": "Vehicle Transmission",
+			"description": "The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (\"gearbox\" for cars).",
+			"anyOf": [
+				{"$ref": "QualitativeValue.json#/definitions/possibleRef"},
+				{"type": "string"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		}
+	}
+}

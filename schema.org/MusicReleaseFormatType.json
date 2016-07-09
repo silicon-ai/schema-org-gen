@@ -1,0 +1,43 @@
+{
+	"id": "MusicReleaseFormatType.json",
+	"title": "Music Release Format Type",
+	"description": "Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).",
+	"format": "http://schema.org/MusicReleaseFormatType",
+	"media": {"type": "application/json;profile=http://schema.org/MusicReleaseFormatType"},
+	"allOf": [{"$ref": "Enumeration.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

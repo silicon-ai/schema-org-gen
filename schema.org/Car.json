@@ -1,0 +1,43 @@
+{
+	"id": "Car.json",
+	"title": "Car",
+	"description": "A car is a wheeled, self-powered motor vehicle used for transportation.",
+	"format": "http://schema.org/Car",
+	"media": {"type": "application/json;profile=http://schema.org/Car"},
+	"allOf": [{"$ref": "Vehicle.json"}],
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

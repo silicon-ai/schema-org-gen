@@ -1,0 +1,55 @@
+{
+	"id": "CompoundPriceSpecification.json",
+	"title": "Compound Price Specification",
+	"description": "A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. \"electricity\" or \"final cleaning\").",
+	"format": "http://schema.org/CompoundPriceSpecification",
+	"media": {"type": "application/json;profile=http://schema.org/CompoundPriceSpecification"},
+	"allOf": [{"$ref": "PriceSpecification.json"}],
+	"type": "object",
+	"properties": {
+		"priceComponent": {
+			"oneOf": [
+				{"$ref": "UnitPriceSpecification.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "UnitPriceSpecification.json#/definitions/possibleRef"}
+				}
+			]
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		}
+	}
+}

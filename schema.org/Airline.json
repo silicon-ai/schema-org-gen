@@ -1,0 +1,61 @@
+{
+	"id": "Airline.json",
+	"title": "Airline",
+	"description": "An organization that provides flights for passengers.",
+	"format": "http://schema.org/Airline",
+	"media": {"type": "application/json;profile=http://schema.org/Airline"},
+	"allOf": [{"$ref": "Organization.json"}],
+	"type": "object",
+	"properties": {
+		"boardingPolicy": {"$ref": "BoardingPolicyType.json#/definitions/possibleRef"},
+		"iataCode": {
+			"oneOf": [
+				{"$ref": "#/definitions/iataCode"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/iataCode"}
+				}
+			]
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"iataCode": {
+			"title": "Iata Code",
+			"description": "IATA identifier for an airline or airport.",
+			"type": "string"
+		}
+	}
+}

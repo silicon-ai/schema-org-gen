@@ -1,0 +1,50 @@
+{
+	"id": "PerformanceRole.json",
+	"title": "Performance Role",
+	"description": "A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.",
+	"format": "http://schema.org/PerformanceRole",
+	"media": {"type": "application/json;profile=http://schema.org/PerformanceRole"},
+	"allOf": [{"$ref": "Role.json"}],
+	"type": "object",
+	"properties": {"characterName": {"$ref": "#/definitions/characterName"}},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"characterName": {
+			"title": "Character Name",
+			"description": "The name of a character played in some acting or performing role, i.e. in a PerformanceRole.",
+			"type": "string"
+		}
+	}
+}

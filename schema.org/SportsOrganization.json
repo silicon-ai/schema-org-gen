@@ -1,0 +1,61 @@
+{
+	"id": "SportsOrganization.json",
+	"title": "Sports Organization",
+	"description": "Represents the collection of all sports organizations, including sports teams, governing bodies, and sports associations.",
+	"format": "http://schema.org/SportsOrganization",
+	"media": {"type": "application/json;profile=http://schema.org/SportsOrganization"},
+	"allOf": [{"$ref": "Organization.json"}],
+	"type": "object",
+	"properties": {
+		"sport": {
+			"type": "array",
+			"items": {"$ref": "#/definitions/sport"}
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"sport": {
+			"title": "Sport",
+			"description": "A type of sport (e.g. Baseball).",
+			"anyOf": [
+				{"type": "string"},
+				{
+					"type": "string",
+					"format": "uri"
+				}
+			]
+		}
+	}
+}

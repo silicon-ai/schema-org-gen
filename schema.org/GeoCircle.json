@@ -1,0 +1,69 @@
+{
+	"id": "GeoCircle.json",
+	"title": "Geo Circle",
+	"description": "A GeoCircle is a GeoShape representing a circular geographic area. As it is a GeoShape\n          it provides the simple textual property 'circle', but also allows the combination of postalCode alongside geoRadius.\n          The center of the circle can be indicated via the 'geoMidpoint' property, or more approximately using 'address', 'postalCode'.",
+	"format": "http://schema.org/GeoCircle",
+	"media": {"type": "application/json;profile=http://schema.org/GeoCircle"},
+	"allOf": [{"$ref": "GeoShape.json"}],
+	"type": "object",
+	"properties": {
+		"geoMidpoint": {
+			"oneOf": [
+				{"$ref": "GeoCoordinates.json#/definitions/possibleRef"},
+				{
+					"type": "array",
+					"items": {"$ref": "GeoCoordinates.json#/definitions/possibleRef"}
+				}
+			]
+		},
+		"geoRadius": {
+			"oneOf": [
+				{"$ref": "#/definitions/geoRadius"},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/geoRadius"}
+				}
+			]
+		}
+	},
+	"definitions": {
+		"array": {
+			"type": "array",
+			"items": {"$ref": "#"}
+		},
+		"possibleRef": {
+			"oneOf": [
+				{"$ref": "#"},
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				}
+			]
+		},
+		"possibleRefArray": {
+			"oneOf": [
+				{
+					"type": "string",
+					"format": "uri",
+					"links": [{
+						"rel": "full",
+						"href": "{+$}"
+					}]
+				},
+				{
+					"type": "array",
+					"items": {"$ref": "#/definitions/possibleRef"}
+				}
+			]
+		},
+		"geoRadius": {
+			"title": "Geo Radius",
+			"description": "Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).",
+			"anyOf": [{"$ref": "Distance.json#/definitions/possibleRef"}, {"type": "number"}, {"type": "string"}]
+		}
+	}
+}
