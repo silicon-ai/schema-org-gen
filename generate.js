@@ -25,8 +25,7 @@ function createRel(key) {
 	return REL_PREFIX + encodeURIComponent(key);
 }
 
-//request.get('http://schema.rdfs.org/all.json', function (err, request, body) {
-fs.readFile('./all.json', function (err, body) {
+request.get('http://schema.link.fish/downloads/all.json', function (err, request, body) {
 	if (err) throw err;
 	
 	var allData = JSON.parse(body);
